@@ -1,92 +1,16 @@
-\documentclass[
-]{scrartcl}
-
-%Deutsche Sprachunterstützung
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage{marvosym}
-\DeclareUnicodeCharacter{20AC}{\EUR}
-
-%Für das Einbinden von Bildern
-\usepackage{graphicx}
-
-%Tabellen
-\usepackage{array}
-
-%Tabellen automatisch schoener
-\usepackage{booktabs}
-
-%Caption
-\usepackage{caption}
-\usepackage{subcaption}
-
-%Formeln
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amstext}
-\usepackage{dsfont}
-
-%\usepackage{mnsymbol}
-
-%Vectorpfeile schöner
-\usepackage{esvect}
-
-%Formatierung
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-
-%Schaltbilder malen
-\usepackage[europeanresistors,cuteinductors,siunitx]{circuitikz}
-
-%\usepackage[german=guillemets]{csquotes}
-
-%Formatierungsanweisungen
-\newcommand{\wichtig}[1]{\underline{\large{#1}}}
-\newcommand{\aref}[1]{(s.Abb. \ref{#1})}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\C}{\mathbb{C}}
+\input{header.tex}
 \begin{document}
 
 \title{Frequenzfilter}
-\subtitle{1. Versuch PPG 8}
-\date
-%\author{PPG8}
-\maketitle
-\section{Vorwort}
-blabla bulbbaslkdfalskdf
-
-\include{theo}
-\section{Versuchsdurchführung}
-Nach einigen Messversuchen
-
-
-Der Schaltkreis hat 2,7 Ohm + dem Messwiderstand.
-
-
-
-
-
-\begin{figure}[t]
-\centering
-	\subcaptionbox{Durchlassfilter\label{img:durchlass}}[.4\linewidth]
-		{\includegraphics[width=.4\textwidth]{images/durchlassfilter}}
-	\subcaptionbox{Sperrfilter\label{img:sperr}}[.4\linewidth]
-		{\includegraphics[width=.4\textwidth]{images/sperrfilter}}
-\caption{Fotos der Versuchsaufbauten}
-\end{figure}
-\section{Versuchsdurchführung}
-Nach einigen Messversuchen
-
-
-Der Schaltkreis hat 2,7 Ohm + dem Messwiderstand.
-\section{Diskussion der Ergebnisse}
-
-
-
-
+\date{}
+\author{PPG8\\
+Udo Beier, Leon Brückner, Valentin Olpp, Marco Zech, Sebastian Ziegler}
+%\maketitle
+\listoffigures
+\include{vorwort}
+\include{theorie}
+\include{durchfuehrung}
+\include{ergebnisse}
 
 
 \end{document}
