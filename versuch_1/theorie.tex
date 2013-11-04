@@ -58,8 +58,7 @@ $
 \Delta \omega=\frac{R}{L}
 \end{equation}
 , d.h. bei kleineren Widerständen ergeben sich 'schärfere' Peaks.
-\\
-Diese Betrachtung nimmt an, dass der Ohmsche Widerstand der Spule vernachlässigbar ist, was in der Praxis jedoch nicht immer der Fall ist.
+\paragraph{}Diese Betrachtung nimmt an, dass der Ohmsche Widerstand der Spule vernachlässigbar ist, was in der Praxis jedoch nicht immer der Fall ist.
 Wenn die Spule einen Widerstand $R_L$ besitzt, ändert sich Gleichung (2) zu
 \begin{equation}
 \Rightarrow\left| U_a \right| = \frac{R}{\sqrt{(R+R_L)^2+\left(\omega L - \frac{1}{\omega C}\right)}}\cdot \left| U_e \right|
@@ -98,16 +97,14 @@ U_a=\frac{R}{R-i \frac{1}{\omega C - \frac{1}{\omega L}}}\cdot U_e\\
 Bei der Resonanzfrequenz (3) geht nun $\left| U_a \right|\longrightarrow 0$, d.h. die Frequenz $\omega_R$ wird blockiert, während andere Frequenzen durchgelassen werden.
 
 
-Berechnet man hier die Frequenzbreite analog zu (4) und (5) ergibt sich:
+\paragraph{}Berechnet man hier die Frequenzbreite analog zu (4) und (5) ergibt sich:
 
 \begin{equation}
 \Delta\omega = \frac{1}{RC\sqrt{1-(1-\frac{1}{\sqrt{2}})^2}}
 \end{equation}
 
 Hier ergeben also größere Widerstände 'schärfere' Peaks.  
-
-
-Auch hier kann man der Spule einen Widerstand $R_L$ zuweisen, außerdem wurde ein nicht weiter spezifizierter zusätzlicher Widerstand $R_{zus}$ eingefügt. Siehe Abb. \ref{plan:sperr-R_L} auf Seite \pageref{plan:sperr-R_L}.
+\newpage Auch hier kann man der Spule einen Widerstand $R_L$ zuweisen, außerdem wurde ein nicht weiter spezifizierter zusätzlicher Widerstand $R_{zus}$ eingefügt. \\Siehe Abb. \ref{plan:sperr-R_L} auf Seite \pageref{plan:sperr-R_L}.
 \begin{figure}
 \centering
 \begin{circuitikz}
@@ -130,19 +127,19 @@ Auch hier kann man der Spule einen Widerstand $R_L$ zuweisen, außerdem wurde ei
 \label{plan:sperr-R_L}
 \end{figure}
 
-Der Gesamtwiderstand der Parallelschaltung aus Spule und Kondensator ist dann:
+\paragraph{} Der Gesamtwiderstand der Parallelschaltung aus Spule und Kondensator ist dann:
 
 \begin{equation}
 Z_{SK} = \frac{1}{\frac{1}{R_L+i\omega L}+i\omega C}
-\end{equation}
+\end{equation}\\
 
 Der Gesamtwiderstand der Schaltung kann nun geschrieben werden als
 
 \begin{equation}
 Z_{SK}+R_{zus}+R = \frac{\gamma R_L - i\omega\gamma[C\gamma-L]}{R_L^2+\omega^2[C\gamma-L]^2} + R_{ges}
-\end{equation}
+\end{equation}\\
 
-mit $\gamma=R_L^2+\omega^2L^2$ und $R_{ges}=R+R_{zus}$
+mit $\gamma=R_L^2+\omega^2L^2$ und $R_{ges}=R+R_{zus}$\\
 
 Analoges Vorgehen zu (1) und (2) liefert schließlich:
 
@@ -150,9 +147,9 @@ Analoges Vorgehen zu (1) und (2) liefert schließlich:
 \frac{\left|U_a \right|}{\left|U_e \right|} = \frac{R \beta}{\sqrt{\left(\gamma R_L + R_{ges}\beta\right)^2+ \gamma^2 \epsilon^2}}
 \end{equation}
 
-mit $\gamma=R_L^2+\omega^2L^2$, $\epsilon=\omega[C\gamma-L]$, $\beta=R_L^2 + \epsilon^2$
+mit $\gamma=R_L^2+\omega^2L^2$, $\epsilon=\omega[C\gamma-L]$, $\beta=R_L^2 + \epsilon^2$\\
 
-Einsetzen der Substitutionen und Ausschreiben liefert dann folgende Gleichung, die für die Theoriekurven in Abb. REFERENZ SPERRFILTER verwendet wurde.
+Einsetzen der Substitutionen und Ausschreiben liefert dann folgende Gleichung, die für die Theoriekurven in Abb. \ref{plot:sperr} verwendet wurde.
 
 \footnotesize
 \begin{align}
