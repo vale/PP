@@ -7,16 +7,17 @@ Beim Aufzeichnen der Spannungskurven für verschiedene ohmsche Widerstände fiel
 \caption{Plot der Messdaten des Durchlassfilters unter Berücksichtigung des gemessenen Gesamtwiderstandes}
 \label{plot:durchlass+R_ges}
 \end{figure}
-Abbildung \ref{plot:durchlass+R_ges-fit} zeigt die gleiche Messreihe, wobei hier über dem Gesamtwiderstand des Kreises als Variable gefittet wurde. Ergebnis war, dass dieser nochmals um etwa 4 $  \Omega $ größer ist, als zuvor im \enquote{Ruhezustand} gemessen. Grund hierfür ist wohl schlichtweg zusätzlicher Widerstand, der sich als Übergangswiderstand bei den Steckverbindungen ausbildet, oder ein thermischer Widerstand in der Widerstandsbox.\\
+Abbildung \ref{plot:durchlass+R_ges-fit} zeigt die gleiche Messreihe, wobei hier über dem Gesamtwiderstand des Kreises als Variable gefittet wurde, um zu zeigen, dass der Gesamtwiderstand des Kreises um etwa 4 $\Omega$ größer ausfällt als wir durch Messungen am ausgeschalteten Schaltkreis messen konnten. Grund hierfür ist wohl schlichtweg zusätzlicher Widerstand, der sich als Übergangswiderstand bei den Steckverbindungen ausbildet, oder ein thermischer Widerstand in der Widerstandsbox.\\
 Die geringen Abweichungen der Resonanzfrequenz, die überdies hinaus zu sehen sind, könnten unter anderem auf ungenaue Kapazitäts- und Induktivitätsangaben zurückgeführt werden, fallen allerdings kaum ins Gewicht.
 
 
 \subsection{Sperrfilter}
 Ähnlich verhält es sich mit den aus dem Betrieb der zweiten Schaltung als Sperrfilter entstandenen Kurven (Abb. \ref{plot:sperr}). Nach Berücksichtigung des ohmschen Widerstandes der Spule ergeben sich nur noch minimale Abweichungen zwischen Theorie nach Formel \eqref{form:sperr} und den Messwerten, einzig die Resonanzfrequenz konnte nicht getroffen werden. Hier scheint es ebenfalls am wahrscheinlichsten, dass die Induktivität der zweiten Spule mit 36 mH nicht korrekt ist, oder dass in anderen Bauteilen ungewollte Induktivitäten oder Kapazitäten auftreten.
 \\
+Der Statistische Fehler wurde in beiden Versuchen nicht mit dargestellt, da er im Verhältniss zu den gemessenen Werten sehr gering ausfällt und die Graphen unnötig unübersichtlicher gestalten würde.
 \begin{figure}
 	\includegraphics[width=.9\textwidth]{images/plot/durchlassfilter+theorie+R_ges-fit.png}
-\caption{Plot der Messdaten des Durchlassfilters unter Berücksichtigung des gefitteten Gesamtwiderstandes}
+\caption{Plot der Messdaten des Durchlassfilters (Theoriekurven mit gefittetem Gesamtwiderstand)}
 \label{plot:durchlass+R_ges-fit}
 
         \includegraphics[width=.9\textwidth]{images/plot/sperrfilter+theorie+R_L.png}
@@ -26,4 +27,4 @@ Die geringen Abweichungen der Resonanzfrequenz, die überdies hinaus zu sehen si
 
 \subsection{Fazit}
 Vergleicht man also die Theorie der behandelten Frequenzfilter mit den tatsächlich gemessenen Ergebnissen, so stimmen beide vor allem in qualitativer Hinsicht gut überein. Durch Ersetzen von etwa der Widerstandsbox durch einen Schichtwiderstand, eine Reduktion des Widerstands der Spule sowie durch Löten der Kontake an Stelle von gewöhnlichen Steckverbindungen müssten darüberhinaus deutliche Verbesserungen möglich sein, was die Höhe des Spannungsverlaufs und dessen Abweichung von der Theorie betrifft. 
-Darüber hinaus müsste es durch die Verwendung genauer ausgemessener Induktivitäten und Kapazitäten auch möglich sein, die Resonanzfrequenz besser zu treffen. 
+Darüber hinaus müsste es durch die Verwendung genauer ausgemessener Induktivitäten und Kapazitäten auch möglich sein, einem idealen Frequenzfilter näher zu kommen. 
