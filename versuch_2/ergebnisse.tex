@@ -324,7 +324,7 @@ An Tabelle \ref{tbl_3} fällt sofort auf, dass der Fehler in Fraktion 13 Null is
 \begin{comment}
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{dNdt(t)MWmitaltenWerten.png}
+        \includegraphics[width=.9\textwidth]{images/dNdt(t)MWmitaltenWerten.png}
 \caption{Einteilung in Fraktionen}
 \label{dNdt(t)MWmitaltenWerten}
 \end{figure}
@@ -385,11 +385,20 @@ Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} 
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
 \end{table}
 
+\begin{comment}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/alpha(T).png}
+\caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
+\label{alpha(T)}
+\end{figure}
+
+\end{comment}
 
 
-\subsubsection{2. Methode}
+\subsubsection{Berechnung des Ausdehnungskoeffizienten durch approximatives Fitten}
 
-Bei Methode 2 werden dN/dt und T(t) gefittet und daraus der Ausdehnungskoeffizient in Abhängigkeit der Temperatur bestimmt.
+Bei dieser Methode werden dN/dt und T(t) gefittet und daraus der Ausdehnungskoeffizient in Abhängigkeit der Temperatur bestimmt.
 
 dN/dt lässt sich gut mit einem Polynom 5. Grades approximieren:
 
@@ -426,15 +435,15 @@ $
 
 $
 a_{5}=(-3,21 \pm 2,62)10^{-16}s^{-6} 
-$
+$\\
 
 
 \begin{comment}
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{Fit dNdt(t).png}
+        \includegraphics[width=.9\textwidth]{images/Fit dNdt(t).png}
 \caption{Fit von dN/dt}
-\label{dNdt(t)MWmitaltenWerten}
+\label{Fit dNdt(t)}
 \end{figure}
 
 \end{comment}
@@ -450,9 +459,9 @@ $c=(19,91 \pm 0,042)^{\circ}C$
 \begin{comment}
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{Fit T(t).png}
+        \includegraphics[width=.9\textwidth]{images/Fit T(t).png}
 \caption{Fit von T(t)}
-\label{dNdt(t)MWmitaltenWerten}
+\label{Fit T(t)}
 \end{figure}
 
 \end{comment}
@@ -483,9 +492,9 @@ Dann ergibt sich folgender Graph:
 \begin{comment}
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{alpha(T)mitFit.png}
+        \includegraphics[width=.9\textwidth]{images/alpha(T)mitFit.png}
 \caption{Vergleich zwischen Methode 1 und 2}
-\label{dNdt(t)MWmitaltenWerten}
+\label{alpha(T)mitFit}
 \end{figure}
 
 \end{comment}
