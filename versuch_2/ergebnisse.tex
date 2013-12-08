@@ -3,10 +3,10 @@
 \subsection{Darstellung der Ergebnisse}
 Mit der oben beschriebenen Messmethode, wurden folgende Werte gemessen:
 \begin{table}
-
+\centering
 \begin{tabular}{c|c}
 t in s & dN/dt in 1/10s \\ 
-\Hline
+\toprule
 20	&34\\ 
 
 40	&29\\ 
@@ -92,18 +92,21 @@ t in s & dN/dt in 1/10s \\
 980	&22\\ 
 
 1000&	18\\ 
-...&...\\
-\end{tabular}
-\begin{tabular}{c|c}
-              &           \\
-\end{tabular}
-\begin{tabular}{c|c}
 
 1080&	19\\ 
 	
 1100&	19\\ 
 
-1120&	18\\ 
+\multicolumn{2}{c}{\dots}\\
+\end{tabular}
+\begin{tabular}{c|c}
+              &           \\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\&\\
+
+\end{tabular}
+\begin{tabular}{c|c} 
+\multicolumn{2}{c}{\dots}\\
+
+1120&	18\\
 
 1160&	17\\ 
 
@@ -241,10 +244,11 @@ Aus $ \Delta L = \frac{\lambda}{2} \cdot \Delta N $ folgt:
 \end{equation}
 
 \begin{table}
-\begin{tabular}{|c|c|c|}
+\centering
+\begin{tabular}{ccc}
 
 Fraktion&	Zeitintervalle in s	& $\Delta T $ in $ ^{\circ} C$ \\
-
+\toprule
 1		&[20, 180]		&26,5\\
 
 2		&[200, 340]		&18,9\\
@@ -284,11 +288,11 @@ Fraktion&	Zeitintervalle in s	& $\Delta T $ in $ ^{\circ} C$ \\
 Innerhalb dieser Fraktionen ergeben sich folgende Mittelwerte mit zugehörigen Fehlern:
 
 \begin{table}
-\begin{tabular}{|c|c|c|}
-
+\centering
+\begin{tabular}{ccc}
 
 Fraktion	&Mittelwert von dN/dt in 1/10s	&Fehler von dN/dt in 1/10s \\
-
+\toprule
 1		&28,67				&1,08\\
 
 2		&26,25				&0,92\\
@@ -353,10 +357,11 @@ Die Fehlerfortpflanzung liefert:
 Es ergibt sich so:
 
 \begin{table}
-\begin{tabular}{|c|c|c|}
+\centering
+\begin{tabular}{ccc}
 
 Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} $	&Fehler von $ \alpha $ in $ 10^{-5} \frac{1}{^{\circ}C}  $ \\
-
+\toprule
 -115,6&				1,896	&		0,072\\
 
 -90,2	&			2,129	&		0,075\\
@@ -389,7 +394,6 @@ Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} 
 \label{tbl_4}
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
 \end{table}
-
 \begin{comment}
 
 \begin{figure}
