@@ -1,32 +1,25 @@
-\section{Versuchsdurchführung}
-\subsection{Durchlassfilter als Frequenzfilter}
-Zur Überprüfung der Funktionsweise eines Frequenzfilters wurde zunächst die Schaltung aus
-Abb. \ref{plan:durchlass} auf Seite \pageref{plan:durchlass} wie in Abb. \ref{img:durchlass} realisiert. Es wurde die Spule \enquote{Leybold 56214} mit 500 Windungen und einer Induktivität von 9 mH verwendet, wobei das Augenmerk auf einer möglichst geringen Windungszahl liegt, um den in der Spule angesiedelten Widerstand möglichst gering zu halten. Dieser liegt für die Spule bei angegebenen 2,5 $ \Omega $, was durch Messung bestätigt wurde. Auf
-der anderen Seite musste auch eine hinreichend große Induktivität garantiert werden, damit die Resonanzfrequenz, in deren Umgebung die Messungen stattfanden, in einem gut erfassbaren Bereich lagen. Weiter wurde ein Plastikfolienkondensator der Firma \enquote{WIMA} der Kapazität 0,22 $  \mu F $ sowie in einem zweiten Teilversuch ein Kondensator gleicher Bauart, allerdings mit 4,7 $  \mu F $ Kapazität, verwendet. Da beide Teilversuche übereinstimmende Ergebnisse lieferten, wird in der Auswertung nur der erste Teilversuch dargestellt. Ferner wurden
-mit Hilfe eines Widerstandskasten verschiedene Widerstände im Bereich von 1 $ \Omega $ bis 20 $ \Omega $ eingesetzt.
-\paragraph{}
-Zur Erzeugung der Eingangsspannung wurde zunächst ein Frequenzgenerator der Marke Hameg (Programmable 15 MHz Function Generator, HM8131/2) verwendet, zur Vereinfachung und Automatisierung der Messung wurde dieser allerdings durch das Power-Cassy ersetzt \footnote{vgl. \cite[42f.]{cassy2013manual}} .
-Die Messung der über dem Widerstand abfallenden Ausgangsspannung wurde bei einem ersten Aufbau mit einem Oszilloskop (Tektronix TDS 2024 100MHz, PPL28/2/001) durchgeführt. Hierbei stellte sich allerdings heraus, dass die Messungen nicht die gewünschte Genauigkeit liefern konnten.(Siehe Abb. \ref{plot:oszi} auf Seite \pageref{plot:oszi})
+\section{Versuchsaufbau}
+
+Das Interferometer wurde auf einem schwingungsgedämpften optischen Tisch aufgebaut, als Lichtquelle wurde ein HeNe-Laser mit Wellenlänge $\lambda=633 nm$ verwendet. Der Lichtstrahl wurde durch einen Teleskopaufbau, bestehend aus einer Zerstreuungslinse mit Brennpunkt $f=-30.0 mm$ und einer Sammellinse mit Brennpunkt $f=200.0 mm$, die im Abstand von 17 cm zueinander aufgestellt wurden, aufgeweitet. Durch den Teleskopaufbau wird der Strahl zunächst aufgeweitet und dann wieder zu einem Parallelstrahl zusammengeführt. Dies ist notwendig, da eine zu starke Aufweitung bzw. Divergenz des Strahls eine Messung oder Zählung unmöglich machen würde, da der Kontrast des Interferenzbildes dadurch zu gering wäre. Nach dem Teleskopaufbau wurde der Strahl zunächst über zwei Spiegel parallel zur Tischebene ausgerichtet und dann in den halbdurchlässigen Spiegel geleitet. Der transmittierte Anteil des Strahls traf auf einen fest montierten Spiegel, der reflektierte Anteil traf auf einen auf einer Schiene beweglich montierten Spiegel. Hinter dem beweglichen Spiegel wurde der Edelstahlstab (Werkstoffnummer 1.4301), dessen Länge zu $l=28.9\pm0.1 cm$ gemessen wurde, eingespannt. In den Stab wurde ein kleines Loch gebohrt, sodass ein Temperaturfühler die Kerntemperatur des Stabes messen konnte. Der Temperaturfühler wurde an ein Sensor-CASSY 2 angeschlossen und die Messwerte über CASSYLab ausgelesen. Das entstehende Interferenzmuster wurde schließlich noch durch eine Zerstreuungslinse mit Brennpunkt $f=-100.0 mm$ aufgeweitet, um es besser sichtbar zu machen und auf eine Wand abgebildet.
+
+hier müssten noch ein foto vom versuchsaufbau und ein foto von den laserstrahlen rein
+
+\begin{landscape}
 \begin{figure}
-	\includegraphics[width=.9\textwidth]{images/plot/oszi.png}
-\caption{Handnotierte Werte der Messung mit Oszilloskop}
-\label{plot:oszi}
+\includegraphics[height=.9\textwidth]{bitmap.png}
+\caption{Skizze des Versuchsaufbaus, nicht maßstabsgetreu} 
+\label{pic:skizze_versuchsaufbau}
 \end{figure}
-Bei der optimierten Durchführung des Experiments haben wir stattdessen das Sensor-Cassy genutzt; Vorteil hierbei ist zudem klar die direkte Übertragung der Daten in die Cassy-Software.
+\end{landscape}
 
-\begin{figure}[h]
-\centering
-    \subcaptionbox{Durchlassfilter\label{img:durchlass}}[.49\linewidth]
-            {\includegraphics[width=.495\textwidth]{images/durchlassfilter.jpg}}
-    \subcaptionbox{Sperrfilter\label{img:sperr}}[.49\linewidth]
-            {\includegraphics[width=.495\textwidth]{images/sperrfilter.jpg}}
-\caption{Fotos der Versuchsaufbauten}
-\end{figure}
+\section{Versuchsdurchführung}
+\subsection{Messung}
+Der Edelstahlstab wurde in ein Bad aus flüssigem Stickstoff ($T=-180^{\circ}C$) eingetaucht, aufgrund des Leidenfrost-Effekts war jedoch eine Abkühlung bis zu dieser Temperatur nicht möglich. Die Messung wurde bei einer gemessenen Temperatur von $T=-130^{\circ}C$ begonnen. Diese Art der Temperaturänderung des Stabs wurde gewählt, da die Ausdehnung des Stabs durch Aufheizung aus der Umgebungsluft vermutlich gleichmäßiger ist als z.B. durch Aufheizen des Stabs mittels Heizdraht o.Ä..
 
-\subsection{Sperrfilter als Frequenzfilter}
-Für die Abwandlung des Durchlassfilters zu einem Sperrfilter müssen lediglich Kapazität und Induktivität parallel anstatt in Reihe geschaltet werden, wie in Abb. \ref{plan:sperr} dargestellt. Für diesen Versuch wurde der zweite Kondensator mit einer Kapazität von 4,7 $  \mu F $ sowie daneben eine Spule höherer Induktivität (36 mH bei 1000 Windungen; ebenfalls von "Leybold") verwendet. Grund hierfür war eine erwartetet Senkung der Resonanzfrequenz und eine damit verbundene bessere Messung, da die Abtastrate des Sensor Cassy besser für niedrige Frequenzen geeignet ist. Tatsächlich wurde aber kein qualitativer Unterschied zum Durchlassfilter und ersterer Spule 
-bei der Genauigkeit der Messung erzielt. Um für dieses Experiment den teilweise recht schwach ausgebildeten Peak deutlicher sichtbar zu machen, also eine geringere Breite zu erreichen, wurde weiter die Widerstandsbox durch einen einfachen Schichtwiderstand, wie etwa in Abb. \ref{img:sperr} zu sehen,
-ersetzt. Grund dafür ist, dass die Widerstandsbox insbesondere bei den kleinsten Widerständen einen zu großen tatsächlichen Widerstand liefert.
+Die Messung bestand daraus, die an einem Referenzpunkt an der Wand 'vorbeilaufenden' Maxima zu zählen. Die Zählung aller Maxima wäre stark fehleranfällig gewesen, also wurden die Maxima in 10-Sekunden-Intervallen gezählt, d.h. die Anzahl der Maxima, die innerhalb von 10 Sekunden am Referenzpunkt vorbeiliefen, wurde gezählt und notiert, nach weiteren 10 Sekunden begann die nächste Zählung, etc. 
 
+\subsection{Probleme}
+Die Durchführung des Versuchs gestaltete sich insgesamt schwierig. Das Interferenzmuster war trotz schwingungsgedämpftem Aufbau anfällig gegen Erschütterungen. Auch eine sehr genaue Justierung des Interferometers war notwendig, da schon kleinste Verkippungen der Spiegel zusätzliche Streifenmuster erzeugten, die sich mit dem eigentlichen, d.h. durch den Strahlteiler erzeugten, Interferenzmuster überlagerten.
 
-
+Ursprünglich war eine elektronische Messung mit CASSY geplant, bei der das Interferenzmuster auf den Sensor einer Fotodiode abgebildet werden sollte, sodass aus den Spannungsmaxima und -minima die Interferenzmaxima und -minima erkennbar sein sollten.
+In der Praxis war dies jedoch fast unmöglich, da die Ausschläge aufgrund der geringen Intensität des Lichts nach Aufweitung und Durchgang durch den Strahlteiler so gering waren, dass sie selbst bei maximaler Verstärkung an der Diode quasi nicht vom Grundrauschen der Diode unterscheidbar waren. Dies konnte zwar durch geringere Aufweitung (Teleskopaufbau) teilweise behoben werden (d.h. auf einem Oszilloskop waren die Maxima und Minima deutlich zu erkennen), bei einer probeweise durchgeführten Messung mit CASSY waren die Daten jedoch nicht verwertbar, auch bei einer zweiten Messung mit höherer zeitlicher Auflösung waren keine klaren Ausschläge zu erkennen, sodass die Messung schließlich doch per Hand durchgeführt wurde.
