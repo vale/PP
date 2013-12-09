@@ -1,4 +1,4 @@
-\section{Diskussion der Ergebnisse}
+\section{Ergebnisse und Diskussion}
 
 \subsection{Durchlassfilter}
 Beim Aufzeichnen der Spannungskurven für verschiedene ohmsche Widerstände fiel auf, dass die Maxima im Vergleich zu denen der Theoriekurven berechnet nach \eqref{form:durchlass} deutlich zu klein waren. Dabei wurde auch der an weiteren Bauteilen, hierbei vor allem die Spule, abfallende Widerstand berücksichtigt. Dieser wurde zuvor zu 3,0 $  \Omega $ ausgemessen (siehe Abb. \ref{plot:durchlass+R_ges}).
@@ -8,28 +8,29 @@ Beim Aufzeichnen der Spannungskurven für verschiedene ohmsche Widerstände fiel
 \label{plot:durchlass+R_ges}
 \end{figure}
 Abbildung \ref{plot:durchlass+R_ges-fit} zeigt die gleiche Messreihe, wobei hier über dem Gesamtwiderstand des Kreises als Variable gefittet wurde, um zu zeigen, dass der Gesamtwiderstand des Kreises um etwa 4 $\Omega$ größer ausfällt als wir durch Messungen am ausgeschalteten Schaltkreis messen konnten. Grund hierfür ist wohl schlichtweg zusätzlicher Widerstand, der sich als Übergangswiderstand bei den Steckverbindungen ausbildet, oder ein thermischer Widerstand in der Widerstandsbox.\\
-Die geringen Abweichungen der Resonanzfrequenz, die überdies hinaus zu sehen sind, könnten unter anderem auf ungenaue Kapazitäts- und Induktivitätsangaben zurückgeführt werden, fallen allerdings kaum ins Gewicht.
-
-
-\subsection{Sperrfilter}
-Ähnlich verhält es sich mit den aus dem Betrieb der zweiten Schaltung als Sperrfilter entstandenen Kurven (Abb. \ref{plot:sperr}). Nach Berücksichtigung des ohmschen Widerstandes der Spule ergeben sich nur noch minimale Abweichungen zwischen Theorie nach Formel \eqref{form:sperr} und den Messwerten, einzig die Resonanzfrequenz konnte nicht getroffen werden. Hier scheint es ebenfalls am wahrscheinlichsten, dass die Induktivität der zweiten Spule mit 36 mH nicht korrekt ist, oder dass in anderen Bauteilen ungewollte Induktivitäten oder Kapazitäten auftreten.
-\\
-Der Statistische Fehler wurde in beiden Versuchen nicht mit dargestellt, da er im Verhältniss zu den gemessenen Werten sehr gering ausfällt und die Graphen unnötig unübersichtlicher gestalten würde.
+Die geringen Abweichungen der Resonanzfrequenz von 50 Hz $\pm$ 1 Hz, die überdies hinaus zu sehen sind, könnten unter anderem auf ungenaue Kapazitäts- und Induktivitätsangaben zurückgeführt werden, fallen allerdings kaum ins Gewicht.
 
 \begin{table}
 \centering
 \begin{tabular}{cc}
 $R_{mess}$ in $\Omega$ & $R_{zus}$ aus Fit \\
-\hline 
+\toprule 
 1 & 11,48 \\ 
 2 & 11.20 \\ 
 5 & 10.70 \\ 
 10 & 10.57 \\  
-20 & 10.88 \\ 
-\hline
+20 & 10.88 \\
 \end{tabular}
-\
+\caption{Zusätzliche Widerstände aus Fit (siehe Abb. \ref{plot:durchlass+R_ges-fit})} 
 \end{table}
+
+\subsection{Sperrfilter}
+Ähnlich verhält es sich mit den aus dem Betrieb der zweiten Schaltung als Sperrfilter entstandenen Kurven (Abb. \ref{plot:sperr}). Nach Berücksichtigung des ohmschen Widerstandes der Spule ergeben sich immer noch kleine Abweichungen zwischen Theorie nach Formel \eqref{form:sperr} und den Messwerten, die Resonanzfrequenz konnte nicht getroffen werden, sie weicht 15 $\pm$ 0.7 Hz von den Erwartungswerten ab. Hier scheint es ebenfalls am wahrscheinlichsten, dass die Induktivität der zweiten Spule mit 36 mH nicht korrekt ist, oder dass in anderen Bauteilen ungewollte Induktivitäten oder Kapazitäten auftreten.
+\\
+Der systematische Fehler wurde in beiden Versuchen nicht mit dargestellt, da er im Verhältniss zu den gemessenen Werten sehr gering ausfällt und die Graphen unnötig unübersichtlicher gestalten würde.
+Der statistische Fehler konnte von Cassy nicht ausgegeben werden. Cassy mittelte die Messwerte automatisch über einen Zeitraum von 2 Sekunden.
+
+
 \begin{figure}
 	\includegraphics[width=.9\textwidth]{images/plot/durchlassfilter+theorie+R_ges-fit.png}
 \caption{Plot der Messdaten des Durchlassfilters (Theoriekurven mit gefittetem Gesamtwiderstand)}
