@@ -386,7 +386,7 @@ Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} 
 \end{table}
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{images/alpha(T).png}
+        \includegraphics[width=.8\textwidth]{images/alpha(T).png}
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
 \label{alpha(T)}
 \end{figure}
@@ -398,15 +398,12 @@ Bei dieser Methode werden dN/dt und T(t) gefittet und daraus der Ausdehnungskoef
 
 dN/dt lässt sich gut mit einem Polynom 5. Grades approximieren:
 
-\begin{equation}
- N^{*} := dN/dt 
-\end{equation}
 
 Dabei ergibt sich für 
 
 
 \begin{equation}
-N^{*}(t)=a_{0}+a_{1} \cdot t+a_{2}t^{2}+a_{3}t^{3}+a_{4}t^{4}+a_{5}t^{5} :
+\dot{N}(t)=a_{0}+a_{1} \cdot t+a_{2}t^{2}+a_{3}t^{3}+a_{4}t^{4}+a_{5}t^{5} :
 \end{equation}
 
 $
@@ -436,7 +433,7 @@ $\\
 
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{images/Fit dNdt(t).png}
+        \includegraphics[width=.8\textwidth]{images/Fit dNdt(t).png}
 \caption{Fit von dN/dt}
 \label{Fit dNdt(t)}
 \end{figure}
@@ -448,11 +445,11 @@ Dabei ergibt sich für $ T(t) = a \cdot e^{bt} + c $ :
 
 $a = (-154,01 \pm 0,04)^{\circ}C$,
 $b=(-0,0012499 \pm 0,0000011)s^{-1}$,
-$c=(19,91 \pm 0,042)^{\circ}C$
+$c=(19,91 \pm 0,042)^{\circ}C$ \\
 
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{images/Fit T(t).png}
+        \includegraphics[width=.8\textwidth]{images/Fit T(t).png}
 \caption{Fit von T(t)}
 \label{Fit T(t)}
 \end{figure}
@@ -461,7 +458,7 @@ $c=(19,91 \pm 0,042)^{\circ}C$
 Herleitung einer Formel zur Berechnung des Ausdehnungskoeffizienten:
 
 Wegen $ \Delta L = \alpha \cdot L_{0} \cdot \Delta T $  (nach \ref{formel:ausdehnung}) folgt: 
-\\
+
 \begin{equation}
 \alpha (T) = \frac{1}{L_{0}} \frac{\partial L}{\partial T}
 \end{equation}
@@ -475,7 +472,7 @@ L = \frac{\lambda}{2} N
 \end{equation}
 
 \begin{equation}
-\Rightarrow \alpha (T) = \frac{\lambda}{2 \cdot L_{0}} \frac{N^{\cdot}(t(T))}{T^{\cdot}(t(T))}
+\Rightarrow \alpha (T) = \frac{\lambda}{2 \cdot L_{0}} \frac{\dot{N}(t(T))}{\dot{T}(t(T))}
 \end{equation} 
 mit 
 
