@@ -1,7 +1,7 @@
 \section{Darstellung der Ergebnisse und Auswertung}
 
 \subsection{Darstellung der Ergebnisse}
-Mit der oben beschriebenen Messmethode, wurden folgende Werte gemessen:
+Mit der oben beschriebenen Messmethode wurden folgende Werte gemessen:
 \begin{table}
 \centering
 \begin{tabular}{c|c}
@@ -200,8 +200,6 @@ t in s & dN/dt in 1/10s \\
 \caption{Anzahl der innerhalb von 10s durchgelaufenen Ringe in Abhängigkeit der Zeit}
 \end{table}
 
-\begin{comment}
-
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/dNdt(t).png}
 \caption{Anzahl der innerhalb von 10s druchgelaufenen Ringe in Abhängigkeit der Zeit}
@@ -209,21 +207,18 @@ t in s & dN/dt in 1/10s \\
 \end{figure}
 
 
-\end{comment}
-
-Beim Betrachten von \ref{dNdt(t)} fällt sofort auf, dass die Messwerte bei großen Werten von dN/dt wesentlich mehr streuen, was darauf zurückzuführen ist, dass das Zählen der Ringe bei größeren Werten von dN/dt mehr Schwierigkeiten bereitet hat.
-Eine Tabelle der Temperatur des Stabes in Abhängigkeit der Zeit ist im Anhang zu finden. \\
-\ref{T(t)}
-
-\begin{comment}
-
 \begin{figure}
 	\includegraphics[width=.9\textwidth]{images/T(t).png}
-\label{T(t)}
+\label{plot:Tt}
 \caption{Temperatur in Abhängigkeit der Zeit}
 \end{figure}
 
-\end{comment}
+Beim Betrachten von Abb. \ref{dNdt(t)} fällt sofort auf, dass die Messwerte bei großen Werten von dN/dt wesentlich mehr streuen, was darauf zurückzuführen ist, dass das Zählen der Ringe bei größeren Werten von dN/dt mehr Schwierigkeiten bereitet hat.
+Eine Tabelle der Temperatur des Stabes in Abhängigkeit der Zeit ist im Anhang zu finden. \\
+
+
+
+
 
 An der Temperaturkurve ist bei $ 0 ^{\circ} C $ ein kurzes Gleichbleiben der Temperatur zu beobachten. Dies ist darauf zurückzuführen, dass sich Eis um den Stab gebildet hat. Dieses schmilzt bei $ 0 ^{\circ} C $ und hält den Stab so kurzzeitig auf einer konstanten Temperatur.
 
@@ -231,7 +226,7 @@ An der Temperaturkurve ist bei $ 0 ^{\circ} C $ ein kurzes Gleichbleiben der Tem
 Aus den gemessenen Daten kann der Wärmeausdehnungskoeffizient $ \alpha $ des verwendeten Stabes in Abhängigkeit von der Temperatur bestimmt werden. Dafür werden in dieser Auswertung zwei verschiedene Methoden verwendet und anschließend miteinander verglichen.
 
 \subsubsection{Einteilung der Messwerte in Fraktionen}
-Bei dieser Methode werden die Messwerte möglichst gleichmäßig in Fraktionen eingeteilt und jeweils innerhalb dieser der Mittelwert von dN/dt gebildet.\\(Die Mittelwertbildung ist aus mehreren Gründen gerechtfertigt: Zum Einen wird gerade ein gemittelter Wärmeausdehnungskoeffizient bestimmt. Zum anderen kann dN/dt in den Fraktionen als linear approximiert werden, wodurch sich Abweichungen vom Mittelwert durch die Linearität gegenseitig aufheben.) Außerdem werden aus den zu den Fraktionen passenden Zeitintervallen die entsprechenden Zeitdifferenzen errechnet. Aus den so bestimmten Größen kann dann für jede Fraktion ein mittlerer Wärmeausdehnungskoeffizient folgendermaßen ermittelt werden:
+Bei dieser Methode werden die Messwerte möglichst gleichmäßig in Fraktionen eingeteilt und es wird jeweils innerhalb dieser der Mittelwert von dN/dt gebildet.\\(Die Mittelwertbildung ist aus mehreren Gründen gerechtfertigt: Zum Einen wird gerade ein gemittelter Wärmeausdehnungskoeffizient bestimmt. Zum anderen kann dN/dt in den Fraktionen als linear approximiert werden, wodurch sich Abweichungen vom Mittelwert durch die Linearität gegenseitig aufheben.) Außerdem werden aus den zu den Fraktionen passenden Zeitintervallen die entsprechenden Zeitdifferenzen errechnet. Aus den so bestimmten Größen kann dann für jede Fraktion ein mittlerer Wärmeausdehnungskoeffizient folgendermaßen ermittelt werden:
 
 \begin{equation}
 \alpha(T)=\frac{\Delta L(T)}{L_{0}} \cdot \Delta T
@@ -330,22 +325,17 @@ Fraktion	&Mittelwert von dN/dt in 1/10s	&Fehler von dN/dt in 1/10s \\
 An Tabelle \ref{tbl_3} fällt sofort auf, dass der Fehler in Fraktion 13 Null ist. Dies resultiert daraus, dass alle in dieser Fraktion zusammengefassten Werte gleich 5/10s sind.
 
 
-\begin{comment}
-
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/dNdt(t)MWmitaltenWerten.png}
 \caption{Einteilung in Fraktionen}
 \label{dNdt(t)MWmitaltenWerten}
 \end{figure}
 
-\end{comment}
-
-\ref{dNdt(t)MWmitaltenWerten}
 
 Für die Fehlerabschätzung von $ \alpha $ wird eine Fehlerfortpflanzung durchgeführt.
 Dabei sind die Fehler von $ \lambda $  und  $ \Delta T $ vernachlässigbar klein. Im Fall von $ \Delta T $ ist der Fehler sogar nicht ermittelbar, da auf Grund der Benutzung von CASSY diesbezüglich keine ausreichenden Angaben vorhanden sind.
 
-Der Fehler von $ L_{0} $ ist laut Versuchsaufbau $ 1 mm $.
+Der Fehler von $ L_{0} $ beträgt aufgrund der Messung mit einem Zollstock $ 1 mm $.
 
 Die Fehlerfortpflanzung liefert:
 
@@ -394,15 +384,12 @@ Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} 
 \label{tbl_4}
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
 \end{table}
-\begin{comment}
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/alpha(T).png}
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
 \label{alpha(T)}
 \end{figure}
-
-\end{comment}
 
 
 \subsubsection{Berechnung des Ausdehnungskoeffizienten durch approximatives Fitten}
@@ -447,7 +434,6 @@ a_{5}=(-3,21 \pm 2,62)10^{-16}s^{-6}
 $\\
 
 
-\begin{comment}
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/Fit dNdt(t).png}
@@ -455,7 +441,6 @@ $\\
 \label{Fit dNdt(t)}
 \end{figure}
 
-\end{comment}
 
 T(t) lässt sich sehr gut mit einer e-Funktion approximieren:
 
@@ -465,7 +450,6 @@ $a = (-154,01 \pm 0,04)^{\circ}C$,
 $b=(-0,0012499 \pm 0,0000011)s^{-1}$,
 $c=(19,91 \pm 0,042)^{\circ}C$
 
-\begin{comment}
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/Fit T(t).png}
@@ -473,11 +457,10 @@ $c=(19,91 \pm 0,042)^{\circ}C$
 \label{Fit T(t)}
 \end{figure}
 
-\end{comment}
 
 Herleitung einer Formel zur Berechnung des Ausdehnungskoeffizienten:
 
-Wegen $ \Delta L = \alpha \cdot L_{0} \cdot \Delta T $ folgt: 
+Wegen $ \Delta L = \alpha \cdot L_{0} \cdot \Delta T $  (nach \ref{formel:ausdehnung}) folgt: 
 \\
 \begin{equation}
 \alpha (T) = \frac{1}{L_{0}} \frac{\partial L}{\partial T}
@@ -498,7 +481,6 @@ mit
 
 Dann ergibt sich folgender Graph:
 
-\begin{comment}
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/alpha(T)mitFit.png}
@@ -506,7 +488,6 @@ Dann ergibt sich folgender Graph:
 \label{alpha(T)mitFit}
 \end{figure}
 
-\end{comment}
 
 Aus beiden Methoden lässt sich folgern, dass der mittlere Wärmeausdehnungkoeffizient des Stabs von der Temperatur abhängig ist.
 
