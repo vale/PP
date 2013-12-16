@@ -217,7 +217,7 @@ t in s & dN/dt in 1/10s \\
 In Abb. \ref{dNdt(t)} wurde die Anzahl der in 10 Sekunden durchlaufenen Maxima über der Zeit aufgetragen. Der Verlauf
 ist bis etwa $ t = 2000 s$ annähernd linear, danach wird der Verlauf flacher und nähert sich der Zeit-Achse an. Die Größe
 $ \frac{dN}{dt} $ ist nach \eqref{form:ausdzumax} proportional zur Geschwindigkeit der Längenänderung des Stabes. In diese
-Längenänderung fließt nach \eqref{form:ausdehnung} ein im Allgemeinen temperaturabhängiges $ \alpha $ sowie der zeitliche 
+Längenänderung fließt nach \eqref{formel:ausdehnung} ein im Allgemeinen temperaturabhängiges $ \alpha $ sowie der zeitliche 
 Verlauf der Temperaturkurve ein. Für den Temperaturverlauf ist nach \eqref{form:konvektion2} ein exponentieller Abfall
 zu erwarten, aber das Verhalten von $ \alpha(T) $ ist nicht bekannt, sondern soll gerade mit diesem Versuch ermittelt werden. 
 Weiter fällt sofort auf, dass die Messwerte bei großen Werten von dN/dt wesentlich
@@ -520,7 +520,7 @@ Dann ergibt sich der Graph \aref{alpha(T)mitFit}
 Wie in \aref{alpha(T)mitFit} zu erkennen, führen beide Methoden zu ähnlichen Ergebnissen: Im Temperaturbereich zwischen $ -120 $ und $ -20 ^{\circ} C $ stimmt der Verlauf des Graphen gut mit den Messwerten überein. Der Graph verläuft hier durch zwei von sieben und berührt zwei weitere Fehlerbalken. Im Temperaturbereich zwischen $ -20 $ und $ 10 ^{\circ} C $ stimmt der Verlauf des Graphen nur bedingt mit den Messwerten überein, da beispielweise der Messwert bei $T = -9,3 ^{\circ} C $ weit vom durch Methode 2 erlangten Graphen entfernt ist. Dies liegt vor allem daran, dass in diesem Temperaturbereich der oben schon angesprochene und nicht eingezeichnete Fehler relativ groß ist, da hier nur geringe Maximumsdurchläufe pro zehn Sekunden gezählt werden konnten.
 
 \subsubsection{Vergleich mit Literaturwerten}
-Der für Edelstahl angegebene Wert für Edelstahl nach \cite{edelstahl} liegt bei $ 1,6 \cdot 10^{-5} $
+Der für Edelstahl angegebene Wert für den Temperaturbereich $ 20 $ bis $ 100 ^{\circ} C $ für den Wärmeausdehnungskoeffizienten liegt nach \cite{edelstahl} bei $ 1,6 \cdot 10^{-5} K^{-1} $. Der gemessene Wert stimmt zumindest in der Größenordnung mit dem gemessenen Wert von $ 3,76 \cdot 10^{-5} K^{-1} $ (nach \ref{tbl_4}) bei $ 9,4 ^{\circ} C $ überein. Allerdings beträgt der relative Fehler etwa $ 135 \% $. Eine mögliche Erklärung hierfür ist, dass die Temperaturmessung zwar in einer Bohrung im Edelstahlstab durchgeführt wurde, wodurch allerdings trotzdem nicht die Kerntemperatur, sondern eine niedrigere Temperatur gemessen wurde. Da sich der Kern zunächst langsamer erwärmen dürfte als das Äußere des Stabes, unterscheidet sich, wenn sich die gemessene Temperatur schon an die Raumtemperatur angenähert hat, die Kerntemperatur noch deutlich von der Raumtemperatur. In Folge dessen ändert sich die Kerntemperatur stärker als die gemessene Temperatur, was zu einem größeren tatsächlichen $ \Delta T$ führt und nach \eqref{formel:ausdehnung} zu einem kleineren tatsächlichen $ \alpha $ als errechnet. Für eine detailliertere Untersuchung wäre es hilfreich, unter Berücksichtigung von \eqref{form:leitung} eine Simulation zu schreiben, wenngleich dies aufgrund etwa der Bohrung, sowie der Befestigung des Stabes im Zylinder sehr schwierig sein dürfte. 
 
 
 \subsection{Fazit}
@@ -528,6 +528,6 @@ Der für Edelstahl angegebene Wert für Edelstahl nach \cite{edelstahl} liegt be
 
 Der Bau des Interferometers hat sich als sehr schwierig herrausgestellt, da die Spiegel sehr genau ausgerichtet sein müssen.
 Weitere Probleme sind bei der Messung der Ausdehnung des Stabs entstanden. Der vom Stab geschobene Spiegel musste so auf einer Schiene befestigt sein, dass er sich dabei nicht verdreht.
-Durch das Zählen von Interferenzringen konnten dennoch Messungen durchgeführt werden, welche damit die Funktionstüchtigkeit des Michelson-Interferometers bestätigten.
+Durch das Zählen von Interferenzringen konnten dennoch Messungen durchgeführt werden, welche zumindest Resultate in der richtigen Größenordnung lieferten. Da der Fehler vermutlich nicht im Interferometer sondern in der Temperaturmessung zu suchen ist, dürfte dieser Aufbau prinzipiell geeignet sein, um Längenausdehnungen in der Größenordnung von $ \mu m $ zu messen. Durch eine Automatisierung der Messung mit Hilfe beispielsweise einer Photodiode dürfte die Messung mit deutlich höherer Genauigkeit möglich sein, allerdings ist hierfür eine sehr genaue Justierung der optischen Elemente nötig.
 
 
