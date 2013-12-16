@@ -1,7 +1,7 @@
 \section{Darstellung der Ergebnisse und Auswertung}
 
 \subsection{Darstellung der Ergebnisse}
-Mit der oben beschriebenen Messmethode wurden folgende Werte gemessen (Tabelle \ref{tbl_1}):
+Mit der oben beschriebenen Messmethode wurden die in Tabelle \ref{tbl_1} dargestellten Werte gemessen.
 \begin{table}
 \centering
 \begin{tabular}{c|c}
@@ -216,9 +216,9 @@ t in s & dN/dt in 1/10s \\
 
 In Abb. \ref{dNdt(t)} wurde die Anzahl der in 10 Sekunden durchlaufenen Maxima über der Zeit aufgetragen. Der Verlauf
 ist bis etwa $ t = 2000 s$ annähernd linear, danach wird der Verlauf flacher und nähert sich der Zeit-Achse an. Die Größe
-$ \frac{dN}{dt} $ ist nach (\ref{form:ausdzumax}) proportional zur Geschwindigkeit der Längenänderung des Stabes. In diese
-Längenänderung fließt nach (\ref{form:ausdehnung}) ein im Allgemeinen temperaturabhängiges $ \alpha $ sowie der zeitliche 
-Verlauf der Temperaturkurve ein. Für den Temperaturverlauf ist nach (\ref{form:konvektion2}) ein exponentieller Abfall
+$ \frac{dN}{dt} $ ist nach \eqref{form:ausdzumax} proportional zur Geschwindigkeit der Längenänderung des Stabes. In diese
+Längenänderung fließt nach \eqref{form:ausdehnung} ein im Allgemeinen temperaturabhängiges $ \alpha $ sowie der zeitliche 
+Verlauf der Temperaturkurve ein. Für den Temperaturverlauf ist nach \eqref{form:konvektion2} ein exponentieller Abfall
 zu erwarten, aber das Verhalten von $ \alpha(T) $ ist nicht bekannt, sondern soll gerade mit diesem Versuch ermittelt werden. 
 Weiter fällt sofort auf, dass die Messwerte bei großen Werten von dN/dt wesentlich
 mehr streuen, was darauf zurückzuführen ist, dass das Zählen der Ringe bei größeren Werten von dN/dt mehr 
@@ -226,25 +226,23 @@ Schwierigkeiten bereitet hat.
 Eine Tabelle der Temperatur des Stabes in Abhängigkeit der Zeit ist im Anhang zu finden. \\
 
 
-
-
-
-In Abb. \ref{plot:Tt} wird der Temperaturverlauf über der Zeit aufgetragen. Der Graph steigt zu Beginn sehr schnell und nähert
+In \aref{plot:Tt} wird der Temperaturverlauf über der Zeit aufgetragen. Der Graph steigt zu Beginn sehr schnell und nähert
 sich dann der Raumtemperatur von etwa $ 20 ^{\circ} C $ an. Der Verlauf ähnelt sehr stark einer an der Zeitachse 
-gespiegelten und nach oben verschobenen Exponentialfunktion, wie es nach \ref{form:konvektion2} zu erwarten ist. 
+gespiegelten und nach oben verschobenen Exponentialfunktion, wie es nach \eqref{form:konvektion2} zu erwarten ist. 
 An der Temperaturkurve ist weiter bei $ 0 ^{\circ} C $ ein kurzes Gleichbleiben der Temperatur zu beobachten. Dies ist darauf zurückzuführen, dass sich Eis um den Stab gebildet hat. Dieses schmilzt bei $ 0 ^{\circ} C $ und hält den Stab so kurzzeitig auf einer konstanten Temperatur.
 
 \subsection{Auswertung}
 Aus den gemessenen Daten kann der Wärmeausdehnungskoeffizient $ \alpha $ des verwendeten Stabes in Abhängigkeit von der Temperatur bestimmt werden. Dafür werden in dieser Auswertung zwei verschiedene Methoden verwendet und anschließend miteinander verglichen.
 
 \subsubsection{Einteilung der Messwerte in Fraktionen}
-Bei dieser Methode werden die Messwerte möglichst gleichmäßig in Fraktionen (Tabelle \ref{tbl_2}) eingeteilt und es wird jeweils innerhalb dieser der Mittelwert von dN/dt gebildet.\\(Die Mittelwertbildung ist aus mehreren Gründen gerechtfertigt: Zum Einen wird gerade ein gemittelter Wärmeausdehnungskoeffizient bestimmt. Zum anderen kann dN/dt in den Fraktionen als linear approximiert werden, wodurch sich Abweichungen vom Mittelwert durch die Linearität gegenseitig aufheben.) Außerdem werden aus den zu den Fraktionen passenden Zeitintervallen die entsprechenden Zeitdifferenzen errechnet. Aus den so bestimmten Größen kann dann für jede Fraktion ein mittlerer Wärmeausdehnungskoeffizient nach (\ref{form:ausdehnung}) folgendermaßen ermittelt werden:
+Bei dieser Methode werden die Messwerte möglichst gleichmäßig in Fraktionen (Tabelle \ref{tbl_2}) eingeteilt und es wird jeweils innerhalb dieser der Mittelwert von $dN/dt$ gebildet.\\
+(Die Mittelwertbildung ist aus mehreren Gründen gerechtfertigt: Zum Einen wird gerade ein gemittelter Wärmeausdehnungskoeffizient bestimmt. Zum anderen kann dN/dt in den Fraktionen als linear approximiert werden, wodurch sich Abweichungen vom Mittelwert durch die Linearität gegenseitig aufheben.) Außerdem werden aus den zu den Fraktionen passenden Zeitintervallen die entsprechenden Zeitdifferenzen errechnet. Aus den so bestimmten Größen kann dann für jede Fraktion ein mittlerer Wärmeausdehnungskoeffizient nach \eqref{formel:ausdehnung} folgendermaßen ermittelt werden:
 
 \begin{equation}
 \alpha(T)=\frac{\Delta L(T)}{L_{0} \cdot \Delta T}
 \end{equation}
 
-Aus $ \Delta L = \frac{\lambda}{2} \cdot \Delta N $ (\ref{form:ausdzumax_1}) folgt:
+Aus $ \Delta L = \frac{\lambda}{2} \cdot \Delta N $ \eqref{form:ausdzumax_1} folgt:
 
 \begin{equation}
 \alpha (T)= \frac{\lambda}{2} \cdot \frac{\Delta N(T)}{L_0 \cdot \Delta T}
@@ -334,7 +332,7 @@ Fraktion	&Mittelwert von dN/dt in 1/10s	&Fehler von dN/dt in 1/10s \\
 \end{table}
 
 
-An Tabelle \ref{tbl_3} und deren graphischen Darstellung \ref{dNdt(t)MWmitaltenWerten} fällt sofort auf, dass 
+An Tabelle \ref{tbl_3} und deren graphischen Darstellung \aref{dNdt(t)MWmitaltenWerten} fällt sofort auf, dass 
 der Fehler in Fraktion 13 Null ist. Dies resultiert daraus, dass alle in dieser Fraktion zusammengefassten Werte 
 gleich 5/10s sind. 
 
@@ -359,7 +357,7 @@ Die Fehlerfortpflanzung liefert:
 \end{equation}
 
 
-Damit ergibt sich für den temperaturabhängigen Wärmeausdehnungskoeffizient der in Tabelle \ref{tbl_4} tabellarisch und in Abb. \ref{plot:alpha(T)}
+Damit ergitb sich für den temperaturabhängigen Wärmeausdehnungskoeffizient der in Tabelle \ref{tbl_4} tabellarisch und in \aref{alpha(T)}
 graphisch dargestellte Verlauf. Es ist eindeutig zu erkennen, dass der Ausdehnungskoeffizient mit zunehmender Temperatur 
 im Bereich zwischen $ -120 $ und $ - 20 ^{\circ} C $ ebenfalls zunimmt. Es bietet sich hier ein linearer Verlauf an.
 Für den Bereich ab $ -20 ^{\circ} C $ ist es aufgrund der großen Fehler schwierig, den Verlauf zu interpretieren. Grund 
@@ -367,7 +365,7 @@ dafür ist auch, dass die in einem zehnsekündigen Intervall gezählten Maxima s
 Messung nicht notwendigerweise auf ein Maximum begonnen und beendet wurde, sondern zu von der Uhr vorgegebenen Zeitpunkten,
 ergibt sich hier eigentlich noch ein zusätzlicher Fehler, der für kleine $dN/dt$ relativ gesehen 
 zunehmend größer wird. \\
-Fittet man in Abb. \ref{plot:alpha(T)} einen linearen Graphen, so ergibt sich die Näherung:
+Fittet man in \aref{alpha(T)} einen linearen Graphen, so ergibt sich die Näherung:
 \begin{equation}
 \alpha(T) = a \cdot T + b 
 \end{equation}
@@ -418,7 +416,7 @@ Mittlere Temperatur in $^{\circ}C$ &$ \alpha $ in $ 10^{-5}\frac {1}{^{\circ}C} 
 \centering
         \includegraphics[width=.8\textwidth]{images/alpha(T).png}
 \caption{Wärmeausdehnungskoeffizient in Abhängigkeit der Temperatur}
-\label{plot:alpha(T)}
+\label{alpha(T)}
 \end{figure}
 
 
@@ -489,7 +487,7 @@ $c=(19,91 \pm 0,042)^{\circ}C$ \\
 
 Herleitung einer Formel zur Berechnung des Ausdehnungskoeffizienten:
 
-Wegen $ \Delta L = \alpha \cdot L_{0} \cdot \Delta T $  (nach (\ref{form:ausdehnung})) folgt: 
+Wegen $ \Delta L = \alpha \cdot L_{0} \cdot \Delta T $  (nach \eqref{formel:ausdehnung}) folgt: 
 
 \begin{equation}
 \alpha (T) = \frac{1}{L_{0}} \frac{\partial L}{\partial T}
@@ -505,17 +503,16 @@ L = \frac{\lambda}{2} N
 
 \begin{equation}
 \Rightarrow \alpha (T) = \frac{\lambda}{2 \cdot L_{0}} \frac{\dot{N}(t(T))}{\dot{T}(t(T))}
-\end{equation} 
-mit 
+\end{equation}  
 
-Damit ergibt sich der in Abb. \ref{plot:alpha(T)mitFit} dargestellte Graph. 
+Dann ergibt sich der Graph \aref{alpha(T)mitFit}
 
 
 \begin{figure}
 \centering
         \includegraphics[width=.8\textwidth]{images/alpha(T)mitFit.png}
 \caption{Vergleich zwischen Methode 1 und 2}
-\label{plot:alpha(T)mitFit}
+\label{alpha(T)mitFit}
 \end{figure}
 
 
