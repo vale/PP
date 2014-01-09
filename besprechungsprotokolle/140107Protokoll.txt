@@ -1,0 +1,72 @@
+\documentclass[
+]{scrartcl}
+
+%Deutsche Sprachunterstützung
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{marvosym}
+\DeclareUnicodeCharacter{20AC}{\EUR}
+
+%Für das Einbinden von Bildern
+%\usepackage{graphicx}
+
+%Tabellen
+\usepackage{array}
+
+%Tabellen automatisch schoener
+\usepackage{booktabs}
+
+%Caption
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Formeln
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{dsfont}
+
+%\usepackage{mnsymbol}
+
+%Vectorpfeile schöner
+\usepackage{esvect}
+
+%Formatierung
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+%\usepackage[german=guillemets]{csquotes}
+
+%Formatierungsanweisungen
+\newcommand{\wichtig}[1]{\underline{\large{#1}}}
+\newcommand{\aref}[1]{(s.Abb. \ref{#1})}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\begin{document}
+
+\title{Besprechungs-Protokoll Gruppentreffen PPG8-11}
+\date{7. Januar 2013}
+\maketitle
+
+\paragraph*{Anwesende}
+Udo Beier,
+Leon Brückner,
+Marco Zech,
+Sebastian Ziegler,
+Domenico Tiziani
+
+
+\section{Status des Projekts}
+
+
+\subsection{Dritter Versuch}
+Abbauen und Ausmessen des Doppelpendels.
+
+\subsection{Vierter Versuch}
+Valentin Olpp hat zur Vorbereitung des vierten Versuchs Kontakt mit dem Fachbereich Strömungsmechanik aufgenommen.
+
+\section{Weiteres Vorgehen}
+Vergleich der getrackten Werte mit den von Sebastian Ziegler in Python errecheten Werten. (Ort und Geschwindigkeit) Weiterarbeiten an der Durchführung des vierten Versuchs.
+\end{document}
