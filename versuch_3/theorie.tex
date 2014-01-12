@@ -1,209 +1,47 @@
 \section{Theorie}
-
-\subsection{Kohärenzlänge und Kohärenzzeit}
-Unter der Kohärenzlänge einer Lichtquelle versteht man die Länge, um die sich die durchlaufenen Wege zweier von der 
-selben Lichtquelle stammenden Strahlen maximal unterscheiden dürfen, sodass noch eine räumlich und zeitlich konstante 
-Interferenz zu beobachten ist. Das Phänomen, das diese Definition notwendig macht, ist, dass prinzipiell keine reale Lichtquellen eine über längere Zeit exakte 
-Sinusschwingung mit konstanter Frequenz liefert, sondern sich mit der Zeit ein \enquote{Versatz} der Phase herausbildet. Es ist deswegen nicht 
-mehr möglich, für eine Länge zwischen einem Maximum und einem weiteren Punkt auf dem Wellenzug, die zwar einem 
-Vielfachen der Wellenlänge entspricht, aber auch die Kohärenzlänge überschreitet, wiederum auf ein Maximum zu schließen. \\
-Die Kohärenzzeit bezeichnet die maximale Zeitdifferenz zwischen zwei Punkten auf dem Wellenzug, deren Abstand kleiner 
-als die Kohärenzlänge ist, und ergibt sich deshalb im Vakuum zu 
-
-\begin{equation}
-t_{K} = \frac{l_{k}}{c},
+\subsection{Newtonsche und Lagrangsche Mechanik}
+In folgenden soll die Herleitung der bewengungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
+Die Bewegungsgleichung eines [mechanischen Systems] Massepunktes und deren Lösung $\vec{x}(t)$ lassen sich nach Newton aus der Summe aller an der Masse greifenden Kräfte bestimmen, also es gilt \begin{equation}
+\vv{\ddot{x}}=\frac{1}{m}\sum \vv{F}
 \end{equation}
-
-wobei hier $ t_{K} $ die Kohärenzzeit, $ l_{k} $ die Kohärenzlänge und c die Lichtgeschwindigkeit bezeichnet. \\
-Bei Lasern ist die Kohärenzlänge meist verhältnismäßig groß und kann mehrere Kilometer erreichen, wohingegen bei anderen Lichtquellen, die etwa auf thermischer Emission beruhen, nur sehr kleine Kohärenzlängen erreicht werden. So liegt diese bei Glühbirnen im Bereich von Mikrometern. 
-
-\subsection{Interferenz zweier Lichtstrahlen}
-Werden zwei Lichtstrahlen, die in gleicher Richtung polarisiert sind, überlagert, so ergibt sich die tatsächliche Lichteinstrahlung durch Addition der beiden elektrischen Felder an diesem Ort. 
-Seien $ \vec{E}_{1} $ und $ \vec{E}_{2} $ die elektrischen Felder des einfallenden Lichts mit: 
+In der Praxis - so auch beim Doppelpendel - stellt es sich als äußerst schwierig dar, alle am Massepunkt wirkenden Kräfte zu identifizieren sowie mathematisch zu beschreiben. Als eine Art Verallgemeinerung der newtonschen Mechanik lässt sich aus ihr [mit Hilfe des hamiltonischen Prinzips] der sogenannte Lagrange-Formalismus herleiten. Hier sind die gesuchte Funktionen die Lösungen der Lagrange-Gleichungen
 \begin{equation}
-\vec{E}_{1} = \vec{e}_{p} \cdot E_{1} \cdot e^{i(\omega_{1}t - k_{1} \cdot r + \phi_{1})}
-\end{equation} und 
-\begin{equation}
-\vec{E}_{2} = \vec{e}_{p} \cdot E_{2} \cdot e^{i(\omega_{2}t - k_{2} \cdot r + \phi_{2})}.
+\frac{d}{dt}\frac{\partial L}{\partial\dot{x_i}}-\frac{\partial L}{x_i} = 0
 \end{equation}
-
-Dabei sind $ E_{1}, E_{2} $ die Amplituden beider Felder, $ \omega_{1}, \omega_{2} $ die Frequenzen der beiden Schwingungen, $ r_{1}, r_{2} $ die zurückgelegten Wege der beiden Lichtstrahlen, $ k_{1}, k_{2} $ die Beträge der Wellenvektoren $ \vec{k_{1}}, \vec{k_{2}} $, die in Ausbreitungsrichtung zeigen sollen und $ \vec{e}_{p} $ der Einheitsvektor in Richtung der Polarisation. Weiter sind  $ \phi_{1} $ und $ \phi_{2} $ die Phasen des elektrischen Feldes bei $ r_{1}, r_{2}, t = 0 $. 
- 
-Als Summe über beide Felder ergibt sich zeitabhängig: 
+mit der Lagrangefunktion  $ L=E_{kin} - V $ . Hierbei sind $E_{kin}$ die kinetische Energie und v das auf den Massepunkt wirkende Potential. Ein weiterer Vorteil dieses Formalismus besteht darin, dass die Langrangegleichungen unter Koordinatenfunktionen invariant bleiben, es gilt also:
 \begin{equation}
-\vec{E}_{1} + \vec{E}_{2} = \vec{e}_{p} \cdot (E_{1} \cdot e^{i(\omega_{1}t - k_{1} \cdot r_{1} + \phi_{1})} + E_{2} \cdot e^{i(\omega_{2}t - k_{2} \cdot r_{2} + \phi_{2})}).
+\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = 0
 \end{equation}
-
-Mit $ \varphi_{1} = - k_{1} \cdot r_{1} + \phi_{1} $ und 
-$ \varphi_{2} = - k_{2} \cdot r_{2} + \phi_{2} $ ergibt sich: 
+Hier sind $q_i$ die verallgemeinerten Koordinaten, die so gewählt werden, damit alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden und die Anzahl der Freiheitsgrade berücksichtigt werden. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden.
+\subsection{Das Doppelpendel}
+Im Ursprungspunkt des Koordinatensystems wird ein Pendel, bestehend aus einem Stab mit fester Länge $l_1$ und einer Masse m an dessem Ende befestigt. Das Pendel soll sich nur in der x-z Ebene bewegen können, Am Massenpunkt befindet sich nun ein zweites Pendel mit Stab der Länge $l_2 \rightarrow l_1$ [und mit gleicher Masse], welchess sich ebenso nur in der x-z-Ebene bewegenn soll. \\
+Der erste Schritt besteht nun darin, eine Beschreibung der Ortsvektoren der beiden Massenpunkte zu finden[, die alle Zwangsbedingungen berücksichtigen]. Die Masse $ m_1 $ ist wie erwähnt Bestandteil eines normalen Pendels in der Ebene. Daraus folgt für $ \vv{x_1} $
 \begin{equation}
-\vec{E} = \vec{E}_{1} + \vec{E}_{2} = \vec{e}_{p} \cdot (E_{1} \cdot e^{i(\omega_{1}t + \varphi_{1})} + E_{2} \cdot e^{i(\omega_{2}t + \varphi_{2})}).
+\vv{x_1}= l_1*\begin{pmatrix}
+\sin \varphi_1 \\ -\cos \varphi_1
+\end{pmatrix}
 \end{equation}
-Die Lichtintensität I ist nach \footnote{\cite[433f.]{feynman2011feynman}} proportional zum zeitlichen Mittel von $  \vec{E}_{reell} ^{2} $ über eine Schwingung, deshalb: 
-
+[Hierbei ist $ l_1 $ die Länge des ersten Pendels und $ \varphi_2 $ dessen Auslenkung aus der Ruhelage.]
+Die Masse $ m_2 $ ist ebenso Teil eines Pendels, das an $m_1$ aufgehängt ist, also müssen die Orte der Massen addiert werden. Für den Vektor $\vv{x_2}$ folgt:
 \begin{equation}
-\nonumber
-\vec{E}_{reell}^{2} = 
-(\vec{e}_{p} \cdot (E_{1} \cdot \cos(\omega_{1}t + \varphi_{1})) + E_{2} \cdot \cos(\omega_{2}t + \varphi_{2})))^{2} = 
-(E_{1} \cdot \cos(\omega_{1}t + \varphi_{1}) + E_{2} \cdot \cos(\omega_{2}t + \varphi_{2}))^{2} = 
-\end{equation}
-\begin{equation}
-E_{1}^{2} \cdot cos^{2}(\omega_{1}t + \varphi_{1}) + 2E_{1}E_{2} \cdot \cos(\omega_{1}t + \varphi_{1}) \cdot \cos(\omega_{2}t + \varphi_{2}) + E_{2}^{2} \cdot \cos^{2}(\omega_{2}t + \varphi_{2}).
+\vv{x_2}= \vv{x_1} + l_2 * \begin{pmatrix}
+\sin \varphi_2 \\ -\cos \varphi_2
+\end{pmatrix}
+= \begin{pmatrix}
+l_1 * \sin \varphi_1 + l_2 * \sin \varphi_2 \\ - l_1 * \cos \varphi_1 - l_2 * \cos \varphi_2
+\end{pmatrix}
 \end{equation}
 
 
-Die beiden quadratischen Terme können als Feldstärkequadrate der einzelnen Strahlen identifiziert werden, es bleibt der Mischterm: 
+Zur Bestimmung von $E_{kin,i} = \frac{m_i}{2} * \dot{\vv{x_i}}^2$  müssen noch die Ableitungen der Ortsvektoren gebildet werden:
 \begin{equation}
-2E_{1}E_{2} \cdot \cos(\omega_{1}t + \varphi_{1}) \cdot \cos(\omega_{2}t + \varphi_{2}) = 
-E_{1}E_{2} \cdot (\cos(t(\omega_{1} + \omega_{2}) + \varphi_{1} + \varphi_{2}) + \cos(t(\omega_{1} - \omega_{2}) + \varphi_{1} - \varphi_{2})).
+\dot{\vv{x_1}} = l_1*\dot{\varphi_1}*\begin{pmatrix}
+\cos \varphi_1 \\ \sin \varphi_1
+\end{pmatrix}
 \end{equation}
-Für $ \omega_{1} = \omega_{2} $ (und damit auch $ k_{1} = k_{2} $) kann dies weiter vereinfacht werden zu: 
+und:
 \begin{equation}
-E_{1}E_{2} \cdot (\cos(2\omega t + \varphi_{1} + \varphi_{2}) + \cos(\varphi_{1} - \varphi_{2})),
-\end{equation} für $ \omega_{1} \neq \omega_{2} $ würde sich im längerfristigen zeitlichen Mittel über dem Mischterm 0 ergeben, da beide Summanden zeitabhängig wären. 
-
-
-Mittelt man nun über $  \vec{E}_{reell} ^{2} $, so folgt: 
-\begin{equation}
-\nonumber
-<\vec{E}_{reell}^{2}> = 
+\dot{\vv{x_2}} = \dot{\vv{x_1}} + l_2 * \dot{\varphi_2} * \begin{pmatrix}
+\cos \varphi_2 \\ \sin \varphi_2
+\end{pmatrix}
 \end{equation}
-\begin{equation}
-\nonumber
-< E_{1}^{2} \cdot cos^{2}(\omega_{1}t + \varphi_{1}) + E_{2}^{2} \cdot \cos^{2}(\omega_{2}t + \varphi_{2}) + E_{1}E_{2} \cdot (\cos(2\omega t + \varphi_{1} + \varphi_{2}) + \cos(\varphi_{1} - \varphi_{2})) > = 
-\end{equation}
-\begin{equation}
-\nonumber
-\frac{E_{1}^{2}}{2} + \frac{E_{2}^{2}}{2} + E_{1}E_{2} \cdot \cos(\varphi_{1} - \varphi_{2}) = 
-\end{equation}
-\begin{equation}
-\frac{E_{1}^{2}}{2} + \frac{E_{2}^{2}}{2} + E_{1}E_{2} \cdot \cos( k \cdot (r_{2} - r_{1}) + \phi_{1} - \phi_{2}).
-\end{equation}
-
-Bezeichnen $ I_{1}, I_{2} $ die Intensitäten der einfallenden Lichtstrahlen, so ergibt sich über $ I = \mu <\vec{E}_{reell}^{2}> $: 
-\begin{equation}
-\label{formel:intensitaet}
-I = I_{1} + I_{2} + 2 \sqrt{I_{1} I_{2}} \cdot \cos( k \cdot (r_{2} - r_{1}) + \phi_{1} - \phi_{2}).
-\end{equation}
-
-
-
-
-
-\subsection{Das Michelson-Interferometer}
-
-Das Michelson-Interferometer gehört zur Klasse der Zweistrahlinterferometer. Seine Funktionsweise beruht darauf, 
-dass ein polarisierter Laserstrahl mit Hilfe eines halbdurchlässigen Spiegels aufgespalten wird (siehe dazu Abb.
-\ref{pic:skizze_versuchsaufbau}). Beide Strahlen werden gespiegelt und so wieder am halbdurchlässigen Spiegel 
-vereinigt. Aufgrund der unterschiedlich großen zurückgelegten Wegstrecken kommt es dort zu Interferenzeffekten,
-die vom genauen Aufbau des Interferometers abhängen.\\
-Verändert man die Länge von einem der beiden Wege, so ändert sich auch die Phasenverschiebung zwischen beiden 
-Lichtstrahlen und nach (\ref{formel:intensitaet}) auch die Intensität der interferierenden Strahlen und ergibt eine verschobene 
-Cosinus- oder gleichbedeutend Sinusfunktion abhängig von $ k $ mal der Laufwegsdifferenz. Durch Beobachtung der Verschiebung der Interferenzen kann also auf die Geschwindigkeit 
-geschlossen werden, mit der sich die Länge des einen Weges ändert: 
-Hat sich das Interferenzmuster genau um $ 2 \pi $ verschoben, so hat sich nach (\ref{formel:intensitaet}) $ k \cdot \Delta r $ um $ 2 \pi $ vergrößert oder verkleinert.
-Ein $ \Delta N $ von 1 entspricht deswegen genau einer Längenänderung um $ \frac{\lambda}{2} $, also:
-
-
-\begin{equation}
-\Delta l = \frac{\lambda}{2} \cdot \Delta N. 
-\label{form:ausdzumax_1}
-\end{equation}
-
-
-wobei $ \lambda $ die Wellenlänge des verwendeten Lasers ist und N die Anzahl der während der Längenänderung durchlaufenen Intensitätsmaxima ist. 
-Durch zeitliches Ableiten ergibt sich:
-\begin{equation}
-\frac{dL}{dt} = \frac{\lambda}{2} \cdot \frac{dN}{dt}.
-\label{form:ausdzumax}
-\end{equation}
-
-
-Weiterhin kann das vom Laser emittierte Strahlenbündel durch Einbringen von einer oder mehrerer Linsen zu einem 
-divergenten Strahl oder einem breiteren, parallelen Strahlenbündel gewandelt werden. Durch eine solche Aufweitung kommt es 
-zu weiteren Interferenzphänomenen, welche im nächsten Absatz detaillierter beschrieben werden. Oftmals geschieht dies mit 
-Hilfe eines \enquote{Teleskops}, bei dem das Strahlenbündel eine Kombination aus konkaver und konvexer Linse 
-durchläuft und danach parallel austritt. Im Falle eines zu Beginn ebenfalls parallelen Strahlenbündels, wie es 
-vom Laser in guter Näherung emittiert wird, müssen dazu die beiden Brennpunkte aufeinander fallen.  \\
-
-Die beobachtbaren Interferenzeffekte hängen maßgeblich von der genauen Ausrichtung der optischen Elemente im 
-Strahlengang ab: 
-Sind etwa die reflektierenden Spiegel nicht exakt senkrecht zum einfallenden Strahl ausgerichtet oder der 
-halbdurchlässige Spiegel nicht in einem Winkel von exakt $ 45 ^\circ$  zum einfallenden Strahl justiert, so 
-führt diese Verkippung der Spiegel zu deutlich sichtbaren Interferenzstreifen, da die Wellenfronten der beiden 
-interferierenden Strahlen dann nicht parallel auf den Schirm treffen. (Abb.~\ref{verkippung}: Die Differenz 
-zwischen den beiden gestrichelten Strecken entspricht dem Phasenversatz zwischen den beiden Wellen an dem 
-entsprechenden Punkt auf dem Schirm. Der Versatz ändert sich in der Horizontalen.) Treffen sich weiter die 
-beiden Strahlbündel bei Vereinigung auf dem halbdurchlässigen Spiegel nicht mittig am gleichen Punkt, so 
-beobachtet man sehr deutlich Interferenzringe, da sich die Laufzeiten bei Verschieben des betrachteten 
-Punkts unterschiedlich ändern. Beide Effekte verschieben sich bei einer Änderung der Laufzeitdifferenz um eine Wellenlänge
-genau um ein Maximum und sind so für eine alternative \enquote{Zählung} der Interferenzmaxima geeignet. 
-
-\begin{figure}
-\centering
-        \includegraphics[width=.9\textwidth]{images/verkippung.png}
-\caption{Darstellung der Interferenz zwischen zwei verkippten Wellenfronten}
-\label{verkippung}
-\end{figure}
-
-
-\subsection{Thermische Längenänderung}
-Wird ein Material erhitzt, so dehnt es sich in den meisten Fällen aus. Dies kann im Standard-Atom-Modell für einen Feststoff veranschaulicht werden: Wird dem Stoff thermische Energie zugeführt, bedeutet dies effektiv eine Zunahme der kinetischen Energie der Atomrümpfe. Dadurch nimmt die Amplitude von deren Schwingung um die Ruhelage zu und es kommt effektiv zu einer \enquote{Streckung} des Materials in alle Raumrichtungen. Eine exakte Beschreibung ist tatsächlich deutlich komplizierter und erfordert die Verwendung von Quantenmechanik. Im Allgemeinen ergibt sich kein einfacher Verlauf für $ l(T) $, allerdings kann die Längenänderung für einen bestimmten Temperaturbereich durch einen linearen Verlauf angenähert werden 
-
-\begin{equation}
-\frac{ \Delta l}{l_{0}} = \alpha(T) \cdot (T-T_{0}), 
-\label{formel:ausdehnung}
-\end{equation}
-
-wobei $ l_{0} $ die eindimensionale Ausdehnung bei der Temperatur $ T_{0} $ ist. $ \alpha $ heißt der Längenausdehnungskoeffizient und ist insbesondere vom Material abhängig. 
-
-\subsection{Überlegungen zu Wärmeleitung und Konvektion}
-Für den Wärmestrom $ \vec{j} $ innerhalb eines Materials gilt: 
-
-\begin{equation}
-\vec{j} = - \kappa \cdot \nabla T, 
-\label{form:j}
-\end{equation}
-
-wobei hier $ \kappa $ der Wärmeleitungskoeffizient ist sowie T die dreidimensionale Temperaturfunktion innerhalb des Materials. 
-
-Weiter ergibt sich über
-\begin{equation}
-\int dt \int_{\partial V} -\vec{j} d \vec{f} = \int dt \int_{V} -\nabla \vec{j} dV = Q = m \cdot c \cdot \Delta T = \int_{V} \rho dV \cdot c \cdot \Delta T
-\end{equation}
-mit $c$ als massebezogene Wärmekapazität, $m$ als Masse, $\rho$ als Dichte. Durch Umschreiben in differenzielle Form folgt: 
-
-\begin{equation}
-\nabla \cdot \vec{j} = \rho \cdot c \cdot  \frac{\partial T}{\partial t}
-\end{equation} 
-und nach Einsetzen in \ref{form:j}: 
-
-\begin{equation}
-\frac{\partial T}{\partial t} = \frac{\kappa}{\rho \cdot c} \Delta T, 
-\label{form:leitung}
-\end{equation}
-wobei hier $\Delta$ den Laplace-Operator darstellt. 
-\\
-Ein weiterer Effekt bei der Übertragung von Wärme ist die Konvektion. Diese bezeichnet allgemein den Transport von Wärme durch Strömungen in Flüssigkeiten oder Gasen. Die Konvektion lässt sich im Allgemeinen nur sehr schwer exakt beschreiben, da die Grundlage hierfür von der Navier-Stokes-Gleichung gebildet wird, die bis heute nicht allgemein gelöst wurde. Nach \cite{praktikumwaerme} gilt allerdings für den Wärmetransport von einem Gegenstand weg innerhalb eines Gases/ einer Flüssigkeit: 
-\begin{equation}
-\frac{dQ}{dt} \sim \Delta T,
-\end{equation}
-wobei $\Delta T$ die Differenz zwischen der Oberflächentemperatur des Gegenstandes und der Temperatur der Flüssigkeit/ des Gases ist. 
-Nimmt man an, dass der Wärmeleitungskoeffizient innerhalb des Gegenstandes relativ hoch ist, was im Falle von Metall durchaus gerechtfertigt ist, so kann dessen Temperatur als konstant innerhalb des Gegenstandes angenommen werden. 
-Im hier durchgeführten Experiment soll die Erwärmung eines Metallstabes von etwa $ -130 ^{\circ} C $ auf Raumtemperatur untersucht werden. Somit ergibt sich: 
-
-\begin{equation}
-\frac{dQ}{dt} \sim  \frac{dT_M}{dt} \sim (T_{M} - T_{R}). 
-\label{form:konvektion1}
-\end{equation}
-
-Als Lösung einer derartigen Differentialgleichung ergibt sich eine e-Funktion 
-\begin{equation}
-k \cdot e^{a \cdot t} + b
-\label{form:konvektion2}
-\end{equation}
-, auf die Bestimmung der Konstanten $k$ und $a$ und $b$ soll hier nicht weiter eingegangen werden. 
-
-\subsection{Leidenfrost-Effekt}
-Der Leidenfrost-Effekt beschreibt ursprünglich das Verhalten von Wassertropfen auf heißen Herdplatten. Wird ein Wassertropfen auf eine heiße Platte gegeben, verdampft die untere Oberfläche des Tropfens sehr schnell und bildet eine Schicht aus Wasserdampf, die den restlichen Tropfen vor weiterer Wärmeübertragung isoliert. Dadurch kann der Tropfen für längere Zeit auf der heißen Herdplatte gleiten, ohne zu verdampfen.
-Ein ähnlicher Effekt entsteht, wenn Metall in flüssigen Stickstoff getaucht wird. Der Stickstoff rund um das Metall verdampft sehr schnell und bildet eine isolierende Schicht, was das Abkühlen des Metalls erschwert.
