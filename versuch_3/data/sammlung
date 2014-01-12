@@ -1,0 +1,110 @@
+\begin{document}
+\section{Auswertung}
+\subsection{Untersuchung des chaotischen Verhaltens}
+Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten, wobei das Pendel dann in Ruhe und derart, dass sich die untere Achse des Pendels ($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5 \ mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
+
+\begin{comment}
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/pendel-6_.jpg}
+\caption{1. Verlauf}
+\label{pendel-6}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/pendel-10.jpg}
+\caption{2. Verlauf}
+\label{pendel-10}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/pendel-9}
+\caption{3. Verlauf}
+\label{pendel-9}
+\end{figure}
+\end{comment}
+
+
+Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-7}, \ref{pendel-9}), so zeigt sich, dass der Verlauf der Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
+Weiter divergiert auch der Verlauf von \ref{pendel-6} und \ref{pendel-9} bald, wie in den Abbildung gut zu erkennen ist. 
+Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalten, sodass das Doppelpendel als ein chaotisches System bezeichnet werden kann. 
+
+\subsection{Simulation des Doppelpendels}
+Mithilfe eines Python-Skripts wurden die in der Theorie hergeleiteten Differenzialgleichungen für das Doppelpendel numerisch gelöst. Dafür wurden die Differenzialgleichungen zunächst nach $ \ddot{\phi_1} $ und $\ddot{\phi_2} $ aufgelöst: 
+
+\begin{equation}
+(m_1 + m_2) l_1 \ddot{\phi_1}  + m_2 l_2 \ddot{\phi_2} \cos{(\phi_1 - \phi_2)} + m_2 l_2 \dot{\phi_2}^{2} \sin{(\phi_1 - \phi_2)} + g (m_1 + m_2) \sin{\phi_1} = 0
+\end{equation} 
+und
+\begin{equation}
+m_2 l_2 \ddot{\phi_2} + m_2 l_1 \ddot{\phi_1} \cos{(\phi_1 - \phi_2)} - m_2 l_1 \dot{\phi_1}^{2} \sin{(\phi_1 - \phi_2)} + g m_2 \sin{\phi_2} = 0
+\end{equation}
+. 
+
+Um die Gleichungen mittels eines Standardverfahrens numerisch lösen zu können, muss das Gleichungssystem auf die Form $ \dot{Y} = f(Y) $ gebracht werden. Zunächst werden die obigen Gleichungen nach $ \ddot{\phi_1} $ und $ \ddot{\phi_2} $ aufgelöst. Es ergibt sich unter Beachtung der folgenden abkürzenden Notation: 
+$ (m_1 + m_2) =: M; \phi_1 - \phi_2 =: \Delta \phi $
+\begin{equation}
+\ddot{\phi_1} = \frac{-m_2 l_2 \dot{\phi_2}^{2} \sin{\Delta \phi} - g M \sin{\phi_1} - m_2 l_1 \dot{\phi_1}^{2} \sin{\Delta \phi} \cos{\Delta \phi} + g m_2 \sin{\phi_2}\cos{\Delta  \phi}}{M l_1 - m_2 l_1 \cos^{2}{\Delta \phi}}
+\end{equation}
+und
+\begin{equation} 
+\ddot{\phi_1} = \frac{-m_2 l_2 \dot{\phi_2}^{2} \sin{\Delta \phi} \cos{\Delta \phi} - g M \sin{\phi_1} \cos{\Delta \phi} - M l_1 \dot{\phi_1}^{2} \sin{\Delta \phi} + g M \sin{\phi_2}}{m_2 l_2 \cos^{2}{\Delta \phi} - M l_2}
+\end{equation}
+
+Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\ref{}). Es wurde also ein Vektor $$ \vec{\phi} = (
+\phi_1, \dot{\phi_1}, \phi_2 , \dot{\phi_2})^{T} $$ 
+ definiert, für den sich ergibt: 
+\begin{equation}
+\dot{\vec{\phi}} = (\dot{\phi_1}, \ddot{\phi_1}, \dot{\phi_2}, \ddot{\phi_2})^{T}
+\end{equation}
+, wobei für $ \ddot{\phi_1} $ und $ \ddot{\phi_2} $ obige Gleichungen eingesetzt werden. 
+Dann wird eine schrittweise Iteration durchgeführt, der Quelltext für das verwendete Python-Skript findet sich im Anhang. 
+
+\subsection{Reibung}
+Bei dem hier behandelten Doppelpendel treten im Wesentlichen Luftreibung und Reibung in der Lagerung der zueinander beweglichen Bauteile, also den Kugellagern.
+\subsubsection{Luftreibung}
+Für die Luftreibungskraft, die auf einen laminar umströmten Gegenstand wirkt, gilt die in guter Näherung gültige Formel
+\begin{equation}
+F_R = v^2 \cdot \frac{\rho}{2} \cdot A_S \cdot c_W
+\end{equation}, 
+wobei $ F_R $ die Luftreibungskraft, $ v $ die Geschwindigkeit der umströmenden Luft, $ \rho $ deren Dichte, $ A_S $ die Fläche der Projektion des Gegenstands in Stömungsrichtung und $ c_W $ ein von der Form des Gegenstands bestimmter, dimensionsloser Koeffizient ist. 
+\begin{comment}
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/v_ueber_t.png}
+\caption{Geschwindigkeit der beiden Massepunkte über der Zeit}
+\label{v_ueber_t}
+\end{figure}
+\end{comment}
+
+Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe \ref{v_ueber_t}, eine der verwendeten Akrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} $ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} $ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich die Kraft bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \ N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1,5 \cdot 10^{-3} m^2 $). 
+
+Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenordung von $ 5.4 \cdot 10^{-3} \ N $. Mit einer Gesamtmasse von 0.7 kg inklusive der Akrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s} $. Bei einer Dauer der Messung von 30 s ergibt sich hiermit also lediglich eine Geschwindigkeitsänderung von $ 0.03 \frac{m}{s} $, also von etwa $ 10^{-2} \frac{m}{s} $, was nicht wesentlich beiträgt. 
+\subsubsection{Reibung in den Kugellagern}
+
+\subsection{Betrachtung der Reibung}
+
+\begin{comment}
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/E_ueber_t.png}
+\caption{Energie des Pendels über der Zeit}
+\label{E_ueber_t}
+\end{figure}
+\end{comment}
+
+Zunächst fällt auf, dass die Energiewerte deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 60 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund ist ein auftretender Effekt, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Diese treten insbesondere auf, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen werden. Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
+Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
+Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0,1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
+\begin{equation}
+\Delta E = \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2} = \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
+\end{equation}. \\
+
+Damit ergeben sich die eingezeichneten Fehlerbalken. 
+
+Nimmt man einen exponentiellen Abfall der Energie $ E(t) = a \cdot e^{b \cdot t} $ an, so ergibt sich mittels eines Fits in den Verlauf von 
+
+$$ a = 0.813 \  J $$ und $$ b = -0.024 \  s^{-1} $$ mit Fehlern von $1,26 \% $ und $ 4,89 \% $. \\
+Allerdings kann aus den hier dargestellten Daten nicht verifiziert werden, ob der Verlauf tatsächlich einem exponentiellen Abfall folgt, da auch etwa ein Abfall mit dem inversen Quadrat der Zeit denkbar wäre. 
+
+\subsection{Simulation des Doppelpendels}
+Die gemessenen Daten sollen nun mit einer Simulation, die entsprechend der Beschreibung in der Theorie durchgeführt wurde, verglichen werden. 
+
+\end{document}
