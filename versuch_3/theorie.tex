@@ -45,3 +45,56 @@ und:
 \cos \varphi_2 \\ \sin \varphi_2
 \end{pmatrix}
 \end{equation}
+
+\subsection{Simulation des Doppelpendels}
+Mithilfe eines Python-Skripts wurden die in der Theorie hergeleiteten Differenzialgleichungen für das Doppelpendel numerisch gelöst. Dafür wurden die Differenzialgleichungen zunächst nach $ \ddot{\phi_1} $ und $\ddot{\phi_2} $ aufgelöst: 
+
+\begin{equation}
+(m_1 + m_2) l_1 \ddot{\phi_1}  + m_2 l_2 \ddot{\phi_2} \cos{(\phi_1 - \phi_2)} + m_2 l_2 \dot{\phi_2}^{2} \sin{(\phi_1 - \phi_2)} + g (m_1 + m_2) \sin{\phi_1} = 0
+\end{equation} 
+und
+\begin{equation}
+m_2 l_2 \ddot{\phi_2} + m_2 l_1 \ddot{\phi_1} \cos{(\phi_1 - \phi_2)} - m_2 l_1 \dot{\phi_1}^{2} \sin{(\phi_1 - \phi_2)} + g m_2 \sin{\phi_2} = 0
+\end{equation}
+. 
+
+Um die Gleichungen mittels eines Standardverfahrens numerisch lösen zu können, muss das Gleichungssystem auf die Form $ \dot{Y} = f(Y) $ gebracht werden. Zunächst werden die obigen Gleichungen nach $ \ddot{\phi_1} $ und $ \ddot{\phi_2} $ aufgelöst. Es ergibt sich unter Beachtung der folgenden abkürzenden Notation: 
+$ (m_1 + m_2) =: M; \phi_1 - \phi_2 =: \Delta \phi $
+\begin{equation}
+\ddot{\phi_1} = \frac{-m_2 l_2 \dot{\phi_2}^{2} \sin{\Delta \phi} - g M \sin{\phi_1} - m_2 l_1 \dot{\phi_1}^{2} \sin{\Delta \phi} \cos{\Delta \phi} + g m_2 \sin{\phi_2}\cos{\Delta  \phi}}{M l_1 - m_2 l_1 \cos^{2}{\Delta \phi}}
+\end{equation}
+und
+\begin{equation} 
+\ddot{\phi_1} = \frac{-m_2 l_2 \dot{\phi_2}^{2} \sin{\Delta \phi} \cos{\Delta \phi} - g M \sin{\phi_1} \cos{\Delta \phi} - M l_1 \dot{\phi_1}^{2} \sin{\Delta \phi} + g M \sin{\phi_2}}{m_2 l_2 \cos^{2}{\Delta \phi} - M l_2}
+\end{equation}
+
+Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\ref{}). Es wurde also ein Vektor $$ \vec{\phi} = (
+\phi_1, \dot{\phi_1}, \phi_2 , \dot{\phi_2})^{T} $$ 
+ definiert, für den sich ergibt: 
+\begin{equation}
+\dot{\vec{\phi}} = (\dot{\phi_1}, \ddot{\phi_1}, \dot{\phi_2}, \ddot{\phi_2})^{T}
+\end{equation}
+, wobei für $ \ddot{\phi_1} $ und $ \ddot{\phi_2} $ obige Gleichungen eingesetzt werden. 
+Dann wird eine schrittweise Iteration durchgeführt, der Quelltext für das verwendete Python-Skript findet sich im Anhang. 
+
+\subsection{Reibung}
+Bei dem hier behandelten Doppelpendel treten im Wesentlichen Luftreibung und Reibung in der Lagerung der zueinander beweglichen Bauteile, also den Kugellagern. Darüber hinaus tritt weiterer Energieverlust auf, indem die Aufhängung des Pendels vom Pendel selbst zu Schwingungen angeregt wird und so ein Energieübertrag stattfindet. 
+
+\subsubsection{Luftreibung}
+Für die Luftreibungskraft, die auf einen laminar umströmten Gegenstand wirkt, gilt die in guter Näherung gültige Formel
+\begin{equation}
+F_R = v^2 \cdot \frac{\rho}{2} \cdot A_S \cdot c_W
+\end{equation}, 
+wobei $ F_R $ die Luftreibungskraft, $ v $ die Geschwindigkeit der umströmenden Luft, $ \rho $ deren Dichte, $ A_S $ die Fläche der Projektion des Gegenstands in Stömungsrichtung und $ c_W $ ein von der Form des Gegenstands bestimmter, dimensionsloser Koeffizient ist. 
+
+
+\subsubsection{Reibung in den Kugellagern}
+Für die Reibung in den Kugellagern kann das Modell der Rollreibung verwendet werden. Demnach ergibt sich für die Reibungskraft $ F_R $:
+\begin{equation}
+F_R = c_R \cdot F_N
+\end{equation}, 
+wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender Parameter ist und $ F_N $ der Betrag der Normalkraft, also die senkrecht zur Rollrichtung wirkende Kraft. 
+
+\subsubsection{Energieübertrag auf die Aufhängung}
+
+Die Betrachtung dieser Art von Energieverlust ist schwierig. Zwar könnte er mit dem Modell zweier gekoppelter schwingfähiger Systeme, bei dem das zweite eine große Dämpfung aufweist, angenähert werden. Allerdings müsste hierfür wieder der Lagrange-Formalismus herangezogen werden, wobei zusätzlich noch Reibungsterme berücksichtigt werden müssten. 
