@@ -1,3 +1,4 @@
+
 \section{Theorie}
 \subsection{Newtonsche und Lagrangsche Mechanik}
 In folgenden soll die Herleitung der bewengungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
@@ -43,8 +44,25 @@ und:
 \begin{equation}
 \dot{\vv{x_2}} = \dot{\vv{x_1}} + l_2 * \dot{\varphi_2} * \begin{pmatrix}
 \cos \varphi_2 \\ \sin \varphi_2
-\end{pmatrix}
+\end{pmatrix} 
 \end{equation}
+Für die kinetische Energie ergibt sich:
+\begin{equation}
+E_{kin} = E_{kin,1} + E_{kin,2} = \frac{m_1}{2} * l_1^2 * \dot{\varphi_1}^2 +
+\frac{m_2}{2} * (l_1^2 * \dot{\varphi_1}^2 + l_2^2 * \dot{\varphi_2}^2 + 2 * l_1 * l_2 * \dot{\varphi_1} * \dot{\varphi_2} * \cos (\varphi_1 - \varphi_2))
+\end{equation}
+Das auf das Doppelpendel wirkende Potential $ V_i = m_i * g * h_i $ ist:
+\begin{equation}
+V = V_1 + V_2 = m_1 * g * (-l_1 * \cos \varphi_1) + m_2 * g * (-l_1 * \cos \varphi_1 - l_2 * \cos \varphi_2)
+\end{equation}
+Die Aufstellung der Lagrange-Gleichung erfolgt nun in mehreren Schritten:
+\begin{equation}
+\frac{\partial (E_{kin} - V)}{\partial\dot{\varphi_1}} = (m_1 + m_2) * l_1^2 *\dot{\varphi_1} + m_2 * (l_1 * l_2 * \dot{\varphi_2} * \cos (\varphi_1 - \varphi_2)) 
+\end{equation}
+\begin{equation}
+\frac{d}{dt} \frac{\partial (E_{kin} - V)}{\partial\dot{\varphi_1}} = m_1 *l_1^2 * \ddot{\varphi_1} + m_2 * (l_1^2 * \ddot{\varphi_1} + l_1 * l_2 * \ddot{\varphi_2} * \cos (\varphi_1 - \varphi_2) - l_1 * l_2 * \ddot{\varphi_2} * \sin (\varphi_1 - \varphi_2) *(\dot{\varphi_1} - \dot{\varphi_2}) )
+\end{equation}
+
 
 \subsection{Simulation des Doppelpendels}
 Mithilfe eines Python-Skripts wurden die in der Theorie hergeleiteten Differenzialgleichungen für das Doppelpendel numerisch gelöst. Dafür wurden die Differenzialgleichungen zunächst nach $ \ddot{\phi_1} $ und $\ddot{\phi_2} $ aufgelöst: 
