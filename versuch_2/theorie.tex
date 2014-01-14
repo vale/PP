@@ -39,7 +39,7 @@ $ \varphi_{2} = - k_{2} \cdot r_{2} + \phi_{2} $ ergibt sich:
 \begin{equation}
 \vec{E} = \vec{E}_{1} + \vec{E}_{2} = \vec{e}_{p} \cdot (E_{1} \cdot e^{i(\omega_{1}t + \varphi_{1})} + E_{2} \cdot e^{i(\omega_{2}t + \varphi_{2})}).
 \end{equation}
-Die Lichtintensität I ist nach \footnote{\cite[433f.]{feynman2011feynman}} proportional zum zeitlichen Mittel von $  \vec{E}_{reell} ^{2} $ über eine Schwingung, deshalb: 
+Die Lichtintensität I ist nach \footnote{\cite[433f.]{feynman2011feynman}} proportional zum zeitlichen Mittel von $  \vec{E}_{reell} ^{2} $ über eine Schwingung. Die Proportionalitätskonstante sei hier mit $ \mu $ bezeichnet. Weiter: 
 
 \begin{equation}
 \nonumber
@@ -101,8 +101,8 @@ Verändert man die Länge von einem der beiden Wege, so ändert sich auch die Ph
 Lichtstrahlen und nach (\ref{formel:intensitaet}) auch die Intensität der interferierenden Strahlen und ergibt eine verschobene 
 Cosinus- oder gleichbedeutend Sinusfunktion abhängig von $ k $ mal der Laufwegsdifferenz. Durch Beobachtung der Verschiebung der Interferenzen kann also auf die Geschwindigkeit 
 geschlossen werden, mit der sich die Länge des einen Weges ändert: 
-Hat sich das Interferenzmuster genau um $ 2 \pi $ verschoben, so hat sich nach (\ref{formel:intensitaet}) $ k \cdot \Delta r $ um $ 2 \pi $ vergrößert oder verkleinert.
-Ein $ \Delta N $ von 1 entspricht deswegen genau einer Längenänderung um $ \frac{\lambda}{2} $, also:
+Hat sich das Interferenzmuster genau um $ 2 \pi $ verschoben, so hat sich nach (\ref{formel:intensitaet}) $ k \cdot \Delta r $ ( $ \Delta r := r_2 - r_1 $ ) um $ 2 \pi $ vergrößert oder verkleinert.
+Ein $ \Delta N $ von 1 entspricht deswegen genau einer Längenänderung um $ \frac{\lambda}{2} $, wobei $ \Delta N $ die Anzahl der während der Längenänderung $ \Delta l $ durchlaufenen Intensitätsmaxima ist. Also:
 
 
 \begin{equation}
@@ -111,10 +111,10 @@ Ein $ \Delta N $ von 1 entspricht deswegen genau einer Längenänderung um $ \fr
 \end{equation}
 
 
-wobei $ \lambda $ die Wellenlänge des verwendeten Lasers ist und N die Anzahl der während der Längenänderung durchlaufenen Intensitätsmaxima ist. 
+wobei $ \lambda $ die Wellenlänge des verwendeten Lasers ist. 
 Durch zeitliches Ableiten ergibt sich:
 \begin{equation}
-\frac{dL}{dt} = \frac{\lambda}{2} \cdot \frac{dN}{dt}.
+\frac{dl}{dt} = \frac{\lambda}{2} \cdot \frac{dN}{dt}.
 \label{form:ausdzumax}
 \end{equation}
 
@@ -169,20 +169,34 @@ wobei hier $ \kappa $ der Wärmeleitungskoeffizient ist sowie T die dreidimensio
 
 Weiter ergibt sich über
 \begin{equation}
-\int dt \int_{\partial V} -\vec{j} d \vec{f} = \int dt \int_{V} -\nabla \vec{j} dV = Q = m \cdot c \cdot \Delta T = \int_{V} \rho dV \cdot c \cdot \Delta T
+\int_{t}^{t+\Delta t} dt' \int_{\partial V} -\vec{j} d \vec{f} = \int_{t}^{t + \Delta t} dt' \int_{V} -\nabla \vec{j} dV = Q = m \cdot c \cdot \Delta T = \int_{V} \rho dV \cdot c \cdot \Delta T
 \end{equation}
-mit $c$ als massebezogene Wärmekapazität, $m$ als Masse, $\rho$ als Dichte. Durch Umschreiben in differenzielle Form folgt: 
+mit $c$ als massebezogene Wärmekapazität, $m$ als Masse, $\rho$ als Dichte. 
+
+Da $ \vec{j} $ als eine stetige Funktion angenommen werden kann, folgt aus dem Mittelwertsatz der Integralrechnung, dass ein $ \Theta \in [t; t + \Delta t] existiert mit:
 
 \begin{equation}
-\nabla \cdot \vec{j} = \rho \cdot c \cdot  \frac{\partial T}{\partial t}
-\end{equation} 
-und nach Einsetzen in \ref{form:j}: 
+\int_{t}^{t + \Delta t} dt' \int_{V} -\nabla \vec{j} dV = \Delta t \cdot \int_{V} -\nabla \vec{j(\Theta)} dV
+\end{equation}. 
+
+Betrachtet man nun $ \Delta t \to 0 $ mit $\Delta t \to \partial t $ und $\Delta T \to \partial T $, so ergibt sich:
+\begin{equation}
+\partial t \cdot \int_{V} -\nabla \vec{j(\Theta)} dV = \int_{V} \rho dV \cdot c \cdot \partial T
+\end{equation}. 
+ 
+Für den Grenzübergang gilt dann $\Theta \to t$ und entsprechend in differenzieller Form unter Berücksichtigung von \ref{form:j}: 
+\begin{equation}
+\rho \cdot c \cdot \partial T = -\nabla \vec{j(t)} \partial t = \kappa \cdot \triangle \vec{j(t)} \partial t
+\end{equation}
+
+
+oder
 
 \begin{equation}
-\frac{\partial T}{\partial t} = \frac{\kappa}{\rho \cdot c} \Delta T, 
+\frac{\partial T}{\partial t} = \frac{\kappa}{\rho \cdot c} \triangle T, 
 \label{form:leitung}
 \end{equation}
-wobei hier $\Delta$ den Laplace-Operator darstellt. 
+wobei hier $\triangle$ den Laplace-Operator darstellt. 
 \\
 Ein weiterer Effekt bei der Übertragung von Wärme ist die Konvektion. Diese bezeichnet allgemein den Transport von Wärme durch Strömungen in Flüssigkeiten oder Gasen. Die Konvektion lässt sich im Allgemeinen nur sehr schwer exakt beschreiben, da die Grundlage hierfür von der Navier-Stokes-Gleichung gebildet wird, die bis heute nicht allgemein gelöst wurde. Nach \cite{praktikumwaerme} gilt allerdings für den Wärmetransport von einem Gegenstand weg innerhalb eines Gases/ einer Flüssigkeit: 
 \begin{equation}
