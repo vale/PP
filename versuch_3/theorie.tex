@@ -1,4 +1,3 @@
-
 \section{Theorie}
 \subsection{Newtonsche und Lagrangsche Mechanik}
 In folgenden soll die Herleitung der bewengungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
@@ -131,3 +130,21 @@ wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender
 \subsubsection{Energieübertrag auf die Aufhängung}
 
 Die Betrachtung dieser Art von Energieverlust ist schwierig. Zwar könnte er mit dem Modell zweier gekoppelter schwingfähiger Systeme, bei dem das zweite eine große Dämpfung aufweist, angenähert werden. Allerdings müsste hierfür wieder der Lagrange-Formalismus herangezogen werden, wobei zusätzlich noch Reibungsterme berücksichtigt werden müssten. 
+
+
+
+\subsubsection{Phasenraumkurven und Attraktoren}
+Der Phasenraum eines Systems ist der Raum, dessen Koordinaten die Zustandsgrößen des Systems sind. (z.B. $x, \dot{x}$) Eine Kurve $X(t) = (x(t), \dot{x}(t))^T$ im Phasenraum heißt \textbf{Trajektorie} und beschreibt die zeitliche Entwicklung des Systems. Zeitlich konstante Punkte im Phasenraum, an denen die Geschwindigkeit des Massepunkts $\dot{X}(t) = 0$  ist, nennt man \textbf{Fixpunkte}. Kurven im Phasenraum können sich nur in Fixpunkten schneiden, da die zeitliche Entwicklung des Systems eindeutig durch die Anfangsbedingungen vorgegeben ist. Da in Fixpunkten mehrere (im Allgemeinen sogar unendlich viele) Trajektorien zusammenlaufen können, nennt man solche Fixpunkte auch \textbf{Attraktoren}. In nichtlinearen Systemen können Attraktoren auch andere Formen (z.B. Flächen oder Kurven) annehmen, sind dann aber keine Fixpunkte mehr.
+\\
+Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.
+
+\begin{figure}
+\includegraphics[width=1.0\textwidth]{phasenraum1.png}
+\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe Demtröder \textbf{HIER REFERENZ ZUM LITERATURVERZEICHNIS EINFÜGEN}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1.0\textwidth]{phasenraum2.png}
+\caption{Phasenraumkurven eines ungedämpften Fadenpendels. Der Punkt A ist Attraktor für alle Winkel $|\phi|<\pi$. Die rote Kurve stellt eine 'Grenzkurve' zwischen stabilen und instabilen Lösungen dar. Die Punkte B ($|\phi|=180\deg, \dot{\phi}=0$) sind instabile Fixpunkte, eine minimale Änderung des Winkels wird eine stabile Pendelbewegung erzeugen, eine minimale Änderung der Winkelgeschwindigkeit wird eine Rotationsbewegung erzeugen, bei der der Winkel unbegrenzt ansteigt.}
+Herleitung siehe Demtröder \textbf{HIER REFERENZ ZUM LITERATURVERZEICHNIS EINFÜGEN}
+\end{figure}
