@@ -130,20 +130,32 @@ wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender
 
 Die Betrachtung dieser Art von Energieverlust ist schwierig. Zwar könnte er mit dem Modell zweier gekoppelter schwingfähiger Systeme, bei dem das zweite eine große Dämpfung aufweist, angenähert werden. Allerdings müsste hierfür wieder der Lagrange-Formalismus herangezogen werden, wobei zusätzlich noch Reibungsterme berücksichtigt werden müssten. 
 
+\subsection{Chaotisches Verhalten}
+\subsubsection{Stabilität}
+Die zeitliche Entwicklung vieler Systeme in der Mechanik kann durch lineare Differentialgleichungen beschrieben werden. Bei bekannten Anfangswerten können diese Gleichungen analytisch oder numerisch gelöst werden und damit die zeitliche Entwicklung des Systems komplett vorhergesagt werden, d.h. für exakte Anfangswerte gibt es exakte Vorhersagen für die zukünftige Entwicklung des Systems. Systeme dieser Art nennt man \textbf{streng deterministisch}. Wenn kleine Änderungen der Anfangswerte auch nur kleine Änderungen der zeitlichen Entwicklung nach sich ziehen, was mit Hilfe der Störungsrechnung bestimmt werden kann, nennt man die Lösung der Bewegungsgleichung \textbf{stabil}.
+Bei anderen Systemen treten nichtlineare Differentialgleichungen als Bewegungsgleichungen auf. Bei diesen Systemen kommt es vor, dass kleine Änderungen der Anfangsbedingungen große Änderungen in der zeitlichen Entwicklung bewirken. Solche Lösungen nennt man  \textbf{instabil}, die Systeme bezeichnet man als \textbf{chaotisch}. Dies macht z.B. die Vorhersage von Vorgängen in der Natur sehr schwierig, da die Anfangsbedingungen schon allein aufgrund der Messungenauigkeit nicht genau bestimmt werden können. Trotzdem lassen sich im Rahmen der Chaosforschung einige interessante Aussagen über solche Systeme treffen, z.B. kann ein Maß für die Stabilität einer Lösung definiert werden und damit Vorhersagen getroffen werden.
+\\
 
+Ein sehr anschauliches Beispiel aus der Natur ist das Ringsystem des Saturn. Das Ringsystem hat einige gut sichtbare Lücken (Abbildung \ref{foto-saturn}), in denen sich keine der Staub- und Felsteilchen, aus denen die Ringe bestehen, befinden. Diese Lücken sind die Bereiche, in denen die Bewegungsgleichung eines Teilchens im Gravitationspotential des Saturn und seiner Monde keine stabile Lösung hat, sodass eine Umlaufbahn in diesen Bereichen nicht auf längere Zeit gehalten werden kann.
+\\
+\begin{figure}
+\includegraphics[width=1.0\textwidth]{images/saturn.jpg}
+\caption{Die Ringe des Saturn, aufgenommen von der Cassini-Sonde}
+\label{foto-saturn}
+\end{figure}
 
 \subsubsection{Phasenraumkurven und Attraktoren}
 Der Phasenraum eines Systems ist der Raum, dessen Koordinaten die Zustandsgrößen des Systems sind. (z.B. $x, \dot{x}$) Eine Kurve $X(t) = (x(t), \dot{x}(t))^T$ im Phasenraum heißt \textbf{Trajektorie} und beschreibt die zeitliche Entwicklung des Systems. Zeitlich konstante Punkte im Phasenraum, an denen die Geschwindigkeit des Massepunkts $\dot{X}(t) = 0$  ist, nennt man \textbf{Fixpunkte}. Kurven im Phasenraum können sich nur in Fixpunkten schneiden, da die zeitliche Entwicklung des Systems eindeutig durch die Anfangsbedingungen vorgegeben ist. Da in Fixpunkten mehrere (im Allgemeinen sogar unendlich viele) Trajektorien zusammenlaufen können, nennt man solche Fixpunkte auch \textbf{Attraktoren}. In nichtlinearen Systemen können Attraktoren auch andere Formen (z.B. Flächen oder Kurven) annehmen, sind dann aber keine Fixpunkte mehr.
 \\
-Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.
+Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.\footnote{\cite{troeder} Seite 386 ff.}
 
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{images/phasenraum1.png}
-\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe \cite{roeder}}
+\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe \cite{troeder} Seite 388}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{images/phasenraum2.png}
 \caption{Phasenraumkurven eines ungedämpften Fadenpendels. Der Punkt A ist Attraktor für alle Winkel $|\phi|<\pi$. Die rote Kurve stellt eine 'Grenzkurve' zwischen stabilen und instabilen Lösungen dar. Die Punkte B ($|\phi|=180\deg, \dot{\phi}=0$) sind instabile Fixpunkte, eine minimale Änderung des Winkels wird eine stabile Pendelbewegung erzeugen, eine minimale Änderung der Winkelgeschwindigkeit wird eine Rotationsbewegung erzeugen, bei der der Winkel unbegrenzt ansteigt.}
-Herleitung siehe \cite{roeder}
+Herleitung siehe \cite{troeder} Seite 389
 \end{figure}
