@@ -1,0 +1,40 @@
+def quadr(a):
+  return(a*a)
+
+
+def mittel(x0, y0):
+	i = 0
+	zaehler = 0
+	while i < 633:
+		zaehler += radius(i, x0, y0)
+		i += 1
+	return(zaehler/634.0)
+
+def var(x0, y0):
+	j=0
+	zaehler = 0
+	mittel_ = mittel(x0, y0)
+	while j < 633:
+		zaehler += sqrt(quadr(radius(j, x0, y0) - mittel_)) #sqrt ist die Quadratwurzel
+		j += 10
+	return(zaehler/sqrt(633))
+	
+def durchlauf(xStart, xAnz, yStart, yAnz, Intervall):
+	xM = 0
+	yM = 0
+	xZaehler = xStart
+	yZaehler = yStart
+	xEnd = xStart + xAnz * Intervall
+	yEnd = yStart + yAnz * Intervall
+	varMin = 10000000
+	while xZaehler < xEnd:
+		while yZaehler < yEnd:
+			a = var(xZaehler, yZaehler)
+			if(a < varMin):
+				xM = xZaehler
+				yM = yZaehler
+				varMin = a
+			yZaehler += Intervall
+		yZaehler = yStart
+		xZaehler += Intervall
+	print(xM, yM)
