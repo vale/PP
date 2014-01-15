@@ -1,4 +1,5 @@
 \input{header}
+%\includeonly{vorwort,versuchsdurchfuehrung,ergebnisse}
 \begin{document}
 
 \title{Messung der temperaturabhängigen Ausdehnung mit Hilfe eines Michelson-Interferometers}
@@ -10,14 +11,14 @@
 \listoffigures
 \listoftables
 \newpage
-\input{vorwort}
-\input{theorie}
-\input{durchfuehrung}
-\input{ergebnisse}
+\include{vorwort}
+\include{theorie}
+\include{versuchsdurchfuehrung}
+\include{ergebnisse}
 \bibliographystyle{natdin}
-\input{bibliography}
+\include{bibliography}
 \newpage
 %\bibliographystyle{natdin}
 %\bibliography{literature}
-\input{anhang}
+\include{anhang}
 \end{document}

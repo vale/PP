@@ -59,19 +59,18 @@ Die Aufstellung der Lagrange-Gleichung erfolgt nun in mehreren Schritten. Zuerst
 \frac{\partial (E_{kin} - V)}{\partial\dot{\varphi_1}} = (m_1 + m_2) * l_1^2 *\dot{\varphi_1} + m_2 * (l_1 * l_2 * \dot{\varphi_2} * \cos (\varphi_1 - \varphi_2)) 
 \end{equation}
 \begin{equation}
-\frac{\partial (E_{kin} - V}{\partial \varphi_1}} = -m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - (m_1 + m_2) g l_1 \sin \varphi_1
+\frac{\partial (E_{kin} - V}{\partial \varphi_1} = -m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - (m_1 + m_2) g l_1 \sin \varphi_1
 \end{equation}
 und nun für $ \varphi_2 $ :
 \begin{equation}
-\frac{\partial (E_{kin} - V}{\partial }dot{\varphi_2}}} = m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - m_2 g l_2 \sin \varphi_2
+\frac{\partial (E_{kin} - V}{\partial }dot{\varphi_2} = m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - m_2 g l_2 \sin \varphi_2
 \end{equation}
 \begin{equation}
-
-\frac{\partial (E_{kin} - V}{\partial \varphi_2}} = m_2 l_2^2 \dot{\varphi_1} \dot{\varphi_2} + m_2 l_1 l_2 \dot{\varphi_1} \cos (\varphi_1 - \varphi_2)
+\frac{\partial (E_{kin} - V}{\partial \varphi_2} = m_2 l_2^2 \dot{\varphi_1} \dot{\varphi_2} + m_2 l_1 l_2 \dot{\varphi_1} \cos (\varphi_1 - \varphi_2)
 \end{equation}
 Setzt man diese Terme in (3) ein, erhält man die Bewegungsgleichungen des Systems:
 \begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = (m_1 + m_2) _1^2^\ddot{\varphi_1} + m_2 l_1 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_1 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) + (m_1 + m_2) g l_1 \ sin \varphi_1 = 0
+\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = (m_1 + m_2) _1^2\ddot{\varphi_1} + m_2 l_1 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_1 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) + (m_1 + m_2) g l_1 \ sin \varphi_1 = 0
 \end{equation}
 \begin{equation}
 \frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = m_2 l_2^2 \ddot{\varphi_2} + m_2 l_1 l_2 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g l_2 \sin \phi_2 = 0
@@ -100,8 +99,8 @@ und
 \ddot{\phi_1} = \frac{-m_2 l_2 \dot{\phi_2}^{2} \sin{\Delta \phi} \cos{\Delta \phi} - g M \sin{\phi_1} \cos{\Delta \phi} - M l_1 \dot{\phi_1}^{2} \sin{\Delta \phi} + g M \sin{\phi_2}}{m_2 l_2 \cos^{2}{\Delta \phi} - M l_2}
 \end{equation}
 
-Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\ref{}). Es wurde also ein Vektor $$ \vec{\phi} = (
-\phi_1, \dot{\phi_1}, \phi_2 , \dot{\phi_2})^{T} $$ 
+Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\cite{eul}). Es wurde also ein Vektor $ \vec{\phi} = (
+\phi_1, \dot{\phi_1}, \phi_2 , \dot{\phi_2})^{T} $
  definiert, für den sich ergibt: 
 \begin{equation}
 \dot{\vec{\phi}} = (\dot{\phi_1}, \ddot{\phi_1}, \dot{\phi_2}, \ddot{\phi_2})^{T}
@@ -139,12 +138,12 @@ Der Phasenraum eines Systems ist der Raum, dessen Koordinaten die Zustandsgröß
 Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.
 
 \begin{figure}
-\includegraphics[width=1.0\textwidth]{phasenraum1.png}
-\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe Demtröder \textbf{HIER REFERENZ ZUM LITERATURVERZEICHNIS EINFÜGEN}}
+\includegraphics[width=1.0\textwidth]{images/phasenraum1.png}
+\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe \cite{roeder}}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1.0\textwidth]{phasenraum2.png}
+\includegraphics[width=1.0\textwidth]{images/phasenraum2.png}
 \caption{Phasenraumkurven eines ungedämpften Fadenpendels. Der Punkt A ist Attraktor für alle Winkel $|\phi|<\pi$. Die rote Kurve stellt eine 'Grenzkurve' zwischen stabilen und instabilen Lösungen dar. Die Punkte B ($|\phi|=180\deg, \dot{\phi}=0$) sind instabile Fixpunkte, eine minimale Änderung des Winkels wird eine stabile Pendelbewegung erzeugen, eine minimale Änderung der Winkelgeschwindigkeit wird eine Rotationsbewegung erzeugen, bei der der Winkel unbegrenzt ansteigt.}
-Herleitung siehe Demtröder \textbf{HIER REFERENZ ZUM LITERATURVERZEICHNIS EINFÜGEN}
+Herleitung siehe \cite{roeder}
 \end{figure}

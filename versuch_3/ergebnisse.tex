@@ -24,7 +24,7 @@ Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedin
 
 
 
-Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-7}, \ref{pendel-9}), so zeigt sich, dass der Verlauf der Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
+Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-10}, \ref{pendel-9}), so zeigt sich, dass der Verlauf der Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
 Weiter divergiert auch der Verlauf von \ref{pendel-6} und \ref{pendel-9} bald, wie in den Abbildung gut zu erkennen ist. 
 Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalten, sodass das Doppelpendel als ein chaotisches System bezeichnet werden kann. 
 
@@ -38,12 +38,14 @@ Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalt
 \end{figure}
 
 
-Zunächst fällt auf, dass die Energiewerte deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 60 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund ist ein auftretender Effekt, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Diese treten insbesondere auf, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen werden. Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
+Zunächst fällt auf, dass die Energiewerte deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund ist ein auftretender Effekt, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Diese treten insbesondere auf, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen werden. Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
 Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0,1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
+\footnotesize
 \begin{equation}
 \Delta E = \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2} = \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
-\end{equation}. \\
+\end{equation}
+\normalsize \\
 
 Damit ergeben sich die eingezeichneten Fehlerbalken. 
 
@@ -62,7 +64,7 @@ Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenor
 
 
 \subsubsection{Reibung in den Kugellagern}
-Laut \ref{wiki} liegt $ c_R $ für Kugellager im Bereich von etwa 
+Laut \cite{wiki} liegt $ c_R $ für Kugellager im Bereich von etwa 
 $ 0,5 $ bis $ 1 \cdot 10^{-3} $. 
 Damit ergäbe sich bei einer Gesamtmasse von etwa $ 0,7 \  kg  $ eine abbremsende Kraft von der Größenordnung $ 10^{-3} $ bis $ 10^{-2} N $. 
 
