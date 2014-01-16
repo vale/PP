@@ -15,7 +15,7 @@ mit der Lagrangefunktion  $ L=E_{kin} - V $ . Hierbei sind $E_{kin}$ die kinetis
 \end{equation}
 Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden.
 \subsection{Das Doppelpendel}
-Im Ursprungspunkt des Koordinatensystems wird ein Pendel, bestehend aus einem Stab mit fester Länge $l_1$ und einer Masse m an dessem Ende befestigt. Das Pendel soll sich nur in der x-z Ebene bewegen können. Am Massenpunkt befindet sich nun ein zweites Pendel mit Stab der Länge $l_2$, welches sich ebenso nur in der x-z-Ebene bewegenn soll. \\
+Im Ursprungspunkt des Koordinatensystems wird ein Pendel, bestehend aus einem Stab mit fester Länge $l_1$ und einer Masse m an dessem Ende befestigt. Das Pendel soll sich nur in der x-z Ebene bewegen können. Am Massenpunkt befindet sich nun ein zweites Pendel mit Stab der Länge $l_2$, welches sich ebenso nur in der x-z-Ebene bewegen soll. \\Es soll nun stets der Index 1 für Größen des oberen Pendels (inklusive der oberen Masse) und der Index 2 für alle Größen des unteren Pendels verwendet werden. \\
 Der erste Schritt besteht nun darin, eine Beschreibung der Ortsvektoren der beiden Massenpunkte zu finden, die alle Zwangsbedingungen berücksichtigt. 
 Derartige verallgemeinerte Koordinaten sind offenbar gegeben durch $ \varphi_1 $ und $ \varphi_2 $, welche die relativen Winkel der Stäbe $l_1 $ und $l_2$ zur Senkrechten (z-Achse) darstellen. Daraus folgt für $ \vv{x_1} $
 \begin{equation}
@@ -25,11 +25,11 @@ Derartige verallgemeinerte Koordinaten sind offenbar gegeben durch $ \varphi_1 $
 \end{equation}
 Für den Vektor $\vv{x_2}$ folgt aus einfachen trigonometrischen Überlegungen:
 \begin{equation}
-\vv{x_2}= \vv{x_1} + l_2 * \begin{pmatrix}
+\vv{x_2}= \vv{x_1} + l_2 \cdot \begin{pmatrix}
 \sin \varphi_2 \\ -\cos \varphi_2
 \end{pmatrix}
 = \begin{pmatrix}
-l_1 * \sin \varphi_1 + l_2 * \sin \varphi_2 \\ - l_1 * \cos \varphi_1 - l_2 * \cos \varphi_2
+l_1 \cdot \sin \varphi_1 + l_2 \cdot \sin \varphi_2 \\ - l_1 * \cos \varphi_1 - l_2 \cdot \cos \varphi_2
 \end{pmatrix}
 \end{equation}
 Zur Bestimmung von $E_{kin,i} = \frac{m_i}{2} \cdot  \dot{\vv{x_i}}^2$  müssen noch die Ableitungen der Ortsvektoren gebildet werden:
@@ -51,9 +51,9 @@ E_{kin} = E_{kin,1} + E_{kin,2} = \frac{m_1}{2} \cdot  l_1^2 \cdot  \dot{\varphi
 \end{equation}
 Das auf das Doppelpendel wirkende Potential $ V_i = m_i \cdot g \cdot h_i $ ist:
 \begin{equation}
-V = V_1 + V_2 = m_1 \cdot g * (-l_1 \cdot \cos \varphi_1) + m_2 \cdot g \cdot (-l_1 \cdot \cos \varphi_1 - l_2 \cdot \cos \varphi_2)
+V = V_1 + V_2 = m_1 \cdot g \cdot (-l_1 \cdot \cos \varphi_1) + m_2 \cdot g \cdot (-l_1 \cdot \cos \varphi_1 - l_2 \cdot \cos \varphi_2)
 \end{equation}
-Die Aufstellung der Lagrange-Gleichung erfolgt nun in mehreren Schritten. Zuerst für $ \varphi_1$ :
+Das Aufstellen der Lagrange-Gleichung erfolgt nun in mehreren Schritten.\\ Zuerst für $ \varphi_1$ :
 \begin{equation}
 \frac{\partial (E_{kin} - V)}{\partial\dot{\varphi_1}} = (m_1 + m_2) \cdot l_1^2 \cdot \dot{\varphi_1} + m_2 \cdot (l_1 \cdot l_2 \cdot \dot{\varphi_2} \cdot \cos (\varphi_1 - \varphi_2)) 
 \end{equation}

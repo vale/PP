@@ -1,3 +1,8 @@
+from math import* # Einbinden von mathematischen Funktionen
+
+def quadr(a): # Quadratfunktion
+        return(a*a)
+
 def simu(t0, x1, y1, x2, y2, phi_1, phi_2, intervall, laenge_sim, anz_schritte_pro_ausgabe): 
 	m1 = 0.3 # obere Masse
 	m2 = 0.3 # untere Masse

@@ -1,7 +1,7 @@
 \section{Darstellung der Ergebnisse und Auswertung}
 
 \subsection{Untersuchung des chaotischen Verhaltens}
-Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten, wobei das Pendel dann in Ruhe und derart, dass sich die untere Achse des Pendels ($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5 \ mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
+Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten, wobei das Pendel dann in Ruhe und derart, dass sich die untere Achse des Pendels ($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5  mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
 
 
 \begin{figure}
@@ -29,7 +29,13 @@ Weiter divergiert auch der Verlauf von \ref{pendel-6} und \ref{pendel-9} bald, w
 Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalten, sodass das Doppelpendel als ein chaotisches System bezeichnet werden kann. 
 
 \subsection{Betrachtung der Reibung}
+
+\subsubsection{Allgemeines zur Auswertung}
+Für die Betrachtung der Reibung wurde ein Video aufgenommen und mittels eines Tracking-Programms nachträglich ausgewertet. 
+Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Ursprungs, muss dieser noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände zu den Messpunkten $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
+
 \subsubsection{Betrachtung der Messergebnisse}
+
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/E_ueber_t.png}
@@ -37,10 +43,18 @@ Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalt
 \label{E_ueber_t}
 \end{figure}
 
+Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund tritt der Effekt auf, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Dies ist insbesondere dann sichtbar, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen wird. Die errechnete Geschwindigkeit ist dann kleiner als die tatsächliche (Abb. \ref{grafik1}). 
 
-Zunächst fällt auf, dass die Energiewerte deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund ist ein auftretender Effekt, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Diese treten insbesondere auf, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen werden. Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
+\begin{figure}
+        \includegraphics[width=.7\textwidth]{images/grafik1.png}
+\caption{Schematische Darstellung der fehlerhaften Auswertung}
+\label{grafik1}
+\end{figure}
+
+
+Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
-Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0,1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
+Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0.1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
 \footnotesize
 \begin{equation}
 \Delta E = \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2} = \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
@@ -58,15 +72,15 @@ Damit ergeben sich die eingezeichneten Fehlerbalken.
 
 
 \subsubsection{Luftreibung}
-Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe \ref{v_ueber_t}, eine der verwendeten Akrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} $ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} $ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich die Kraft bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \ N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1,5 \cdot 10^{-3} m^2 $). 
+Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe \ref{v_ueber_t}, eine der verwendeten Akrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} $ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} $ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich die Kraft bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \ N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
 
-Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenordung von $ 5.4 \cdot 10^{-3} \ N $. Mit einer Gesamtmasse von 0.7 kg inklusive der Akrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s} $. Bei einer Dauer der Messung von 30 s ergibt sich hiermit also lediglich eine Geschwindigkeitsänderung von $ 0.03 \frac{m}{s} $, also von etwa $ 10^{-2} \frac{m}{s} $, was nicht wesentlich beiträgt. 
+Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenordung von $ 5.4 \cdot 10^{-3}  N $. Mit einer Gesamtmasse von $0.7 kg$ inklusive der Akrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s} $. Bei einer Dauer der Messung von 30 s ergibt sich hiermit also lediglich eine Geschwindigkeitsänderung von $ 0.03 \frac{m}{s} $, also von etwa $ 10^{-2} \frac{m}{s} $, was nicht wesentlich beiträgt. 
 
 
 \subsubsection{Reibung in den Kugellagern}
 Laut \cite{wiki} liegt $ c_R $ für Kugellager im Bereich von etwa 
-$ 0,5 $ bis $ 1 \cdot 10^{-3} $. 
-Damit ergäbe sich bei einer Gesamtmasse von etwa $ 0,7 \  kg  $ eine abbremsende Kraft von der Größenordnung $ 10^{-3} $ bis $ 10^{-2} N $. 
+$ 0.5 $ bis $ 1 \cdot 10^{-3} $. 
+Damit ergäbe sich bei einer Gesamtmasse von etwa $ 0.7 \  kg  $ eine abbremsende Kraft von der Größenordnung $ 10^{-3} $ bis $ 10^{-2} N $. 
 
 \subsubsection{Energieübertrag auf die Aufhängung}
 Da sowohl die Luftreibung als auch der Rollwiderstand vernachlässigbar klein sind, dürfte dieser Effekt wesentlich verantwortlich für die Abbremsung des Pendels sein. 
@@ -74,5 +88,55 @@ Es bietet sich an, in grober Näherung eine lineare Abhängigkeit des Energiever
 
 Nimmt man einen exponentiellen Abfall der Energie $ E(t) = a \cdot e^{b \cdot t} $ an, so ergibt sich mittels eines Fits in den Verlauf von 
 
-$$ a = 0.813 \  J $$ und $$ b = -0.024 \  s^{-1} $$ mit Fehlern von $1,26 \% $ und $ 4,89 \% $. \\
+\begin{equation}
+ a = 0.813   J
+\nonumber
+\end{equation}  und  
+\begin{equation}
+b = -0.024  s^{-1}
+\nonumber
+\end{equation} 
+mit Fehlern von $1.26 \% $ und $ 4.89 \% $. \\
 Allerdings kann aus den hier dargestellten Daten nicht verifiziert werden, ob der Verlauf tatsächlich einem exponentiellen Abfall folgt, da auch etwa ein Abfall mit dem inversen Quadrat der Zeit denkbar wäre. 
+
+\subsection{Simulation des Doppelpendels}
+Die gemessenen Daten sollen nun mit einer Simulation, die entsprechend der Beschreibung in der Theorie durchgeführt wurde, verglichen werden. Da das Pendel händisch gestartet wurde, ist davon auszugehen, dass sich die ersten Werte eher schlecht mit der Simulation nachvollziehen lassen. 
+
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/x2_ueber_t_beginn.png}
+\caption{Auftragung der $x_2$-Koordiante bei einer Simulation mit Start zu etwa dem Zeitpunkt des Loslassens}
+\label{x2_ueber_t_alt}
+\end{figure}
+
+
+Tatsächlich ist dies der Fall, wie in Abb. \ref{x2_ueber_t_alt} zu sehen ist. Hier ist die $x_2$-Koordinate, also die x-Koordinate des unteren Pendels über der Zeit aufgetragen. Man erkennt, dass sich Simulation und Messung schon zu Beginn sehr deutlich unterscheiden. Zwar verlaufen ab etwa $ 0.8 s $ Simulation und Messung ähnlich, allerdings dürfte dies auf einen Zufall beziehungsweise darauf zurückzuführen sein, dass die Auslenkung des Pendels hier relativ klein ist und das Pendel ein leicht peroidisches Verhalten aufweist. 
+Aus diesem Grund wurde die Simulation erst bei $ 0.8 s $ begonnen. Dieser spezielle Wert wurde gewählt, weil hier wie in \ref{x2_ueber_t_alt} die Änderungsrate von $x_2$ in etwa 0 ist, und so Fehler bei der Bestimmung der Geschwindigkeit zu minimieren. 
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/x1_ueber_t.png}
+\caption{Auftragung der $x_1$-Koordiante bei einer Simulation mit späterem Start}
+\label{x1_ueber_t}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/y1_ueber_t.png}
+\caption{Auftragung der $y_1$-Koordiante bei einer Simulation mit späterem Start}
+\label{y1_ueber_t}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/x2_ueber_t.png}
+\caption{Auftragung der $x_2$-Koordiante bei einer Simulation mit späterem Start}
+\label{x2_ueber_t}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/y2_ueber_t.png}
+\caption{Auftragung der $y_2$-Koordiante bei einer Simulation mit späterem Start}
+\label{y2_ueber_t}
+\end{figure}
+
+Dabei wurden die in Abb. \ref{x1_ueber_t}, \ref{y1_ueber_t}, \ref{x2_ueber_t} und Abb. \ref{y2_ueber_t} dargestellten Ergebnisse erzielt, wobei der rote Graph die Simulation darstellt und der grüne die tatsächlich gemessenen Werte. \\
+Es ist deutlich sichtbar, dass die Verläufe bis etwa $ t = 2 s $ recht gut mit den Messwerten übereinstimmen, danach ergeben sich vor allem bei den $x_2- $ und $ y_1$-Koordinaten deutliche Unterschiede, wohingegen bei den anderen beiden Koordinaten noch länger eine deutliche Ähnlichkeit bestehen bleibt. Die Ähnlichkeit ist zum Teil auch darauf zurückzuführen, dass das Pendel bei dieser Messung kein deutlich ausgeprägtes chaotisches Verhalten besitzt, sondern eher periodische Eigenschaften aufweist. \\
+Trotzdem eignet sich die Simulation scheinbar gut, um die Bewegung des Pendels nachzuvollziehen. 
