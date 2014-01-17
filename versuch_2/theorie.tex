@@ -101,7 +101,7 @@ Verändert man die Länge von einem der beiden Wege, so ändert sich auch die Ph
 Lichtstrahlen und nach (\ref{formel:intensitaet}) auch die Intensität der interferierenden Strahlen und ergibt eine verschobene 
 Cosinus- oder gleichbedeutend Sinusfunktion abhängig von $ k $ mal der Laufwegsdifferenz. Durch Beobachtung der Verschiebung der Interferenzen kann also auf die Geschwindigkeit 
 geschlossen werden, mit der sich die Länge des einen Weges ändert: 
-Hat sich das Interferenzmuster genau um $ 2 \pi $ verschoben, so hat sich nach (\ref{formel:intensitaet}) $ k \cdot \Delta r $ ( $ \Delta r := r_2 - r_1 $ ) um $ 2 \pi $ vergrößert oder verkleinert.
+Hat sich das Interferenzmuster genau um $ 2 \pi $ verschoben, so hat sich nach (\ref{formel:intensitaet}) $ k \cdot \Delta r $ ($ \Delta r := r_2 - r_1 $) um $ 2 \pi $ vergrößert oder verkleinert.
 Ein $ \Delta N $ von 1 entspricht deswegen genau einer Längenänderung um $ \frac{\lambda}{2} $, wobei $ \Delta N $ die Anzahl der während der Längenänderung $ \Delta l $ durchlaufenen Intensitätsmaxima ist. Also:
 
 
@@ -155,10 +155,10 @@ Wird ein Material erhitzt, so dehnt es sich in den meisten Fällen aus. Dies kan
 \label{formel:ausdehnung}
 \end{equation}
 
-wobei $ l_{0} $ die eindimensionale Ausdehnung bei der Temperatur $ T_{0} $ ist. $ \alpha $ heißt der Längenausdehnungskoeffizient und ist insbesondere vom Material abhängig. 
+wobei $ l_{0} $ die eindimensionale Ausdehnung bei der Temperatur $ T_{0} $ und $ \Delta L$ die Änderung der Länge bei der neuen Temperatur T ist. $ \alpha $ heißt der Längenausdehnungskoeffizient und ist insbesondere vom Material abhängig. 
 
 \subsection{Überlegungen zu Wärmeleitung und Konvektion}
-Für den Wärmestrom $ \vec{j} $ innerhalb eines Materials gilt: 
+Für den Wärmestrom $ \vec{j} \equiv \vec{j}(\vec{x}, t) $ innerhalb eines Materials gilt: 
 
 \begin{equation}
 \vec{j} = - \kappa \cdot \nabla T, 
@@ -171,22 +171,22 @@ Weiter ergibt sich über
 \begin{equation}
 \int_{t}^{t+\Delta t} dt' \int_{\partial V} -\vec{j} d \vec{f} = \int_{t}^{t + \Delta t} dt' \int_{V} -\nabla \vec{j} dV = Q = m \cdot c \cdot \Delta T = \int_{V} \rho dV \cdot c \cdot \Delta T
 \end{equation}
-mit $c$ als massebezogene Wärmekapazität, $m$ als Masse, $\rho$ als Dichte. 
+mit $c$ als massebezogene Wärmekapazität, $m$ als Masse, $\rho$ als Dichte, $ d \vec{f} $ als Flächenelement und $ dV $ als Volumenelement. 
 
-Da $ \vec{j} $ als eine stetige Funktion angenommen werden kann, folgt aus dem Mittelwertsatz der Integralrechnung, dass ein $ \Theta \in [t; t + \Delta t] $ existiert mit:
+Da $ \int_{\partial V} \vec{j} dV $ als eine stetige Funktion angenommen werden kann, folgt aus dem Mittelwertsatz der Integralrechnung, dass ein $ \Theta \in [t; t + \Delta t] $ existiert mit:
 
 \begin{equation}
-\int_{t}^{t + \Delta t} dt' \int_{V} -\nabla \vec{j} dV = \Delta t \cdot \int_{V} -\nabla \vec{j(\Theta)} dV
+\int_{t}^{t + \Delta t} dt' \int_{V} -\nabla \vec{j} dV = \Delta t \cdot \int_{V} -\nabla \vec{j}(\vec{x}, \Theta) dV
 \end{equation}. 
 
-Betrachtet man nun $ \Delta t \to 0 $ mit $\Delta t \to \partial t $ und $\Delta T \to \partial T $, so ergibt sich:
+Betrachtet man nun $ \Delta t \to \partial t \to 0 $ mit $\Delta T \to \partial T $, so ergibt sich:
 \begin{equation}
-\partial t \cdot \int_{V} -\nabla \vec{j(\Theta)} dV = \int_{V} \rho dV \cdot c \cdot \partial T
-\end{equation}. 
+\partial t \cdot \int_{V} -\nabla \vec{j}(\vec{x}, \Theta) dV = \int_{V} \rho dV \cdot c \cdot \partial T
+\end{equation}.
  
 Für den Grenzübergang gilt dann $\Theta \to t$ und entsprechend in differenzieller Form unter Berücksichtigung von \ref{form:j}: 
 \begin{equation}
-\rho \cdot c \cdot \partial T = -\nabla \vec{j(t)} \partial t = \kappa \cdot \triangle \vec{j(t)} \partial t
+\rho \cdot c \cdot \partial T = -\nabla \vec{j}(\vec{x}, t) \partial t = \kappa \cdot \triangle T \cdot \partial t
 \end{equation}
 
 
@@ -202,9 +202,9 @@ Ein weiterer Effekt bei der Übertragung von Wärme ist die Konvektion. Diese be
 \begin{equation}
 \frac{dQ}{dt} \sim \Delta T,
 \end{equation}
-wobei $\Delta T$ die Differenz zwischen der Oberflächentemperatur des Gegenstandes und der Temperatur der Flüssigkeit/ des Gases ist. 
-Nimmt man an, dass der Wärmeleitungskoeffizient innerhalb des Gegenstandes relativ hoch ist, was im Falle von Metall durchaus gerechtfertigt ist, so kann dessen Temperatur als konstant innerhalb des Gegenstandes angenommen werden. 
-Im hier durchgeführten Experiment soll die Erwärmung eines Metallstabes von etwa $ -130 ^{\circ} C $ auf Raumtemperatur untersucht werden. Somit ergibt sich: 
+wobei $\Delta T$ die Differenz zwischen der Oberflächentemperatur des Gegenstandes und der Temperatur der Flüssigkeit/ des Gases und Q die gesamte übertragene Wärme ist. 
+Nimmt man an, dass der Wärmeleitungskoeffizient innerhalb des Gegenstandes relativ hoch ist, was im Falle von Metall durchaus gerechtfertigt ist, so kann dessen Temperatur $ T_M $ als konstant innerhalb des Gegenstandes angenommen werden. 
+Im hier durchgeführten Experiment soll die Erwärmung eines Metallstabes von etwa $ -130 ^{\circ} C $ auf Raumtemperatur $T_R$ untersucht werden. Somit ergibt sich: 
 
 \begin{equation}
 \frac{dQ}{dt} \sim  \frac{dT_M}{dt} \sim (T_{M} - T_{R}). 
