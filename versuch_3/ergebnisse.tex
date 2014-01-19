@@ -55,12 +55,10 @@ Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich stre
 Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
 Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0.1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
-\footnotesize
-\begin{equation}
-\Delta E = \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2} = \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
-\end{equation}
-\normalsize \\
-
+\begin{align}
+\Delta E &= \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} \nonumber\\
+&= \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2} = \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
+\end{align}
 Damit ergeben sich die eingezeichneten Fehlerbalken. 
 
 
