@@ -24,7 +24,7 @@ Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedin
 
 
 
-Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-10}, \ref{pendel-9}), so zeigt sich, dass der Verlauf der Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
+Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-10}, \ref{pendel-9} (Belichtungszeit jeweils $3,2s$)), so zeigt sich, dass der Verlauf der grünen Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
 Weiter divergiert auch der Verlauf von \ref{pendel-6} und \ref{pendel-9} bald, wie in den Abbildung gut zu erkennen ist. 
 Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalten, sodass das Doppelpendel als ein chaotisches System bezeichnet werden kann. 
 
@@ -52,7 +52,7 @@ Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich stre
 \end{figure}
 
 
-Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , der sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
+Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
 Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0.1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
 \footnotesize
@@ -72,9 +72,9 @@ Damit ergeben sich die eingezeichneten Fehlerbalken.
 
 
 \subsubsection{Luftreibung}
-Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe \ref{v_ueber_t}, eine der verwendeten Akrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} $ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} $ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich die Kraft bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \ N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
+Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe Abb. \ref{v_ueber_t}, eine der verwendeten Akrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} $ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} $ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich die Kraft bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \ N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
 
-Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenordung von $ 5.4 \cdot 10^{-3}  N $. Mit einer Gesamtmasse von $0.7 kg$ inklusive der Akrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s} $. Bei einer Dauer der Messung von 30 s ergibt sich hiermit also lediglich eine Geschwindigkeitsänderung von $ 0.03 \frac{m}{s} $, also von etwa $ 10^{-2} \frac{m}{s} $, was nicht wesentlich beiträgt. 
+Für die drei verwendeten Platten ergibt sich somit eine Kraft in der Größenordung von $ 5.4 \cdot 10^{-3}  N $. Mit einer Gesamtmasse von $0.7 kg$ inklusive der Akrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s} $. Bei einer Dauer der Messung von 30 s ergibt sich hiermit also lediglich eine Geschwindigkeitsänderung von $ 0.03 \frac{m}{s} $, also von etwa $ 10^{-2} \frac{m}{s} $, was nicht wesentlich zum Energieverlust beiträgt. 
 
 
 \subsubsection{Reibung in den Kugellagern}
@@ -111,7 +111,7 @@ Die gemessenen Daten sollen nun mit einer Simulation, die entsprechend der Besch
 
 
 Tatsächlich ist dies der Fall, wie in Abb. \ref{x2_ueber_t_alt} zu sehen ist. Hier ist die $x_2$-Koordinate, also die x-Koordinate des unteren Pendels über der Zeit aufgetragen. Man erkennt, dass sich Simulation und Messung schon zu Beginn sehr deutlich unterscheiden. Zwar verlaufen ab etwa $ 0.8 s $ Simulation und Messung ähnlich, allerdings dürfte dies auf einen Zufall beziehungsweise darauf zurückzuführen sein, dass die Auslenkung des Pendels hier relativ klein ist und das Pendel ein leicht peroidisches Verhalten aufweist. 
-Aus diesem Grund wurde die Simulation erst bei $ 0.8 s $ begonnen. Dieser spezielle Wert wurde gewählt, weil hier wie in \ref{x2_ueber_t_alt} die Änderungsrate von $x_2$ in etwa 0 ist, und so Fehler bei der Bestimmung der Geschwindigkeit zu minimieren. 
+Aus diesem Grund wurde die Simulation erst bei $ 0.8 s $ begonnen. Dieser spezielle Wert wurde gewählt, weil hier wie in \aref{x2_ueber_t_alt} die Änderungsrate von $x_2$ in etwa 0 ist, und so Fehler bei der Bestimmung der Geschwindigkeit zu minimieren. 
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/x1_ueber_t.png}
@@ -154,7 +154,7 @@ Trotzdem eignet sich die Simulation scheinbar gut, um die Bewegung des Pendels n
 \end{figure}
 
 Weiter sind die sich aus den gemessenen Daten ergebenden Phasenraumdiagramme in Abb. \ref{phi1} und Abb. \ref{phi2} dargestellt. Es ergibt sich dabei ein Verlauf, der plausibel erscheint, da sie sehr dem in Abb. \ref{pic:pendel_einfach} ähnelt, welches das Phasenraumdiagramm eines einfachen Pendels zeigt. Der Grund dafür liegt darin, dass auch das Doppelpendel in dem hier dargestellten Energiebereich leldiglich \enquote{hin und her schwankt}, sodass eine in Näherung ellipsenförmige, auf jeden Fall aber \enquote{geschlossene} Kurve entsteht. \\
-Trotzdem gibt es Abweichungen zum einfachen Pendel. Zunächst schneiden sich hier die Linien im Phasenraumdiagramm, was allerdings darauf zurückzuführen ist, dass die Auftragungen nur eine Projektion des gesamten, vierdimensionalen Phasenraums darstellen. Weiter erscheint das Diagramm vor allem bei dem oberen Pendel (\ref{phi1}) seitlich \enquote{unscharf}, was durch die Beeinflussung durch das untere Pendel zu erklären ist. 
+Trotzdem gibt es Abweichungen zum einfachen Pendel. Zunächst schneiden sich hier die Linien im Phasenraumdiagramm, was allerdings darauf zurückzuführen ist, dass die Auftragungen nur eine Projektion des gesamten, vierdimensionalen Phasenraums darstellen. Weiter erscheint das Diagramm vor allem bei dem oberen Pendel (\aref{phi1}) seitlich \enquote{unscharf}, was durch die Beeinflussung durch das untere Pendel zu erklären ist. 
 
 \section{Fazit}
-Es zeigt sich, dass das Doppelpendel, wie zu erwarten, chaotisches Verhalten aufweist. Darüber hinaus ist es möglich, die Bewegung des Doppelpendels in über mehrere \enquote{Schwingungen} nachzuvollziehen, wohingegen eine analytische Lösung der in der Theorie aufgestellten Bewegungsgleichung unmöglich ist. 
+Es zeigt sich, dass das Doppelpendel, wie zu erwarten, chaotisches Verhalten aufweist. Darüber hinaus ist es möglich, die Bewegung des Doppelpendels über mehrere \enquote{Schwingungen} nachzuvollziehen, wohingegen eine analytische Lösung der in der Theorie aufgestellten Bewegungsgleichung unmöglich ist. 
