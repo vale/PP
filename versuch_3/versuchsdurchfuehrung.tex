@@ -13,15 +13,20 @@ Die Gewindestange, das Kugellager sowie die sechs Schrauben und Muttern der ober
 \subsection{Messung der Pendelbewegung}
 Um den Aufenthaltsort der Massen in der Pendelebene mit einem geringen zeitlichen Intervall aufzunehmen wurde eine Kamera eingesetzt. Um nach dem Versuch die X, Y Daten in einer Tabelle zu erhalten, wurde die Videotracking Software \enquote{Tracker} von Open Source Physics \footnote{http://www.cabrillo.edu/~dbrown/tracker/} eingesetzt.
 Bei Testaufnahmen stellte sich heraus, dass das Programm dazu neigte, sofern kein optimaler Kontrast des Objekts zum Hintergrund herrschte, in einigen Frames Punkte im Hintergrund statt dem Objekt zu fokussieren. Als eine Weitere Hürde stellte sich die Bewegungsunschärfe dar, besonders in Phasen mit hoher Geschwindigkeit verschwamm der Trackingpunkt mehr zu einer Linie, die die Software dann nicht mehr zuordnen kann. Um einen hohen Kontrast zum Hintergrund zu erhalten, wurden die Massen mit LED markiert und der Versuch wurde in einem sonst dunklen Raum durchgeführt. Um die Bewegungsunschärfe zu minimieren wurde eine Kamera mit möglichst geringer Minimalverschlusszeit bei gleichzeitig guter Lichtausbeute gesucht. Diese Anforderungen konnten von einer Spiegelreflexkamera mit Videomodus erreicht werden. Auf den Einzelbildern des Videos erschienen die Marker des Pendels bei einer Verschlusszeit von $\frac{1}{2000} s$ zu allen Zeiten als Punkte.
-\begin{comment}
 \ref{foto-kamera}
 \begin{figure}
-\includegraphics[width=.8\textwidth]{images/kamera}
+\centering
+\includegraphics[width=.4\textwidth]{images/kamera}
 \caption{Versuchsaufbau mit Kamera}
 \label{photo-kamera}
 \end{figure}
-\end{comment}
- Die Punkte ließen sich im Allgemeinen gut durch die Video Tracking Software analysieren, abgesehen von Spezialfällen in denen sich eine der Massen über der Tischkante und damit außerhalb des für die Kamera sichtbaren Bereichs befand.
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{images/tischkante.jpg}
+\caption{Tischkante verdeckt LED}
+\label{tischkante}
+\end{figure}
+ Die Punkte ließen sich im Allgemeinen gut durch die Video Tracking Software analysieren, abgesehen von Spezialfällen in denen sich eine der Massen über der Tischkante und damit außerhalb des für die Kamera sichtbaren Bereichs befand.(siehe \aref{tischkante})
 Als Nachteil der Spiegelreflexkamera kann gesehen werden, dass eine Aufnahme von 30 Bilder pro Sekunde die maximale Framerate der Kamera darstellt.
 \begin{comment}
 \begin{figure}

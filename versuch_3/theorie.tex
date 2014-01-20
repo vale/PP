@@ -1,5 +1,5 @@
 \section{Theorie}
-\subsection{Newtonsche und Lagrang'sche Mechanik}
+\subsection{Newtonsche und Lagrange'sche Mechanik}
 In folgenden soll die Herleitung der Bewegungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
 Die zu lösende Bewegungsgleichung eines Massepunkts ergibt sich nach Newton bekanntlich zu \begin{equation}
 \vv{\ddot{x}}=\frac{1}{m}\sum \vv{F},
@@ -68,48 +68,46 @@ Das Aufstellen der Lagrange-Gleichung erfolgt nun in mehreren Schritten.\\ Zuers
 \frac{\partial (E_{kin} - V)}{\partial \varphi_1} = -m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - (m_1 + m_2) g l_1 \sin \varphi_1
 \end{equation}
 und nun für $ \varphi_2 $ :
+
 \begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial }\cdot{\varphi_2} = m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - m_2 g l_2 \sin \varphi_2
+\frac{\partial (E_{kin} - V)}{\partial \dot{\varphi_2}} = m_2 l_2^2 \dot{\varphi_2} + m_2 l_1 l_2 \dot{\varphi_1} \cos (\varphi_1 - \varphi_2)
 \end{equation}
+
 \begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial \varphi_2} = m_2 l_2^2 \dot{\varphi_1} \dot{\varphi_2} + m_2 l_1 l_2 \dot{\varphi_1} \cos (\varphi_1 - \varphi_2)
+\frac{\partial (E_{kin} - V)}{\partial \varphi_2} = m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - m_2 g l_2 \sin \varphi_2
 \end{equation}
+
 Setzt man diese Terme in \eqref{lagrangegl} ein, erhält man die Bewegungsgleichungen des Systems:
 \begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = (m_1 + m_2) l_1^2\ddot{\varphi_1} + m_2 l_1 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_1 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) + (m_1 + m_2) g l_1 \ sin \varphi_1 = 0
+\begin{split}
+\frac{d}{dt}\frac{\partial L}{\partial\dot{\varphi_1}}-\frac{\partial L}{\varphi_1} = (m_1 + m_2) l_1^2\ddot{\varphi_1} + m_2 l_1 l_2 ( \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2)+\\ + \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2)) + (m_1 + m_2) g l_1 \sin \varphi_1 = 0
+\end{split}
 \end{equation}
+
 \begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = m_2 l_2^2 \ddot{\varphi_2} + m_2 l_1 l_2 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g l_2 \sin \varphi_2 = 0
+\frac{d}{dt}\frac{\partial L}{\partial\dot{\varphi_2}}-\frac{\partial L}{\varphi_2} = m_2 l_2^2 \ddot{\varphi_2} + m_2 l_1 l_2 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g l_2 \sin \varphi_2 = 0
 \end{equation} 
-Diese können noch vereinfacht werden durch eine Division durch $l_1$ bzw. $l_2$:
-\footnotesize 
+Diese können noch vereinfacht werden durch eine Division durch $l_1$ bzw. $l_2$: 
 \begin{equation}
-(m_1 + m_2) l_1\ddot{\varphi_1} + m_2 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) + (m_1 + m_2) g \ sin \varphi_1 = 0
+\begin{split}
+(m_1 + m_2) l_1\ddot{\varphi_1} + m_2 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) +\\+ (m_1 + m_2) g \ sin \varphi_1 = 0
+\end{split}
+\label{equ:1}
 \end{equation}
-\normalsize
 \begin{equation}
 m_2 l_2 \ddot{\varphi_2} + m_2 l_1 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g \sin \varphi_2 = 0
+\label{equ:2}
 \end{equation}
 
 \subsection{Simulation des Doppelpendels}
-Mithilfe eines Python-Skripts wurden die in der Theorie hergeleiteten Differenzialgleichungen für das Doppelpendel numerisch gelöst. Dafür wurden die Differenzialgleichungen zunächst nach $ \ddot{\phi_1} $ und $\ddot{\phi_2} $ aufgelöst: 
-
-\begin{equation}
-(m_1 + m_2) l_1 \ddot{\varphi_1}  + m_2 l_2 \ddot{\varphi_2} \cos{(\varphi_1 - \varphi_2)} + m_2 l_2 \dot{\varphi_2}^{2} \sin{(\varphi_1 - \varphi_2)} + g (m_1 + m_2) \sin{\varphi_1} = 0
-\end{equation} 
-und
-\begin{equation}
-m_2 l_2 \ddot{\varphi_2} + m_2 l_1 \ddot{\varphi_1} \cos{(\varphi_1 - \varphi_2)} - m_2 l_1 \dot{\varphi_1}^{2} \sin{(\varphi_1 - \varphi_2)} + g m_2 \sin{\varphi_2} = 0
-\end{equation}
-
-Um die Gleichungen mittels eines Standardverfahrens numerisch lösen zu können, muss das Gleichungssystem auf die Form $ \dot{Y} = f(Y) $ gebracht werden. Zunächst werden die obigen Gleichungen nach $ \ddot{\varphi_1} $ und $ \ddot{\varphi_2} $ aufgelöst. Es ergibt sich unter Beachtung der folgenden abkürzenden Notation: 
+Um die Gleichungen mittels eines Standardverfahrens numerisch lösen zu können, muss das Gleichungssystem (\ref{equ:1} und \ref{equ:2}) auf die Form $ \dot{Y} = f(Y) $ gebracht werden. Zunächst werden die obigen Gleichungen nach $ \ddot{\varphi_1} $ und $ \ddot{\varphi_2} $ aufgelöst. Es ergibt sich unter Beachtung der folgenden abkürzenden Notation: 
 $ (m_1 + m_2) =: M; \varphi_1 - \varphi_2 =: \Delta \varphi $
 \begin{equation}
 \ddot{\varphi_1} = \frac{-m_2 l_2 \dot{\varphi_2}^{2} \sin{\Delta \varphi} - g M \sin{\varphi_1} - m_2 l_1 \dot{\varphi_1}^{2} \sin{\Delta \varphi} \cos{\Delta \varphi} + g m_2 \sin{\phi_2}\cos{\Delta  \varphi}}{M l_1 - m_2 l_1 \cos^{2}{\Delta \varphi}}
 \end{equation}
 und
 \begin{equation} 
-\ddot{\varphi_1} = \frac{-m_2 l_2 \dot{\varphi_2}^{2} \sin{\Delta \varphi} \cos{\Delta \varphi} - g M \sin{\varphi_1} \cos{\Delta \varphi} - M l_1 \dot{\varphi_1}^{2} \sin{\Delta \varphi} + g M \sin{\varphi_2}}{m_2 l_2 \cos^{2}{\Delta \varphi} - M l_2}
+\ddot{\varphi_2} = \frac{-m_2 l_2 \dot{\varphi_2}^{2} \sin{\Delta \varphi} \cos{\Delta \varphi} - g M \sin{\varphi_1} \cos{\Delta \varphi} - M l_1 \dot{\varphi_1}^{2} \sin{\Delta \varphi} + g M \sin{\varphi_2}}{m_2 l_2 \cos^{2}{\Delta \varphi} - M l_2}
 \end{equation}
 
 Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\cite{eul}). Es wurde also ein Vektor $\vec{Y} = \vec{\varphi} = (
@@ -128,8 +126,9 @@ Bei dem hier behandelten Doppelpendel treten im Wesentlichen Luftreibung und Rei
 Für die Luftreibungskraft, die auf einen laminar umströmten Gegenstand wirkt, gilt die in guter Näherung gültige Formel
 \begin{equation}
 F_R = v^2 \cdot \frac{\rho}{2} \cdot A_S \cdot c_W,
+\label{luftreibung}
 \end{equation}
-wobei $ F_R $ die Luftreibungskraft, $ v $ die Geschwindigkeit der umströmenden Luft, $ \rho $ deren Dichte, $ A_S $ die Fläche der Projektion des Gegenstands in Stömungsrichtung und $ c_W $ ein von der Form des Gegenstands bestimmter, dimensionsloser Koeffizient ist. 
+wobei $ F_R $ die Luftreibungskraft, $ v $ die Geschwindigkeit der umströmenden Luft, $ \rho $ deren Dichte, $ A_S $ die Fläche der Projektion des Gegenstands in Stömungsrichtung und $ c_W $ ein von der Form des Gegenstands bestimmter, dimensionsloser Koeffizient ist \cite{win}. 
 
 
 \subsubsection{Reibung in den Kugellagern}
@@ -137,7 +136,7 @@ Für die Reibung in den Kugellagern kann das Modell der Rollreibung verwendet we
 \begin{equation}
 F_R = c_R \cdot F_N,
 \end{equation} 
-wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender Parameter ist und $ F_N $ der Betrag der Normalkraft, also die senkrecht zur Rollrichtung wirkende Kraft. 
+wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender Parameter ist und $ F_N $ der Betrag der Normalkraft, also die senkrecht zur Rollrichtung wirkende Kraft \cite{rol}. 
 
 \subsubsection{Energieübertrag auf die Aufhängung}
 
