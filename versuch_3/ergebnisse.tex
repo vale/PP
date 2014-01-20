@@ -3,13 +3,6 @@
 \subsection{Untersuchung des chaotischen Verhaltens}
 Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten. Das Pendel wurde dann in Ruhe so gestartet, dass sich die obere Masse($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5  mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
 
-
-\begin{figure}
-        \includegraphics[width=.9\textwidth]{images/pendel-6_.jpg}
-\caption{1. Verlauf}
-\label{pendel-6}
-\end{figure}
-
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/pendel-10.jpg}
 \caption{2. Verlauf}
@@ -22,8 +15,6 @@ Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedin
 \label{pendel-9}
 \end{figure}
 
-
-
 Vergleicht man drei exemplarisch ausgewählte Aufnahmen (\ref{pendel-6}, \ref{pendel-10}, \ref{pendel-9}) (Belichtungszeit jeweils $3.2s$), so zeigt sich, dass der Verlauf der grünen Leuchtspur des unteren Pendels zumindest der groben Form nach gleich ist bis zu dem mit einem roten Pfeil markierten Punkt. Danach differierten die Wege der unteren Masse deutlich, bis nach etwa einer halben weiteren Schwingung überhaupt kein sichtbarer Zusammenhang mehr zwischen den Leuchtspuren besteht. Während in \ref{pendel-6} und \ref{pendel-9} die Spur von dem markierten Punkt ausgehend einen Bogen nach rechts beschreibt, wird in \ref{pendel-10} die untere Masse abgebremst, sodass sie, wie an der deutlich helleren Färbung der Leuchtspur zu erkennen, fast zum Stehen kommt und danach annähernd senkrecht nach unten weiterführt. Der Grund für die hellere Färbung bei langsameren Geschwindigkeiten und insbesondere Punkten, bei denen sich die Geschwindigkeitsrichtung umkehrt, ist, dass ein Punkt auf der Leuchtspur umso heller ist, je länger sich die an der Masse befestigte Diode im Abstand der halben Breite der Leuchtspur (des \enquote{optischen Radius} der Diode) von diesem Punkt befindet. 
 Weiter divergiert auch der Verlauf von \ref{pendel-6} und \ref{pendel-9} bald, wie in den Abbildung gut zu erkennen ist. 
 Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalten, sodass das Doppelpendel als ein chaotisches System bezeichnet werden kann. 
@@ -32,7 +23,7 @@ Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalt
 
 \subsubsection{Allgemeines zur Auswertung}
 Für die Betrachtung der Reibung wurde ein Video aufgenommen und mittels eines Tracking-Programms nachträglich ausgewertet. 
-Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Ursprungs, muss dieser noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände $d_1, d_2, ... $ zu den Messpunkten $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die stochastische Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
+Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Ursprungs, muss dieser noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände $d_1, d_2, ... $ zu den Messpunkten des oberen Pendels $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die stochastische Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, d.h. der Punkt, an dem die Abstände zu allem Messpunkten des oberen Pendels ungefähr gleich sind, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
 
 \subsubsection{Betrachtung der Messergebnisse}
 
