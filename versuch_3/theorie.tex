@@ -2,7 +2,7 @@
 \subsection{Newtonsche und Lagrange'sche Mechanik}
 In folgenden soll die Herleitung der Bewegungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
 Die zu lösende Bewegungsgleichung eines Massepunkts ergibt sich nach Newton bekanntlich zu \begin{equation}
-\vv{\ddot{x}}=\frac{1}{m}\sum \vv{F},
+\vv{\ddot{x}}=\frac{1}{m}\sum_i \vv{F_i},
 \end{equation} 
 wobei $ \sum \vv{F} $ die Summe aller am Massepunkt angreifenden Kräfte, $\vv{x} $ die Ortskoordinate und $ m $ die Masse des betrachteten Massepunkts ist.
 In der Praxis, so auch beim Doppelpendel, stellt es sich als äußerst schwierig dar, alle am Massepunkt wirkenden Kräfte zu identifizieren sowie mathematisch zu beschreiben. Als eine Art Verallgemeinerung der Newton'schen Mechanik lässt sich aus ihr der sogenannte Lagrange-Formalismus herleiten. Hier sind die gesuchten Funktionen die Lösungen der Lagrange-Gleichungen
@@ -14,7 +14,7 @@ mit der Lagrangefunktion  $ L=E_{kin} - V $ . Hierbei sind $E_{kin}$ die kinetis
 \frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = 0
 \label{lagrangegl}
 \end{equation}
-Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden.
+Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden.\footnote{\cite{sch}}
 \subsection{Das Doppelpendel}
 \begin{figure}
 	\centering
