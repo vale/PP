@@ -22,6 +22,7 @@ Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalt
 \subsection{Betrachtung der Reibung}
 
 \subsubsection{Allgemeines zur Auswertung}
+Gewählt wurde für die Auswertung ein Fall mit kleiner Auslenkung, weil die Messpunkte so durch numerische Berechnung in Näherung nachvollzogen werden konnten.
 Für die Betrachtung der Reibung wurde ein Video aufgenommen und mittels eines Tracking-Programms nachträglich ausgewertet. 
 Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Ursprungs, muss dieser noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände $d_1, d_2, ... $ zu den Messpunkten des oberen Pendels $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die stochastische Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, d.h. der Punkt, an dem die Abstände zu allem Messpunkten des oberen Pendels ungefähr gleich sind, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
 
