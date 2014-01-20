@@ -14,7 +14,7 @@ mit der Lagrangefunktion  $ L=E_{kin} - V $ . Hierbei sind $E_{kin}$ die kinetis
 \frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = 0
 \label{lagrangegl}
 \end{equation}
-Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden.\footnote{\cite{sch}}
+Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden. \cite{sch} Seite 84 ff.
 \subsection{Das Doppelpendel}
 \begin{figure}
 	\centering
@@ -146,10 +146,8 @@ Die Betrachtung dieser Art von Energieverlust ist schwierig. Er könnte mit dem 
 \subsubsection{Stabilität}
 Die zeitliche Entwicklung vieler Systeme in der Mechanik kann durch lineare Differentialgleichungen beschrieben werden. Bei bekannten Anfangswerten können diese Gleichungen analytisch oder numerisch gelöst werden und damit die zeitliche Entwicklung des Systems komplett vorhergesagt werden, d.h. für exakte Anfangswerte gibt es exakte Vorhersagen für die zukünftige Entwicklung des Systems. Systeme dieser Art nennt man \textbf{streng deterministisch}. Wenn kleine Änderungen der Anfangswerte auch nur kleine Änderungen der zeitlichen Entwicklung nach sich ziehen, was mit Hilfe der Störungsrechnung bestimmt werden kann, nennt man die Lösung der Bewegungsgleichung \textbf{stabil}.
 Bei anderen Systemen treten nichtlineare Differentialgleichungen als Bewegungsgleichungen auf. Bei diesen Systemen kommt es vor, dass kleine Änderungen der Anfangsbedingungen große Änderungen in der zeitlichen Entwicklung bewirken. Solche Lösungen nennt man  \textbf{instabil}, die Systeme bezeichnet man als \textbf{chaotisch}. Dies macht z.B. die Vorhersage von Vorgängen in der Natur sehr schwierig, da die Anfangsbedingungen schon allein aufgrund der Messungenauigkeit und der Menge an Informationen nicht genau bestimmt werden können. Trotzdem lassen sich im Rahmen der Chaosforschung einige interessante Aussagen über solche Systeme treffen, z.B. kann ein Maß für die Stabilität einer Lösung definiert werden und damit Vorhersagen getroffen werden.
-\\
 
 Ein sehr anschauliches Beispiel aus der Natur ist das Ringsystem des Saturn. Das Ringsystem hat einige gut sichtbare Lücken (Abbildung \ref{foto-saturn}), in denen sich keine der Staub- und Felsteilchen, aus denen die Ringe bestehen, befinden. Diese Lücken sind die Bereiche, in denen die Bewegungsgleichung eines Teilchens im Gravitationspotential des Saturn und seiner Monde keine stabile Lösung hat, sodass eine Umlaufbahn in diesen Bereichen nicht auf längere Zeit gehalten werden kann.
-\\
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{images/saturn.jpg}
 \caption{Die Ringe des Saturn, aufgenommen von der Cassini-Sonde}
@@ -159,7 +157,7 @@ Ein sehr anschauliches Beispiel aus der Natur ist das Ringsystem des Saturn. Das
 \subsubsection{Phasenraumkurven und Attraktoren}
 Der Phasenraum eines Systems ist der Raum, dessen Koordinaten die Zustandsgrößen des Systems sind. (z.B. $x, \dot{x}$) Eine Kurve $X(t) = (x(t), \dot{x}(t))^T$ im Phasenraum heißt \textbf{Trajektorie} und beschreibt die zeitliche Entwicklung des Systems. Zeitlich konstante Punkte im Phasenraum, an denen die Geschwindigkeit des Massepunkts $\dot{X}(t) = 0$  ist, nennt man \textbf{Fixpunkte}. Kurven im Phasenraum können sich nur in Fixpunkten schneiden, da die zeitliche Entwicklung des Systems eindeutig durch die Anfangsbedingungen vorgegeben ist. Da in Fixpunkten mehrere (im Allgemeinen sogar unendlich viele) Trajektorien zusammenlaufen können, nennt man solche Fixpunkte auch \textbf{Attraktoren}. In nichtlinearen Systemen können Attraktoren auch andere Formen (z.B. Flächen oder Kurven) annehmen, sind dann aber keine Fixpunkte mehr.
 \\
-Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.\footnote{\cite{troeder} Seite 386 ff.}
+Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.\cite{troeder} Seite 386 ff.
 
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{images/phasenraum1.png}
