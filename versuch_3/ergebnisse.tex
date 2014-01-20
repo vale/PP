@@ -65,6 +65,7 @@ Damit ergeben sich die eingezeichneten Fehlerbalken.
 Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe Abb. \ref{v_ueber_t}, eine der verwendeten Acrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} m^2$ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} m^2$ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \cdot 10^{-3} N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
 
 Für die drei verwendeten Platten ergibt sich somit, mit der stark vereinfachten Annahme, dass die gesamte Fläche sich mit gleicher Geschwindigkeit bewegt und die Beschleunigung über längere Zeit konstant ist, was zur Abschätzung der Größenordnung aber ausreichend ist, eine Kraft von $ 5.4 \cdot 10^{-3}  N $. Mit einer Gesamtmasse von $0.7 kg$ inklusive der Acrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s^2} $. Bei einer Dauer der Messung von $20 s$ ergibt sich hiermit also  eine Geschwindigkeitsänderung von etwa $ 0.15 \frac{m}{s} $, die also einen wesentlichen Teil des Energieverlusts darstellt. \\
+\begin{comment}
 Die Luftreibung soll qualitativ für ein einfaches Pendel diskutiert werden: Die Reibungskraft selbst ist nach (\ref{luftreibung}) proportional zu $v^2$. Für den Energieverlust $\frac{dE}{dt}$ gilt:
 \begin{equation}
 \frac{d E}{d t} = \frac{\vec{F} \cdot d\vec{s}}{dt} \sim  \vec{F} \cdot \vec{v} \sim |v|^3, 
@@ -84,7 +85,7 @@ Die allgemeine Lösung dieser Gleichung ist:
 E(t) = a \cdot (bt + d)^{-2}. 
 \end{equation}
 Dieses Ergebnis ist allerdings nur bedingt auf ein Doppelpendel übertragbar, da dort die Geschwindigkeit nicht einer einfachen Sinus-Funktion folgt. 
-
+\end{comment}
 \subsubsection{Reibung in den Kugellagern}
 Laut \cite{wiki} liegt $ c_R $ für Kugellager im Bereich von etwa 
 $ 0.5 $ bis $ 1 \cdot 10^{-3} $. 
@@ -161,7 +162,7 @@ Trotzdem eignet sich die Simulation scheinbar gut, um die Bewegung des Pendels n
 \label{phi2}
 \end{figure}
 
-Weiter sind die sich aus den gemessenen Daten ergebenden Phasenraumdiagramme in Abb. \ref{phi1} und Abb. \ref{phi2} dargestellt. Es ergibt sich dabei ein Verlauf, der plausibel erscheint, da sie sehr dem in Abb. \ref{pic:pendel_einfach} ähnelt, welches das Phasenraumdiagramm eines einfachen Pendels zeigt. Der Grund dafür liegt darin, dass auch das Doppelpendel in dem hier dargestellten Energiebereich leldiglich \enquote{hin und her schwankt}, sodass eine in Näherung ellipsenförmige, auf jeden Fall aber \enquote{geschlossene} Kurve entsteht. \\
+Weiter sind die sich aus den gemessenen Daten ergebenden Phasenraumdiagramme in Abb. \ref{phi1} und Abb. \ref{phi2} dargestellt. Es ergibt sich dabei ein Verlauf, der plausibel erscheint, da sie sehr dem in Abb. \ref{pic:pendel_einfach} ähnelt, welches das Phasenraumdiagramm eines einfachen Pendels zeigt. Der Grund dafür liegt darin, dass auch das Doppelpendel in dem hier dargestellten Energiebereich leldiglich \enquote{hin und her schwingt}, sodass eine in Näherung ellipsenförmige, auf jeden Fall aber \enquote{geschlossene} Kurve entsteht. \\
 Trotzdem gibt es Abweichungen zum einfachen Pendel. Zunächst schneiden sich hier die Linien im Phasenraumdiagramm, was allerdings darauf zurückzuführen ist, dass die Auftragungen nur eine Projektion des gesamten, vierdimensionalen Phasenraums darstellen. Weiter erscheint das Diagramm vor allem bei dem oberen Pendel (\aref{phi1}) seitlich \enquote{unscharf}, was durch die Beeinflussung durch das untere Pendel zu erklären ist. 
 
 \section{Fazit}
