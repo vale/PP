@@ -1,0 +1,76 @@
+\documentclass[
+]{scrartcl}
+
+%Deutsche Sprachunterstützung
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{marvosym}
+\DeclareUnicodeCharacter{20AC}{\EUR}
+
+%Für das Einbinden von Bildern
+%\usepackage{graphicx}
+
+%Tabellen
+\usepackage{array}
+
+%Tabellen automatisch schoener
+\usepackage{booktabs}
+
+%Caption
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Formeln
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{dsfont}
+
+%\usepackage{mnsymbol}
+
+%Vectorpfeile schöner
+\usepackage{esvect}
+
+%Formatierung
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+%\usepackage[german=guillemets]{csquotes}
+
+%Formatierungsanweisungen
+\newcommand{\wichtig}[1]{\underline{\large{#1}}}
+\newcommand{\aref}[1]{(s.Abb. \ref{#1})}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\begin{document}
+
+\title{Besprechungs-Protokoll Gruppentreffen PPG8-13}
+\date{21. Januar 2013}
+\maketitle
+
+\paragraph*{Anwesende}
+Udo Beier,
+Leon Brückner,
+Marco Zech,
+Sebastian Ziegler,
+Valentin Olpp,
+Domenico Tiziani
+
+
+\section{Status des dritten Versuchs}
+Das Protokoll wurde am Montag der Praktikumsleitung übergeben. 
+
+\subsection{Vierter Versuch}
+Es wurde eine Befestigung für das Feinnmanometer bestehend aus einer Holzplatte gebaut, um die Störung durch Unebenheiten 
+der Straße zu vermeiden. Weiter wurde die Funktionsfähigkeit des Pitotrohrs aus dem 3D-Drucker überprüft. 
+
+\section{Weiteres Vorgehen}
+Nachdem der Füllstand des Feinmanometers korrigiert wurde, wird heute die Messung auf der Straße durchgeführt. Es sollen dabei 
+die Drücke für verschiedene Geschwindigkeiten im Bereich von 0 bis 100 km/h gemessen werden. 
+Zum vierten Protokoll wird Udo Beier die Theorie, Marco Zech die Durchführung, Leon Brückner die Auswertung und Valentin Olpp
+das Vorwort verfassen. Sebastian Ziegler wird nochmals Daten zum Doppelpendel für die Präsentation dieses Versuches am 29. 1.
+auswerten. 
+
+\end{document}
