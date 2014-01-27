@@ -1,4 +1,4 @@
-\documentclass[11pt]{beamer}
+\documentclass[compress,11pt]{beamer}
 \usetheme{Ilmenau}
 %\usecolortheme{beaver}
 %\beamertemplatenavigationsymbolsempty
@@ -8,6 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{esvect}
 %\author{}
 \title{PP Gruppe 8}
 %\setbeamercovered{transparent} 
@@ -16,6 +17,7 @@
 %\institute{} 
 %\date{} 
 %\subject{} 
+\usepackage{verbatim}
 \begin{document}
 
 \frame[c]{\titlepage}
@@ -69,7 +71,45 @@
 	\includegraphics[width=\textwidth]{images/3/karte.png}
 \end{frame}
 
+
 \section{Doppelpendel}
+\begin{frame}{Bestimmung der Bewegungsgleichungen mit Hilfe des Lagrangeformalismus}
+	\begin{block}
+		
+		\begin{equation}
+			\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} =0
+		\label{lagrangegl}
+		\end{equation}
+		\begin{equation}
+			 L=\frac{m_1}{2}\cdot\dot{\vv{x_i}}^2 - m_i \cdot g \cdot z_i
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{comment}
+\begin{frame}
+	\begin{minipage}{.48\textwidth}
+	%\centering
+	\includegraphics[width=\textwidth]{images/4/double-pendulum}
+	\end{minipage}
+	\begin{minipage}{.48\textwidth}
+		\begin{equation}
+			\vv{x_1}= l_1\cdot\begin{pmatrix}
+			\sin \varphi_1 \\ -\cos \varphi_1
+			\end{pmatrix}
+		\end{equation}
+		\begin{equation}
+			\vv{x_2}= \vv{x_1} + l_2 \cdot \begin{pmatrix}
+			\sin \varphi_2 \\ -\cos \varphi_2
+			\end{pmatrix}
+			= \begin{pmatrix}
+			l_1 \cdot \sin \varphi_1 + l_2 \cdot \sin \varphi_2 \\ - l_1 \cdot \cos \varphi_1 - l_2 \cdot \cos \varphi_2
+			\end{pmatrix}
+		\end{equation}
+	\end{minipage}	
+\end{frame}
+\end{comment}
+
 \begin{frame}
 \movie[showcontrols=false, autostart]{\includegraphics[width=\textwidth]{movies/6006_1}}{movies/6006.mov}
 \end{frame}
