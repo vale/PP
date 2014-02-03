@@ -30,6 +30,7 @@ Für die weitere Auswertung für jeden Zeitpunkt $ t $ einer Aufnahme die Geschw
 \vec{v}(t) = \frac{1}{(2 \Delta t)} \cdot (\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t))
 \end{equation} 
 berechnet. 
+Somit verhindert man eine \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 \subsubsection{Betrachtung der Messergebnisse}
 
 
@@ -42,8 +43,8 @@ In Abb. \ref{E_ueber_t} wurde die Gesamtenergie des Pendels über der Zeit aufge
 \begin{equation}
 E(t) = E_{kin,1}(t) + E_{kin,2}(t) + E_{pot,1}(t) + E_{pot,2}(t) = \frac{1}{2} (m_1 \cdot \vec{v_1}(t)^2 + m_2 \cdot \vec{v_2}(t)^2) + g (m_1 \cdot h_1(t) + m_2 \cdot h_2(t))
 \end{equation}
-berechnet wurde, wobei $h_1 = y_1 + l_1$ und $h_2 = y_2 + l_1 + l_2$, sodass $h_1 $ und $h_2$ die Höhe über der Ruhelage des entsprechenden Pendels angeben. 
-Somit wäre die Energie im Fall, dass sich das Pendel gänzlich in Ruhe und in der Ruhelage ($phi_1, phi_2 = 0$) befindet gleich 0. 
+berechnet, wobei $h_1 = y_1 + l_1$ und $h_2 = y_2 + l_1 + l_2$, sodass $h_1 $ und $h_2$ die Höhe über der Ruhelage des entsprechenden Pendels angeben. 
+Somit ist die Energie im Fall, dass sich das Pendel gänzlich in Ruhe und in der Ruhelage ($phi_1, phi_2 = 0$) befindet, auf 0 normiert. 
 Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund tritt der Effekt auf, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Dies ist insbesondere dann sichtbar, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen wird. Die errechnete Geschwindigkeit ist dann kleiner als die tatsächliche (Abb. \ref{grafik1}). 
 
 \begin{figure}
@@ -52,15 +53,24 @@ Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich stre
 \label{grafik1}
 \end{figure}
 
-
-Verstärkt wird dies dadurch, dass bei der Auswertung die Geschwindigkeit zur Zeit t mittels $ |\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t)| $ bestimmt wurde. Somit verhindert man die \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
-Dieser Fehler ist schwer abzuschätzen, da korrekterweise eine stochastische Betrachtung nötig wäre, die aber insbesondere aufgrund des chaotischen Verhalten des Doppelpendels problematisch ist. 
-Es soll deshalb angenommen werden, dass die Geschwindigkeiten $ v_1 $ und $ v_2 $ jeweils mit einem Fehler von $ 0.1 \frac{m}{s} $ bestimmt werden kann. Mittels einer Fehlerfortpflanzung ergibt sich: 
+Dieser durch die Aufnahmerate von 30 Bildern pro Sekunde bedingte Fehler ist schwer zu quantifizieren. Um in etwa die Größenordnung 
+des Fehlers abzuschätzen, soll folgende Abschätzung betrachtet werden: 
+Aus Abb. \ref{v_ueber_t} geht hervor, dass die obere Masse maximal eine Geschwindigkeit von etwa $1.8 \frac{m}{s} $ hat. Nimmt man an, 
+dass sich diese Masse auf einer Kreisbahn und mit etwa dieser Geschwindigkeit für $\frac{2}{30} s$ bewegt, so kann der in 
+Abb. \ref{graphik1} dargestellte Fehler für diese Idealisierung berechnet werden: 
+Aus $ v = 1.8 \frac{m}{s} $ ergibt sich mit $ l_1 = 0.2 m$ eine Winkelgeschwindigkeit von $ \omega = 9 \frac{1}{s} $. Für die Dauer
+einer Belichtungszeit beträgt der Winkel, um den sich das Pendel also bewegt, etwa $ \Delta \phi = \omega \cdot \Delta t = 9 \frac{1}{s} \cdot \frac{1}{30} s = 0.3$. 
+Da für die Geschwindigkeitsberechnung zwei Belichtungsintervalle betrachtet werden, ergibt sich aus Abb. \ref{graphik1} und elementarer 
+Geometrie, dass das Verhältnis zwischen tatsächlich zurückgelegter Strecke und der verkürzten Strecke, aus der in der Auswertung die Geschwindigkeit bestimmt 
+wird, sich zu $ \frac{2 \Delta \phi \cdot l_1}{2 \cdot \sin(\Delta \phi) \cdot l_1} = \frac{\Delta \phi}{\sin(\Delta \phi)} $
+ergibt. Für ein $\Delta \phi $ von 0.3 ergibt sich ein Verhältnis von $1.015$, was also $1.5 \% $ Abweichung entspricht. 
+Da hier maximale Werte verwendet wurden, ist dies ebenfalls der maximale Fehler, der sich aus dem erklärten Effekt ergeben sollte. 
+Mittels einer Fehlerfortpflanzung ergibt sich: 
 
 \begin{align}
-\Delta E &= \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2}= \nonumber \\ &= \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}
+\Delta E &= \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2}= \nonumber \\ &= \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}, 
 \end{align}
-
+wobei $ \Delta v_1 = \Delta v_2 = \Delta v  = 0.03$. 
 Damit ergeben sich die eingezeichneten Fehlerbalken. 
 
 
