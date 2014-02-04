@@ -1,172 +1,175 @@
 \section{Theorie}
-\subsection{Newtonsche und Lagrange'sche Mechanik}
-In folgenden soll die Herleitung der Bewegungsgleichung des Doppelpendels mit Hilfe des Lagrange-Formalismus der klassischen Mechanik beschrieben werden. \\
-Die zu lösende Bewegungsgleichung eines Massepunkts ergibt sich nach Newton bekanntlich zu \begin{equation}
-\vv{\ddot{x}}=\frac{1}{m}\sum_i \vv{F_i},
+\subsection{Strömende Flüssigkeiten und Gase}
+
+\subsubsection{Grundbetrachtungen}
+Strömende Flüssigkeiten und Gase unterscheiden sich hauptsächlich in zwei Punkten. Zum einen sind die Dichten von Flüssigkeiten um etwa drei Größenordnungen größer als bei Gasen. Zum anderen sind Flüssigkeiten in guter Näherung inkompressibel, was auf Gase nicht zutrifft.
+
+Um die makroskopische Bewegung von Flüssigkeiten und Gasen beschreiben zu können, ist es nötig alle Kräfte zu kennen, die auf ein Volumenelement $ \Delta V $ wirken. Als Kräfte kommen dabei Kräfte durch Druckdifferenzen $ \vec{F}_p $, die Schwerkraft $ \vec{F}_g $ und Reibungskräfte $ \vec{F}_R $ zwischen Schichten des strömenden Mediums in Frage. Dabei gilt:
+
+\begin{equation}
+\vec{F}_p = -{\bf grad}(p) \cdot \Delta V
+\end{equation}
+\begin{equation}
+\vec{F}_g = \rho \cdot \vec{g} \cdot \Delta V
+\end{equation}
+Die Reibungskraft $ \vec{F}_R $ wird weiter unten noch behandelt.
+
+Mit $ \vec{F} := \vec{F}_p + \vec{F}_g + \vec{F}_R $ ergibt sich für die Newtonschen Bewegungsgleichungen:
+
+\begin{equation}
+\vec{F} = \Delta m \ddot{\vec{r}} = \rho \cdot \Delta V \cdot \frac{d \vec{u}}{dt}
+\label{form:Newton}
+\end{equation}
+Dabei ist $ \vec{u} = \frac{d \vec{r}}{dt} $ die Strömungsgeschwindigkeit des Volumenelements $ \Delta V $.\\
+\\Kennt man die Strömungsgeschwindigkeit $ \vec{u} ( \vec{r} , t) $ an allen Orten $ \vec{r} $ und zu jedem Zeitpunkt $ t $, so kennt man die makroskopische Bewegung der gesamten Flüssigkeit.
+
+Eine Strömung heißt stationär, wenn $ \vec{u} ( \vec{r} , t) \equiv \vec{u} ( \vec{r} ) $ nicht von $t$ abhängt.
+Flüssigkeiten, bei denen $ \Vert \vec{F}_R \Vert \ll \Vert \vec{F}_p \Vert + \Vert \vec{F}_g \Vert $, bezeichnet man als ideale Flüssigkeiten, während Flüssigkeiten, bei denen $ \Vert \vec{F}_R \Vert \gg \Vert \vec{F}_p \Vert + \Vert \vec{F}_g \Vert $, als viskos oder zäh bezeichnet werden.
+
+Die Kurve $ \vec{r} (t) $ eines Flüssigkeitselements $ \Delta V $ nennt man Stromlinie. Strömungen heißen laminar, wenn sich die Stromlinien nebeneinander bewegen und sich nicht vermischen. Laminare Strömungen liegen immer dann vor, wenn die inneren Reibungskräfte im Vergleich zu den anderen Kräften groß sind. Sind die inneren Reibungskräfte allerdings klein im Vergleich zu Kräften, wie z.B. solche die an Hindernissen auftreten, bilden sich Wirbel. Solche Strömungen bezeichnet man als turbulent.
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/8-1}
+\caption{(a) Stromlinien und Strömungsgeschwindigkeit $ \vec{u}(\vec{r},t) $ ; (b) Strömungsfeld zu einem bestimmten Zeitpunkt $t$ }
+\label{fig:8-1}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/8-5}
+\caption{ Beispiele laminarer Strömungen }
+\label{fig:8-5}
+\end{figure}
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/8-6}
+\caption{ Beispiel einer turbulenten Strömung }
+\label{fig:8-6}
+\end{figure}
+
+\subsubsection{Die Kontinuitätsgleichung}
+Sei $ V $ ein beliebiges Volumen. $V$ enthält zur Zeit $t$ die Masse:
+
+\begin{equation}
+M(t) = \iiint_V \rho (t) dV
+\end{equation}
+Aufgrund der Massenerhaltung kann sich die Masse in $V$ nur dann ändern, wenn Masse durch die Oberfläche $ \partial V $ ein- oder ausströmt. Sei $ \vec{j} = \rho \cdot \vec{u} $ die Massenstromdichte. Dann gilt wegen der Massenerhaltung:
+
+\begin{equation}
+-\frac{\partial M}{\partial t} = \iint_{\partial V} \vec{j} \cdot d \vec{\sigma} = \iint_{\partial V} \rho \cdot \vec{u} \cdot d \vec{\sigma}
+\end{equation}
+Dabei ist $ d \vec{\sigma} $ der Flächennormalenvektor. Also folgt mit dem Satz von Gauß:
+
+\begin{equation}
+-\frac{\partial M}{\partial t} = -\frac{\partial}{\partial t} \iiint_V \rho dV = \iiint_V (-\frac{\partial}{\partial t} \rho) dV = \iiint_V {\bf div}(\rho \cdot \vec{u})dV = \iint_{\partial V} \rho \cdot \vec{u} \cdot d \vec{\sigma}
+\label{form:viele Integrale}
+\end{equation}
+Da Gleichung \ref{form:viele Integrale} für beliebige $V$ gilt, folgt:
+
+\begin{equation}
+\boxed{\frac{\partial \rho}{\partial t} + {\bf div}(\rho \cdot \vec{u}) = 0}
+\label{form:Kontinuitätsgl.}
+\end{equation}
+Diese Gleichung nennt man die Kontinuitätsgleichung. Sie drückt aus, dass Masse erhalten ist. Im Fall von inkompressiblen Flüssigkeiten gilt: $ \rho = const. $ . Deshalb vereinfacht sich \ref{form:Kontinuitätsgl.} zu:
+
+\begin{equation}
+{\bf div}(\vec{u}) = 0
+\end{equation}
+
+\subsubsection{Die Euler-Gleichung}
+Für $ \frac{d \vec{u}}{dt} $ gilt:
+
+\begin{equation}
+\frac{d \vec{u}}{dt} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial \vec{u}}{\partial y} \frac{\partial y}{\partial t} + \frac{\partial \vec{u}}{\partial z} \frac{\partial z}{\partial t} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} u_x + \frac{\partial \vec{u}}{\partial y} u_y + \frac{\partial \vec{u}}{\partial z} u_z = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla) \vec{u}
+\label{form:herleitung euler}
+\end{equation}
+Aufgrund von \ref{form:Newton} und \ref{form:herleitung euler} ergibt sich für die Bewegungsgleichung einer idealen Flüssigkeit:
+
+\begin{equation}
+\boxed{\frac{d \vec{u}}{dt} = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla) \vec{u} = \vec{g} - \frac{1}{\rho} {\bf grad} (p)}
+\end{equation}
+Diese Gleichung nennt man die Euler-Gleichung. Sie bildet die Grundlage der Hydrodynamik idealer Flüssigkeiten.
+
+\subsubsection{Die Bernoulli-Gleichung}
+Hier wird ein Fluid (Flüssigkeit oder Gas) betrachtet, das horizontal durch ein Rohr mit veränderlichem Querschnitt fließt. Die Bernoulli-Gleichung folgt dann aus der Energieerhaltung. Strömt ein Fluid durch ein Rohr, dessen Querschnitt variabel ist, so muss das Fluid aufgrund der Kontinuitätsgleichung \ref{form:Kontinuitätsgl.} an Stellen mit kleinerem Querschnitt schneller fließen. Ein Volumen $ \Delta V_1 = A_1 \cdot \Delta x_1 $ hat dort also eine größere kinetische Energie.
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/8-8}
+\caption{ Rohr mit variablem Querschnitt zur Herleitung der Bernoulli-Gleichung }
+\label{fig:8-8}
+\end{figure}
+
+Um das Volumen $ \Delta V_1 $ um $ \Delta x_1 $ gegen $ p_1 $ zu verschieben, ist eine Arbeit $ \Delta W_1 $ nötig. Analoges gilt für $ \Delta V_2 $. Es gilt dann:
+
+\begin{equation}
+\Delta W_1 = F_1 \cdot \Delta x_1 = p_1 \cdot A_1 \cdot \Delta x_1 = p_1 \cdot \Delta V_1
+\end{equation}
+\begin{equation}
+\Delta W_2 = F_2 \cdot \Delta x_2 = p_2 \cdot A_2 \cdot \Delta x_2 = p_2 \cdot \Delta V_2
+\end{equation}
+Die kinetische Energie des Volumenelements $ \Delta V $ ist $ E_{kin} = \frac{1}{2} \Delta m u^2 = \frac{1}{2} \rho u^2 \Delta V $. Für ideale Flüssigkeiten muss nun die Summe aus kinetischer und potentieller Energie konstant sein. Deshalb folgt:
+
+\begin{equation}
+p_1 \Delta V_1 + \frac{1}{2} \rho u_1^2 \Delta V_1 = p_2 \Delta V_2 + \frac{1}{2} \rho u_2^2 \Delta V_2
+\end{equation}
+Für inkompressible Flüssigkeiten gilt nun $ \Delta V_1 = \Delta V = \Delta V_2 $. Damit ergibt sich:
+
+\begin{equation}
+p_1 + \frac{1}{2} \rho u_1^2 = p_2 + \frac{1}{2} \rho u_2^2
+\label{form:Pre-Bernoulli}
+\end{equation}
+Da \ref{form:Pre-Bernoulli} für beliebige Querschnitte gilt, folgt die Bernoulli-Gleichung:
+
+\begin{equation}
+\boxed{p + \frac{1}{2} \rho u^2 = p_0 = const.}
+\label{form:Bernoulli-Gleichung}
+\end{equation}
+$ p_0 $ heißt Gesamtdruck, $ p_S = \frac{1}{2} \rho u^2 $ heißt Staudruck und $p$ ist der statische Druck der strömenden Flüssigkeit.
+
+Verläuft die Strömung durch schräge Rohre, ergibt sich die allgemeinere Gleichung:
+
+\begin{equation}
+p + \rho g z(x) + \frac{1}{2} \rho u^2(x) = p_0 = const.
+\end{equation}
+Dabei ist $z(x)$ die Höhe am Ort $x$.
+
+\begin{figure}
+        \includegraphics[width=.9\textwidth]{images/8-11}
+\caption{ Strömung durch ein schräges Rohr }
+\label{fig:8-11}
+\end{figure}
+
+\subsubsection{Die Navier-Stokes-Gleichung}
+Die Bewegungsgleichung für reale viskose strömende Fluide kann angegeben werden, wenn auch $ \vec{F}_R $ genauer bestimmt ist. Für viskose Fluide gilt:
+
+\begin{equation}
+\vec{F}_R = \eta {\bf \Delta} \vec{u} \Delta V
+\end{equation}
+Dabei ist $ {\bf \Delta} = \nabla \cdot \nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} $ der Laplace-Operator. Aus \ref{form:Newton} folgt nun mit Hilfe von \ref{form:herleitung euler} die Navier-Stokes-Gleichung:
+
+\begin{equation}
+\boxed{\rho (\frac{\partial}{\partial t} + \vec{u} \cdot \nabla ) \vec{u} = - {\bf grad}(p) + \rho \cdot \vec{g} + \eta {\bf \Delta} \vec{u}}
+\end{equation}
+Die Lösung der Navier-Stokes-Gleichung ist laut dem Clay Mathematics Institute sogar Teil der Millenium-Probleme. Deshalb werden wir uns hier nicht weiter mit der Navier-Stokes-Gleichung befassen.
+
+\subsection{Strömungsmesstechnik}
+\subsubsection{Grundsätzliche Betrachtungen}
+Betrachtet man ein Fluid, ist ihm zunächst nicht anzusehen, ob es strömt oder nicht. Dies wird erst durch Fremdkörper wie z.B. Rauch, Farbstoff, Strömungsfäden oder anderes ermöglicht. Es wird also in der Praxis unmöglich sein tatsächlich $ \vec{u} ( \vec{r} , t) $ für alle $ \vec{r} $ und $t$ zu messen. Deshalb ist man auf indirekte Methoden wie z.B. die  Messung von Druckdifferenzen oder die Messung der Kraft auf einen in der Strömung befindlichen Körper angewiesen. Außerdem sind Messinstrumente oft nur dazu in der Lage den Betrag oder die Richtung von $ \vec{u} $ zu bestimmen. Dabei ist außerdem zu beachten, dass Instrumente zur Messung des Betrags von $ \vec{u} $ oft eine Richtungsempfindlichkeit besitzen, sodass vor der Messung des Betrags die Kenntnis der Richtung von $ \vec{u} $ erforderlich ist.
+
+Die Grundlage zur Bestimmung von Strömungsgeschwindigkeiten durch Druckmessung bildet die Bernoulli-Gleichung \ref{form:Bernoulli-Gleichung}. Stellt man diese nach $u$ um, ergibt sich eine Formel zur Bestimmung der Strömungsgeschwindigkeit des Fluids:
+
+\begin{equation}
+\boxed{u = \sqrt{\frac{2}{\rho} (p_0 - p)} = \sqrt{\frac{2}{\rho} p_d}}
 \end{equation} 
-wobei $ \sum \vv{F} $ die Summe aller am Massepunkt angreifenden Kräfte, $\vv{x} $ die Ortskoordinate und $ m $ die Masse des betrachteten Massepunkts ist.
-In der Praxis, so auch beim Doppelpendel, stellt es sich als äußerst schwierig dar, alle am Massepunkt wirkenden Kräfte zu identifizieren sowie mathematisch zu beschreiben. Als eine Art Verallgemeinerung der Newton'schen Mechanik lässt sich aus ihr der sogenannte Lagrange-Formalismus herleiten. Hier sind die gesuchten Funktionen die Lösungen der Lagrange-Gleichungen
-\begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{x_i}}-\frac{\partial L}{x_i} = 0
-\end{equation}
-mit der Lagrangefunktion  $ L=E_{kin} - V $ . Hierbei sind $E_{kin}$ die kinetische Energie und V das auf den Massepunkt wirkende Potential. Ein weiterer Vorteil dieses Formalismus besteht darin, dass die Langrangegleichungen unter Koordinatentransformationen invariant bleiben, es gilt also:
-\begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{q_i}}-\frac{\partial L}{q_i} = 0
-\label{lagrangegl}
-\end{equation}
-Hier seien $q_i$ die sogenannten verallgemeinerten Koordinaten, die so gewählt werden, dass alle geometrischen Einschränkungen, denen das mechanische System unterworfen ist (sog. Zwangsbedingungen) berücksichtigt werden. Dies geschehe in dem Sinne, dass die verallgemeinerten Koordinaten für beliebige Werte nur unter den Zwangsbedingungen erlaubte Zustände liefern. Für jeden Freiheitsgrad muss nun eine Lagrangegleichung aufgestellt werden. \cite{sch} Seite 84 ff.
-\subsection{Das Doppelpendel}
-\begin{figure}
-	\centering
-	\includegraphics[width=.3\textwidth]{images/double-pendulum.png}
-	\caption{Schematische Skizze eines Doppelpendels}
-	\label{wiki:double-pendulum}
-\end{figure}
-Im Ursprungspunkt des Koordinatensystems wird ein Pendel, bestehend aus einem Stab mit fester Länge $l_1$ und einer Masse m an dessen Ende, befestigt. Das Pendel soll sich nur in der x-z Ebene bewegen können. Am Massenpunkt befindet sich nun ein zweites Pendel mit Stab der Länge $l_2$, welches sich ebenso nur in der x-z-Ebene bewegen soll. \\Es soll nun stets der Index 1 für Größen des oberen Pendels (inklusive der oberen Masse) und der Index 2 für alle Größen des unteren Pendels verwendet werden. \\
-Der erste Schritt besteht nun darin, eine Beschreibung der Ortsvektoren der beiden Massenpunkte zu finden, die alle Zwangsbedingungen berücksichtigt. 
-Derartige verallgemeinerte Koordinaten sind offenbar gegeben durch $ \varphi_1 $ und $ \varphi_2 $, welche die relativen Winkel der Stäbe $l_1 $ und $l_2$ zur Senkrechten (z-Achse) darstellen. Daraus folgt für $ \vv{x_1} $
-\begin{equation}
-\vv{x_1}= l_1\cdot\begin{pmatrix}
-\sin \varphi_1 \\ -\cos \varphi_1
-\end{pmatrix}
-\end{equation}
-Für den Vektor $\vv{x_2}$ folgt aus einfachen trigonometrischen Überlegungen:
-\begin{equation}
-\vv{x_2}= \vv{x_1} + l_2 \cdot \begin{pmatrix}
-\sin \varphi_2 \\ -\cos \varphi_2
-\end{pmatrix}
-= \begin{pmatrix}
-l_1 \cdot \sin \varphi_1 + l_2 \cdot \sin \varphi_2 \\ - l_1 \cdot \cos \varphi_1 - l_2 \cdot \cos \varphi_2
-\end{pmatrix}
-\end{equation}
-Zur Bestimmung von $E_{kin,i} = \frac{m_i}{2} \cdot  \dot{\vv{x_i}}^2$  müssen noch die Ableitungen der Ortsvektoren gebildet werden:
-\begin{equation}
-\dot{\vv{x_1}} = l_1 \cdot \dot{\varphi_1} \cdot \begin{pmatrix}
-\cos \varphi_1 \\ \sin \varphi_1
-\end{pmatrix}
-\end{equation}
-und:
-\begin{equation}
-\dot{\vv{x_2}} = \dot{\vv{x_1}} + l_2 \cdot  \dot{\varphi_2} \cdot \begin{pmatrix}
-\cos \varphi_2 \\ \sin \varphi_2
-\end{pmatrix} 
-\end{equation}
-Für die kinetische Energie ergibt sich:
-\begin{equation}
-E_{kin} = E_{kin,1} + E_{kin,2} = \frac{m_1}{2} \cdot  l_1^2 \cdot  \dot{\varphi_1}^2 +
-\frac{m_2}{2} \cdot (l_1^2 \cdot \dot{\varphi_1}^2 + l_2^2 \cdot \dot{\varphi_2}^2 + 2 \cdot l_1 \cdot l_2 \cdot \dot{\varphi_1} \cdot \dot{\varphi_2} \cdot \cos (\varphi_1 - \varphi_2))
-\end{equation}
-Das auf das Doppelpendel wirkende Potential $ V_i = m_i \cdot g \cdot h_i $ ist:
-\begin{equation}
-V = V_1 + V_2 = m_1 \cdot g \cdot (-l_1 \cdot \cos \varphi_1) + m_2 \cdot g \cdot (-l_1 \cdot \cos \varphi_1 - l_2 \cdot \cos \varphi_2)
-\end{equation}
-Das Aufstellen der Lagrange-Gleichung erfolgt nun in mehreren Schritten.\\ Zuerst für $ \varphi_1$ :
-\begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial\dot{\varphi_1}} = (m_1 + m_2) \cdot l_1^2 \cdot \dot{\varphi_1} + m_2 \cdot (l_1 \cdot l_2 \cdot \dot{\varphi_2} \cdot \cos (\varphi_1 - \varphi_2)) 
-\end{equation}
-\begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial \varphi_1} = -m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - (m_1 + m_2) g l_1 \sin \varphi_1
-\end{equation}
-und nun für $ \varphi_2 $ :
+Dabei ist $ p_d := p_0 - p $ der dynamische Druck. In der Praxis wird deshalb oft eine Messung des Gesamtdrucks und des statischen Drucks durchgeführt, um aus der Differenz auf die Geschwindigkeit des strömenden Fluids schließen zu können.
 
-\begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial \dot{\varphi_2}} = m_2 l_2^2 \dot{\varphi_2} + m_2 l_1 l_2 \dot{\varphi_1} \cos (\varphi_1 - \varphi_2)
-\end{equation}
+\subsubsection{Sonden zur Messung des Gesamtdrucks (Pitot Rohre)}
+Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch Anbringen einer Bohrung gemessen werden kann. Mit einem parallel zur Strömung ausgerichteten Rohr hat schon Henri Pitot (1732) als erster Strömungsgeschwindigkeiten gemessen. Deshalb bezeichnet man Gesamtdruckrohre als Pitot Rohre. Um die Richtungsempfindlichkeit von Pitot Rohren zu verbessern wurden verschiedene Kopfformen entwickelt. Es wurde auch ein umhülltes Pitot Rohr entwickelt. Der maximale Winkelbereich, um unter $ 1 \% $ Fehler zu bleiben, hängt stark vom jeweiligen Pitot Rohr ab. Er kann bei einer scharfen Vorderkante $ \pm 10^{\circ} $ betragen und reicht beim umhüllten Pitot Rohr bis zu $ \pm 60^{\circ} $. Diese Werte sind jedoch nur Richtwerte.
+%Abb. zu versch. Köpfen
 
-\begin{equation}
-\frac{\partial (E_{kin} - V)}{\partial \varphi_2} = m_2 l_1 l_2 \dot{\varphi_1} \dot{\varphi_2} \sin (\varphi_1 - \varphi_2) - m_2 g l_2 \sin \varphi_2
-\end{equation}
+\subsubsection{Sonden zur Messung des statischen Drucks}
+Zur Messung des statischen Drucks wird ein vorne geschlossenes Rohr mit seitlichen Bohrungen verwendet. Die Bohrungen dürfen dabei keinen Grad oder ähnliches aufweisen, da sonst die Messergebnisse verfälscht werden. Außerdem muss die Bohrung exakt senkrecht zur Wand und damit auch zur Strömung sein.
+%Abb. einfügen
 
-Setzt man diese Terme in \eqref{lagrangegl} ein, erhält man die Bewegungsgleichungen des Systems:
-\begin{equation}
-\begin{split}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{\varphi_1}}-\frac{\partial L}{\varphi_1} = (m_1 + m_2) l_1^2\ddot{\varphi_1} + m_2 l_1 l_2 ( \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2)+\\ + \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2)) + (m_1 + m_2) g l_1 \sin \varphi_1 = 0
-\end{split}
-\end{equation}
-
-\begin{equation}
-\frac{d}{dt}\frac{\partial L}{\partial\dot{\varphi_2}}-\frac{\partial L}{\varphi_2} = m_2 l_2^2 \ddot{\varphi_2} + m_2 l_1 l_2 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g l_2 \sin \varphi_2 = 0
-\end{equation} 
-Diese können noch vereinfacht werden durch eine Division durch $l_1$ bzw. $l_2$: 
-\begin{equation}
-\begin{split}
-(m_1 + m_2) l_1\ddot{\varphi_1} + m_2 l_2 \ddot{\varphi_2} \cos (\varphi_1 - \varphi_2) + m_2 l_2 \dot{\varphi_2}^2 \sin (\varphi_1 - \varphi_2) +\\+ (m_1 + m_2) g \ sin \varphi_1 = 0
-\end{split}
-\label{equ:1}
-\end{equation}
-\begin{equation}
-m_2 l_2 \ddot{\varphi_2} + m_2 l_1 (\ddot{\varphi_1} \cos (\varphi_1 - \varphi_2) - \dot{\varphi_1}^2 \sin (\varphi_1 - \varphi_2)) + m_2 g \sin \varphi_2 = 0
-\label{equ:2}
-\end{equation}
-
-\subsection{Simulation des Doppelpendels}
-Um die Gleichungen mittels eines Standardverfahrens numerisch lösen zu können, muss das Gleichungssystem (\ref{equ:1} und \ref{equ:2}) auf die Form $ \dot{Y} = f(Y) $ gebracht werden. Zunächst werden die obigen Gleichungen nach $ \ddot{\varphi_1} $ und $ \ddot{\varphi_2} $ aufgelöst. Es ergibt sich unter Beachtung der folgenden abkürzenden Notation: 
-$ (m_1 + m_2) =: M; \varphi_1 - \varphi_2 =: \Delta \varphi $
-\begin{equation}
-\ddot{\varphi_1} = \frac{-m_2 l_2 \dot{\varphi_2}^{2} \sin{\Delta \varphi} - g M \sin{\varphi_1} - m_2 l_1 \dot{\varphi_1}^{2} \sin{\Delta \varphi} \cos{\Delta \varphi} + g m_2 \sin{\phi_2}\cos{\Delta  \varphi}}{M l_1 - m_2 l_1 \cos^{2}{\Delta \varphi}}
-\end{equation}
-und
-\begin{equation} 
-\ddot{\varphi_2} = \frac{-m_2 l_2 \dot{\varphi_2}^{2} \sin{\Delta \varphi} \cos{\Delta \varphi} - g M \sin{\varphi_1} \cos{\Delta \varphi} - M l_1 \dot{\varphi_1}^{2} \sin{\Delta \varphi} + g M \sin{\varphi_2}}{m_2 l_2 \cos^{2}{\Delta \varphi} - M l_2}
-\end{equation}
-
-Dieses Differenzialgleichungssystem erster Ordnung kann nun mit Hilfe elementarer Algorithmen gelöst werden. Hier wurde das expliztite Euler-Verfahren verwendet (\cite{eul}). Es wurde also ein Vektor $\vec{Y} = \vec{\varphi} = (
-\varphi_1, \dot{\varphi_1}, \varphi_2 , \dot{\varphi_2})^{T} $
- definiert, für den sich ergibt: 
-\begin{equation}
-\dot{\vec{\varphi}} = (\dot{\varphi_1}, \ddot{\varphi_1}, \dot{\varphi_2}, \ddot{\varphi_2})^{T},
-\end{equation}
-wobei für $ \ddot{\varphi_1} $ und $ \ddot{\varphi_2} $ obige Gleichungen eingesetzt werden. 
-Dann wird eine schrittweise Iteration durchgeführt, der Quelltext für das verwendete Python-Skript findet sich im Anhang. 
-
-\subsection{Energieverlust des Systems}
-Bei dem hier behandelten Doppelpendel treten im Wesentlichen Luftreibung und Reibung in der Lagerung der zueinander beweglichen Bauteile, also den Kugellagern, auf. Darüber hinaus tritt weiterer Energieverlust auf, indem die Aufhängung des Pendels vom Pendel selbst zu Schwingungen angeregt wird und so ein Energieübertrag stattfindet. 
-
-\subsubsection{Luftreibung}
-Für die Luftreibungskraft, die auf einen laminar umströmten Gegenstand wirkt, gilt die in guter Näherung gültige Formel
-\begin{equation}
-F_R = v^2 \cdot \frac{\rho}{2} \cdot A_S \cdot c_W,
-\label{luftreibung}
-\end{equation}
-wobei $ F_R $ die Luftreibungskraft, $ v $ die Geschwindigkeit der umströmenden Luft, $ \rho $ deren Dichte, $ A_S $ die Fläche der Projektion des Gegenstands in Stömungsrichtung und $ c_W $ ein von der Form des Gegenstands bestimmter, dimensionsloser Koeffizient ist \cite{win}. 
-
-
-\subsubsection{Reibung in den Kugellagern}
-Für die Reibung in den Kugellagern kann das Modell der Rollreibung verwendet werden. Demnach ergibt sich für die Reibungskraft $ F_R $:
-\begin{equation}
-F_R = c_R \cdot F_N,
-\end{equation} 
-wobei $ c_R $ ein die verwendeten Materialien und deren Form charakterisierender Parameter ist und $ F_N $ der Betrag der Normalkraft, also die senkrecht zur Rollrichtung wirkende Kraft \cite{rol}. 
-
-\subsubsection{Energieübertrag auf die Aufhängung}
-
-Die Betrachtung dieser Art von Energieverlust ist schwierig. Er könnte mit dem Modell zweier gekoppelter schwingfähiger Systeme, bei dem das zweite eine große Dämpfung aufweist, angenähert werden. Allerdings müsste hierfür wieder der Lagrange-Formalismus herangezogen werden, wobei zusätzlich noch Reibungsterme berücksichtigt werden müssten. 
-
-\subsection{Chaotisches Verhalten}
-\subsubsection{Stabilität}
-Die zeitliche Entwicklung vieler Systeme in der Mechanik kann durch lineare Differentialgleichungen beschrieben werden. Bei bekannten Anfangswerten können diese Gleichungen analytisch oder numerisch gelöst werden und damit die zeitliche Entwicklung des Systems komplett vorhergesagt werden, d.h. für exakte Anfangswerte gibt es exakte Vorhersagen für die zukünftige Entwicklung des Systems. Systeme dieser Art nennt man \textbf{streng deterministisch}. Wenn kleine Änderungen der Anfangswerte auch nur kleine Änderungen der zeitlichen Entwicklung nach sich ziehen, was mit Hilfe der Störungsrechnung bestimmt werden kann, nennt man die Lösung der Bewegungsgleichung \textbf{stabil}.
-Bei anderen Systemen treten nichtlineare Differentialgleichungen als Bewegungsgleichungen auf. Bei diesen Systemen kommt es vor, dass kleine Änderungen der Anfangsbedingungen große Änderungen in der zeitlichen Entwicklung bewirken. Solche Lösungen nennt man  \textbf{instabil}, die Systeme bezeichnet man als \textbf{chaotisch}. Dies macht z.B. die Vorhersage von Vorgängen in der Natur sehr schwierig, da die Anfangsbedingungen schon allein aufgrund der Messungenauigkeit und der Menge an Informationen nicht genau bestimmt werden können. Trotzdem lassen sich im Rahmen der Chaosforschung einige interessante Aussagen über solche Systeme treffen, z.B. kann ein Maß für die Stabilität einer Lösung definiert werden und damit Vorhersagen getroffen werden.
-
-Ein sehr anschauliches Beispiel aus der Natur ist das Ringsystem des Saturn. Das Ringsystem hat einige gut sichtbare Lücken (Abbildung \ref{foto-saturn}), in denen sich keine der Staub- und Felsteilchen, aus denen die Ringe bestehen, befinden. Diese Lücken sind die Bereiche, in denen die Bewegungsgleichung eines Teilchens im Gravitationspotential des Saturn und seiner Monde keine stabile Lösung hat, sodass eine Umlaufbahn in diesen Bereichen nicht auf längere Zeit gehalten werden kann.
-\begin{figure}
-\includegraphics[width=1.0\textwidth]{images/saturn.jpg}
-\caption{Die Ringe des Saturn, aufgenommen von der Cassini-Sonde}
-\label{foto-saturn}
-\end{figure}
-
-\subsubsection{Phasenraumkurven und Attraktoren}
-Der Phasenraum eines Systems ist der Raum, dessen Koordinaten die Zustandsgrößen des Systems sind. (z.B. $x, \dot{x}$) Eine Kurve $X(t) = (x(t), \dot{x}(t))^T$ im Phasenraum heißt \textbf{Trajektorie} und beschreibt die zeitliche Entwicklung des Systems. Zeitlich konstante Punkte im Phasenraum, an denen die Geschwindigkeit des Massepunkts $\dot{X}(t) = 0$  ist, nennt man \textbf{Fixpunkte}. Kurven im Phasenraum können sich nur in Fixpunkten schneiden, da die zeitliche Entwicklung des Systems eindeutig durch die Anfangsbedingungen vorgegeben ist. Da in Fixpunkten mehrere (im Allgemeinen sogar unendlich viele) Trajektorien zusammenlaufen können, nennt man solche Fixpunkte auch \textbf{Attraktoren}. In nichtlinearen Systemen können Attraktoren auch andere Formen (z.B. Flächen oder Kurven) annehmen, sind dann aber keine Fixpunkte mehr.
-\\
-Phasenraumkurven sind ein praktisches Mittel, um das Verhalten von (chaotischen) Systemen zu zeigen, wie man in den folgenden Beispielen sehen kann.\cite{troeder} Seite 386 ff.
-
-\begin{figure}
-\includegraphics[width=1.0\textwidth]{images/phasenraum1.png}
-\caption{Phasenraumkurven von: \\a) ungedämpfter harmonischer Oszillator \\b) gedämpfter harmonischer Oszillator \\c) harmonischer Oszillator mit negativer Dämpfung \\d) nichtlinearer angeregter Oszillator im chaotischen Bereich \\Herleitung siehe \cite{troeder} Seite 388}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1.0\textwidth]{images/phasenraum2.png}
-\caption{Phasenraumkurven eines ungedämpften Fadenpendels. Der Punkt A ist Attraktor für alle Winkel $|\phi|<\pi$. Die rote Kurve stellt eine 'Grenzkurve' zwischen stabilen und instabilen Lösungen dar. Die Punkte B ($|\phi|=180^{\circ}, \dot{\phi}=0$) sind instabile Fixpunkte, eine minimale Änderung des Winkels wird eine stabile Pendelbewegung erzeugen, eine minimale Änderung der Winkelgeschwindigkeit wird eine Rotationsbewegung erzeugen, bei der der Winkel unbegrenzt ansteigt. \\
-Herleitung siehe \cite{troeder} Seite 389}
-\label{pic:pendel_einfach}
-\end{figure}
+\subsubsection{Sonden zur gleichzeitigen Messung des Gesamtdrucks und des statischen Drucks (Prandtl Rohre)}
+Ein Prandtl Rohr ist Pitot Rohr und statische Drucksonde in einem und kann daher direkt zur Messung des dynamischen Drucks verwendet werden. Beim Prandtl Rohr ist die Messung des statischen Drucks problematisch, da es wichtig ist, dass sich die Bohrungen hierfür nicht zu weit vorne, aber auch nicht zu weit hinten befindet. Beides führt zu Fehlern bei der Messung des statischen Drucks. Werden diese Bohrungen jedoch korrekt platziert, gleichen sich die Messfehler gerade gegenseitig aus. Hier soll jedoch nicht weiter auf diesen Aspekt eingegangen werden, da bei unseren Messungen ein Pitot Rohr verwendet wurde.
+%Abb. einfügen
