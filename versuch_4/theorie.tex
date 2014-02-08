@@ -35,14 +35,16 @@ Die Kurve $ \vec{r} (t) $ eines Flüssigkeitselements $ \Delta V $ nennt man Str
 \end{figure}
 
 \begin{figure}
+		\centering
         \includegraphics[width=.9\textwidth]{images/8-5}
-\caption{ Beispiele laminarer Strömungen }
+\caption{Beispiele laminarer Strömungen}
 \label{fig:8-5}
 \end{figure}
 
 \begin{figure}
+	\centering
         \includegraphics[width=.9\textwidth]{images/8-6}
-\caption{ Beispiel einer turbulenten Strömung }
+\caption{Beispiel einer turbulenten Strömung}
 \label{fig:8-6}
 \end{figure}
 
@@ -93,6 +95,7 @@ Diese Gleichung nennt man die Euler-Gleichung. Sie bildet die Grundlage der Hydr
 Hier wird ein Fluid (Flüssigkeit oder Gas) betrachtet, das horizontal durch ein Rohr mit veränderlichem Querschnitt fließt. Die Bernoulli-Gleichung folgt dann aus der Energieerhaltung. Strömt ein Fluid durch ein Rohr, dessen Querschnitt variabel ist, so muss das Fluid aufgrund der Kontinuitätsgleichung \ref{form:Kontinuitätsgl.} an Stellen mit kleinerem Querschnitt schneller fließen. Ein Volumen $ \Delta V_1 = A_1 \cdot \Delta x_1 $ hat dort also eine größere kinetische Energie.
 
 \begin{figure}
+		\centering
         \includegraphics[width=.9\textwidth]{images/8-8}
 \caption{ Rohr mit variablem Querschnitt zur Herleitung der Bernoulli-Gleichung }
 \label{fig:8-8}
@@ -133,6 +136,7 @@ p + \rho g z(x) + \frac{1}{2} \rho u^2(x) = p_0 = const.
 Dabei ist $z(x)$ die Höhe am Ort $x$.
 
 \begin{figure}
+	\centering
         \includegraphics[width=.9\textwidth]{images/8-11}
 \caption{ Strömung durch ein schräges Rohr }
 \label{fig:8-11}
@@ -159,17 +163,36 @@ Die Grundlage zur Bestimmung von Strömungsgeschwindigkeiten durch Druckmessung 
 
 \begin{equation}
 \boxed{u = \sqrt{\frac{2}{\rho} (p_0 - p)} = \sqrt{\frac{2}{\rho} p_d}}
+\label{eq:Geschwindigkeitsformel}
 \end{equation} 
 Dabei ist $ p_d := p_0 - p $ der dynamische Druck. In der Praxis wird deshalb oft eine Messung des Gesamtdrucks und des statischen Drucks durchgeführt, um aus der Differenz auf die Geschwindigkeit des strömenden Fluids schließen zu können.
 
 \subsubsection{Sonden zur Messung des Gesamtdrucks (Pitot Rohre)}
-Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch Anbringen einer Bohrung gemessen werden kann. Mit einem parallel zur Strömung ausgerichteten Rohr hat schon Henri Pitot (1732) als erster Strömungsgeschwindigkeiten gemessen. Deshalb bezeichnet man Gesamtdruckrohre als Pitot Rohre. Um die Richtungsempfindlichkeit von Pitot Rohren zu verbessern wurden verschiedene Kopfformen entwickelt. Es wurde auch ein umhülltes Pitot Rohr entwickelt. Der maximale Winkelbereich, um unter $ 1 \% $ Fehler zu bleiben, hängt stark vom jeweiligen Pitot Rohr ab. Er kann bei einer scharfen Vorderkante $ \pm 10^{\circ} $ betragen und reicht beim umhüllten Pitot Rohr bis zu $ \pm 60^{\circ} $. Diese Werte sind jedoch nur Richtwerte.
+Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch Anbringen einer Bohrung gemessen werden kann. Mit einem parallel zur Strömung ausgerichteten Rohr hat schon Henri Pitot (1732) als erster Strömungsgeschwindigkeiten gemessen. Deshalb bezeichnet man Gesamtdruckrohre als Pitot Rohre. Um die Richtungsempfindlichkeit von Pitot Rohren zu verbessern wurden verschiedene Kopfformen entwickelt. Es wurde auch ein umhülltes Pitot (siehe rechts unten \aref{sonden}) Rohr entwickelt. Der maximale Winkelbereich, um unter $ 1 \% $ Fehler zu bleiben, hängt stark vom jeweiligen Pitot Rohr ab. Er kann bei einer scharfen Vorderkante $ \pm 10^{\circ} $ betragen und reicht beim umhüllten Pitot Rohr bis zu $ \pm 60^{\circ} $. Diese Werte sind jedoch nur Richtwerte.
 %Abb. zu versch. Köpfen
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/sonden.jpg}
+	\caption{Verschiedene Ausführungen der Sondenköpfe}
+	\label{sonden}
+\end{figure}
 
 \subsubsection{Sonden zur Messung des statischen Drucks}
-Zur Messung des statischen Drucks wird ein vorne geschlossenes Rohr mit seitlichen Bohrungen verwendet. Die Bohrungen dürfen dabei keinen Grad oder ähnliches aufweisen, da sonst die Messergebnisse verfälscht werden. Außerdem muss die Bohrung exakt senkrecht zur Wand und damit auch zur Strömung sein.
+Zur Messung des statischen Drucks (siehe \aref{statisch}) wird ein vorne geschlossenes Rohr mit seitlichen Bohrungen verwendet. Die Bohrungen dürfen dabei keinen Grad oder ähnliches aufweisen, da sonst die Messergebnisse verfälscht werden. Außerdem muss die Bohrung exakt senkrecht zur Wand und damit auch zur Strömung sein.
 %Abb. einfügen
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/statisch}
+	\caption{Sonde zur Messung des statischen Drucks}
+	\label{statisch}
+\end{figure}
 
 \subsubsection{Sonden zur gleichzeitigen Messung des Gesamtdrucks und des statischen Drucks (Prandtl Rohre)}
-Ein Prandtl Rohr ist Pitot Rohr und statische Drucksonde in einem und kann daher direkt zur Messung des dynamischen Drucks verwendet werden. Beim Prandtl Rohr ist die Messung des statischen Drucks problematisch, da es wichtig ist, dass sich die Bohrungen hierfür nicht zu weit vorne, aber auch nicht zu weit hinten befindet. Beides führt zu Fehlern bei der Messung des statischen Drucks. Werden diese Bohrungen jedoch korrekt platziert, gleichen sich die Messfehler gerade gegenseitig aus. Hier soll jedoch nicht weiter auf diesen Aspekt eingegangen werden, da bei unseren Messungen ein Pitot Rohr verwendet wurde.
+Ein Prandtl Rohr (siehe \aref{prandtl}) ist Pitot Rohr und statische Drucksonde in einem und kann daher direkt zur Messung des dynamischen Drucks verwendet werden. Beim Prandtl Rohr ist die Messung des statischen Drucks problematisch, da es wichtig ist, dass sich die Bohrungen hierfür nicht zu weit vorne, aber auch nicht zu weit hinten befindet. Beides führt zu Fehlern bei der Messung des statischen Drucks. Werden diese Bohrungen jedoch korrekt platziert, gleichen sich die Messfehler gerade gegenseitig aus. Hier soll jedoch nicht weiter auf diesen Aspekt eingegangen werden, da bei unseren Messungen ein Pitot Rohr verwendet wurde.
 %Abb. einfügen
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/prandtl}
+	\caption{Prandtlrohr}
+	\label{prandtl}
+\end{figure}
