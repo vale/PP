@@ -35,7 +35,7 @@ Somit verhindert man eine \enquote{Verschiebung} zwischen den Ortskoordinaten $ 
 
 
 \begin{figure}
-        \includegraphics[width=.9\textwidth]{images/E_ueber_t_neu.png}
+        \includegraphics[width=1.0\textwidth]{images/E_ueber_t.png}
 \caption{Energie des Pendels über der Zeit}
 \label{E_ueber_t}
 \end{figure}
@@ -44,7 +44,7 @@ In Abb. \ref{E_ueber_t} wurde die Gesamtenergie des Pendels über der Zeit aufge
 E(t) = E_{kin,1}(t) + E_{kin,2}(t) + E_{pot,1}(t) + E_{pot,2}(t) = \frac{1}{2} (m_1 \cdot \vec{v_1}(t)^2 + m_2 \cdot \vec{v_2}(t)^2) + g (m_1 \cdot h_1(t) + m_2 \cdot h_2(t))
 \end{equation}
 berechnet, wobei $h_1 = y_1 + l_1$ und $h_2 = y_2 + l_1 + l_2$, sodass $h_1 $ und $h_2$ die Höhe über der Ruhelage des entsprechenden Pendels angeben. 
-Somit ist die Energie im Fall, dass sich das Pendel gänzlich in Ruhe und in der Ruhelage ($phi_1, phi_2 = 0$) befindet, auf 0 normiert. 
+Somit ist die Energie im Fall, dass sich das Pendel gänzlich in Ruhe und in der Ruhelage ($\phi_1, \phi_2 = 0$) befindet, auf 0 normiert. 
 Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund tritt der Effekt auf, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Dies ist insbesondere dann sichtbar, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen wird. Die errechnete Geschwindigkeit ist dann kleiner als die tatsächliche (Abb. \ref{grafik1}). 
 
 \begin{figure}
@@ -57,22 +57,21 @@ Dieser durch die Aufnahmerate von 30 Bildern pro Sekunde bedingte Fehler ist sch
 des Fehlers abzuschätzen, soll folgende Abschätzung betrachtet werden: 
 Aus Abb. \ref{v_ueber_t} geht hervor, dass die obere Masse maximal eine Geschwindigkeit von etwa $1.8 \frac{m}{s} $ hat. Nimmt man an, 
 dass sich diese Masse auf einer Kreisbahn und mit etwa dieser Geschwindigkeit für $\frac{2}{30} s$ bewegt, so kann der in 
-Abb. \ref{graphik1} dargestellte Fehler für diese Idealisierung berechnet werden: 
-Aus $ v = 1.8 \frac{m}{s} $ ergibt sich mit $ l_1 = 0.2 m$ eine Winkelgeschwindigkeit von $ \omega = 9 \frac{1}{s} $. Für die Dauer
-einer Belichtungszeit beträgt der Winkel, um den sich das Pendel also bewegt, etwa $ \Delta \phi = \omega \cdot \Delta t = 9 \frac{1}{s} \cdot \frac{1}{30} s = 0.3$. 
-Da für die Geschwindigkeitsberechnung zwei Belichtungsintervalle betrachtet werden, ergibt sich aus Abb. \ref{graphik1} und elementarer 
+Abb. \ref{grafik1} dargestellte Fehler für diese Idealisierung berechnet werden: 
+Aus $ v = 1.8 \frac{m}{s} $ ergibt sich mit $ l_1 = 0.3 m$ eine Winkelgeschwindigkeit von $ \omega = 6 \frac{1}{s} $. Für die Dauer
+einer Belichtungszeit beträgt der Winkel, um den sich das Pendel also bewegt, etwa $ \Delta \phi = \omega \cdot \Delta t = 6 \frac{1}{s} \cdot \frac{1}{30} s = 0.2$. 
+Da für die Geschwindigkeitsberechnung zwei Belichtungsintervalle betrachtet werden, ergibt sich aus Abb. \ref{grafik1} und elementarer 
 Geometrie, dass das Verhältnis zwischen tatsächlich zurückgelegter Strecke und der verkürzten Strecke, aus der in der Auswertung die Geschwindigkeit bestimmt 
 wird, sich zu $ \frac{2 \Delta \phi \cdot l_1}{2 \cdot \sin(\Delta \phi) \cdot l_1} = \frac{\Delta \phi}{\sin(\Delta \phi)} $
-ergibt. Für ein $\Delta \phi $ von 0.3 ergibt sich ein Verhältnis von $1.015$, was also $1.5 \% $ Abweichung entspricht. 
+ergibt. Für ein $\Delta \phi $ von 0.2 ergibt sich ein Verhältnis von $1.006$, was also $0.6 \% $ Abweichung entspricht. Bei einem v von maximal $1.8 \frac{m}{s} $ ergibt sich ein $\Delta v $ von etwa $0.01 \frac{m}{s} $.  
 Da hier maximale Werte verwendet wurden, ist dies ebenfalls der maximale Fehler, der sich aus dem erklärten Effekt ergeben sollte. 
 Mittels einer Fehlerfortpflanzung ergibt sich: 
 
 \begin{align}
 \Delta E &= \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2}= \nonumber \\ &= \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}, 
 \end{align}
-wobei $ \Delta v_1 = \Delta v_2 = \Delta v  = 0.03$. 
-Damit ergeben sich die eingezeichneten Fehlerbalken. 
-
+wobei $ \Delta v_1 = \Delta v_2 = \Delta v  = 0.01$, der gleiche Fehler beider Geschwindigkeiten ist. Diese Abschätzung gilt nur für unkorrelierte Fehlergrößen, was hier nicht anzunehmen ist. Da in dem hier betrachteten Fall das Pendel mit sehr kleiner Amplitude schwingt, weißt das Verhalten des Pendels kaum chaotische Charakteristika auf, vielmehr schwingen oberes und unteres Pendel oft synchron, sodass eine klare Korrelation zwischen $v_1 $ und $v_2$ besteht. Da allerdings nur die Größenordnung des Fehlers abgeschätzt werden soll, kann diese weitere Näherung verwendet werden. 
+Wie deutlich zu erkennen, sind die Fehlerbalken viel zu klein, um die Schwankungen in der Energie zu erklären. Der Grund dafür ist, dass die Annahme einer Kreisbahn falsch ist. Betrachtet man die Daten (...), so fällt auf, dass die Energie immer dann sehr klein ist, wenn sich oberes und unteres Pendel mit hoher Geschwindigkeit in verschiedene Richtungen bewegen. Wie man leicht sieht, ist dadurch der Krümmungsradius der Bahn der unteren Masse zu diesem Zeitpunkt sehr klein, woraus ein deutlich größerer Fehler resultiert. 
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/v_ueber_t_neu.png}
@@ -115,21 +114,12 @@ Damit ergäbe sich bei einer Gesamtmasse von etwa $ 0.7 \  kg  $ eine abbremsend
 Neben dem Energieverlust durch die Luftreibung tritt ein der Energieübertrag auf die Aufhängung als weiterer Effekt auf. Dieser sollte zwar durch eine möglichst starre und unbewegliche Befestigung des Pendels zwischen zwei Tischen minimiert werden, trotzdem fangen vor allem bei Überschlägen des Pendels die Tische deutlich sichtbar zu wackeln an. 
 Es bietet sich hier an, in grober Näherung eine lineare Abhängigkeit des Energieverlustes des Systems von der momentanen Energie anzunehmen. 
 
-Nimmt man einen exponentiellen Abfall der Energie $ E(t) = a \cdot e^{b \cdot t} $ an, so ergibt sich mittels eines Fits (Abb. \ref{E_ueber_t}) in den Verlauf von 
-
-\begin{equation}
- a = 0.813   J
-\nonumber
-\end{equation}  und  
-\begin{equation}
-b = -0.024  s^{-1}
-\nonumber
-\end{equation} 
-mit Fehlern von $1.26 \% $ und $ 4.89 \% $. \\
-Allerdings kann aus den hier dargestellten Daten nicht verifiziert werden, ob der Verlauf tatsächlich einem exponentiellen Abfall folgt, da auch etwa ein Abfall mit dem inversen Quadrat der Zeit denkbar wäre, wie es für reine Luftreibung zu erwarten wäre. 
+\subsubsection{Erklärung des Energieverlusts}
+Es kann somit keine Aussage darüber getroffen werden, welche Art des Energieverlusts wesentlich bei dem von uns gebauten Doppelpendel ist. Es kommt sowohl die Luftreibung als auch der Energieübertrag auf die Aufhängung in Frage. \\
+Weiter ist es aufgrund des Fehlers bei der Energie nicht möglich, eine Aussage über den tatsächlichen Energieverlauf zu treffen. Es wäre ein exponentieller Abfall, ein Abfall mit $t^k$ mit einer konstante k denkbar. Mit den Daten lässt sich nicht einmal ein linearer Energieabfall ausschließen. 
 
 \subsection{Simulation des Doppelpendels}
-Die gemessenen Daten sollen nun mit einer Simulation, die entsprechend der Beschreibung in der Theorie durchgeführt wurde, verglichen werden. Da das Pendel händisch gestartet wurde, ist davon auszugehen, dass sich die ersten Werte eher schlecht mit der Simulation nachvollziehen lassen. 
+Die gemessenen Daten sollen nun mit einer Simulation, die entsprechend der Beschreibung in der Theorie durchgeführt wurde, verglichen werden. Da das Pendel händisch gestartet wurde, ist davon auszugehen, dass sich schon die ersten Werte eher schlecht mit der Simulation nachvollziehen lassen und damit auch im weiteren zeitlichen Verlauf keine Übereinstimmung zwischen Messung und Simulation zu erwarten ist. 
 
 
 \begin{figure}
