@@ -65,13 +65,13 @@ Dabei ist $ d \vec{\sigma} $ der Flächennormalenvektor. Also folgt mit dem Satz
 -\frac{\partial M}{\partial t} = -\frac{\partial}{\partial t} \iiint_V \rho dV = \iiint_V (-\frac{\partial}{\partial t} \rho) dV = \iiint_V {\bf div}(\rho \cdot \vec{u})dV = \iint_{\partial V} \rho \cdot \vec{u} \cdot d \vec{\sigma}
 \label{form:viele Integrale}
 \end{equation}
-Da Gleichung \ref{form:viele Integrale} für beliebige $V$ gilt, folgt:
+Da Gleichung (\ref{form:viele Integrale}) für beliebige $V$ gilt, folgt:
 
 \begin{equation}
 \boxed{\frac{\partial \rho}{\partial t} + {\bf div}(\rho \cdot \vec{u}) = 0}
 \label{form:Kontinuitätsgl.}
 \end{equation}
-Diese Gleichung nennt man die Kontinuitätsgleichung. Sie drückt aus, dass Masse erhalten ist. Im Fall von inkompressiblen Flüssigkeiten gilt: $ \rho = const. $ . Deshalb vereinfacht sich \ref{form:Kontinuitätsgl.} zu:
+Diese Gleichung nennt man die Kontinuitätsgleichung. Sie drückt aus, dass Masse erhalten ist. Im Fall von inkompressiblen Flüssigkeiten gilt: $ \rho = const. $ . Deshalb vereinfacht sich Gleichung (\ref{form:Kontinuitätsgl.}) zu:
 
 \begin{equation}
 {\bf div}(\vec{u}) = 0
@@ -84,7 +84,7 @@ Für $ \frac{d \vec{u}}{dt} $ gilt:
 \frac{d \vec{u}}{dt} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial \vec{u}}{\partial y} \frac{\partial y}{\partial t} + \frac{\partial \vec{u}}{\partial z} \frac{\partial z}{\partial t} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} u_x + \frac{\partial \vec{u}}{\partial y} u_y + \frac{\partial \vec{u}}{\partial z} u_z = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla) \vec{u}
 \label{form:herleitung euler}
 \end{equation}
-Aufgrund von \ref{form:Newton} und \ref{form:herleitung euler} ergibt sich für die Bewegungsgleichung einer idealen Flüssigkeit:
+Aufgrund der Gleichungen (\ref{form:Newton}) und (\ref{form:herleitung euler}) ergibt sich für die Bewegungsgleichung einer idealen Flüssigkeit:
 
 \begin{equation}
 \boxed{\frac{d \vec{u}}{dt} = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla) \vec{u} = \vec{g} - \frac{1}{\rho} {\bf grad} (p)}
@@ -120,7 +120,7 @@ Für inkompressible Flüssigkeiten gilt nun $ \Delta V_1 = \Delta V = \Delta V_2
 p_1 + \frac{1}{2} \rho u_1^2 = p_2 + \frac{1}{2} \rho u_2^2
 \label{form:Pre-Bernoulli}
 \end{equation}
-Da \ref{form:Pre-Bernoulli} für beliebige Querschnitte gilt, folgt die Bernoulli-Gleichung:
+Da Gleichung (\ref{form:Pre-Bernoulli}) für beliebige Querschnitte gilt, folgt die Bernoulli-Gleichung:
 
 \begin{equation}
 \boxed{p + \frac{1}{2} \rho u^2 = p_0 = const.}
@@ -148,7 +148,7 @@ Die Bewegungsgleichung für reale viskose strömende Fluide kann angegeben werde
 \begin{equation}
 \vec{F}_R = \eta {\bf \Delta} \vec{u} \Delta V
 \end{equation}
-Dabei ist $ {\bf \Delta} = \nabla \cdot \nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} $ der Laplace-Operator. Aus \ref{form:Newton} folgt nun mit Hilfe von \ref{form:herleitung euler} die Navier-Stokes-Gleichung:
+Dabei ist $ {\bf \Delta} = \nabla \cdot \nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} $ der Laplace-Operator. Aus \ref{form:Newton} folgt nun mit Hilfe von Gleichung (\ref{form:herleitung euler}) die Navier-Stokes-Gleichung:
 
 \begin{equation}
 \boxed{\rho (\frac{\partial}{\partial t} + \vec{u} \cdot \nabla ) \vec{u} = - {\bf grad}(p) + \rho \cdot \vec{g} + \eta {\bf \Delta} \vec{u}}
@@ -168,7 +168,7 @@ Die Grundlage zur Bestimmung von Strömungsgeschwindigkeiten durch Druckmessung 
 Dabei ist $ p_d := p_0 - p $ der dynamische Druck. In der Praxis wird deshalb oft eine Messung des Gesamtdrucks und des statischen Drucks durchgeführt, um aus der Differenz auf die Geschwindigkeit des strömenden Fluids schließen zu können.
 
 \subsubsection{Sonden zur Messung des Gesamtdrucks (Pitot Rohre)}
-Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch Anbringen einer Bohrung gemessen werden kann. Mit einem parallel zur Strömung ausgerichteten Rohr hat schon Henri Pitot (1732) als erster Strömungsgeschwindigkeiten gemessen. Deshalb bezeichnet man Gesamtdruckrohre als Pitot Rohre. Um die Richtungsempfindlichkeit von Pitot Rohren zu verbessern wurden verschiedene Kopfformen entwickelt. Es wurde auch ein umhülltes Pitot (siehe rechts unten \aref{sonden}) Rohr entwickelt. Der maximale Winkelbereich, um unter $ 1 \% $ Fehler zu bleiben, hängt stark vom jeweiligen Pitot Rohr ab. Er kann bei einer scharfen Vorderkante $ \pm 10^{\circ} $ betragen und reicht beim umhüllten Pitot Rohr bis zu $ \pm 60^{\circ} $. Diese Werte sind jedoch nur Richtwerte.
+Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch Anbringen einer Bohrung gemessen werden kann. Mit einem parallel zur Strömung ausgerichteten Rohr hat schon Henri Pitot (1732) als erster Strömungsgeschwindigkeiten gemessen. Deshalb bezeichnet man Gesamtdruckrohre als Pitotrohre. Um die Richtungsempfindlichkeit von Pitotrohren zu verbessern wurden verschiedene Kopfformen entwickelt, unter anderem auch ein umhülltes Pitotrohr (siehe rechts unten \aref{sonden}). Der maximale Winkelbereich, um unter $ 1 \% $ Fehler zu bleiben, hängt stark von der jeweiligen Bauweise ab. Er kann bei einer scharfen Vorderkante $ \pm 10^{\circ} $ betragen und reicht beim umhüllten Pitotrohr bis zu $ \pm 60^{\circ} $. Diese Werte sind jedoch nur Richtwerte.
 %Abb. zu versch. Köpfen
 \begin{figure}
 	\centering
@@ -178,7 +178,7 @@ Im vorderen Teil eines Körpers stellt sich der Gesamtdruck ein, der dort durch 
 \end{figure}
 
 \subsubsection{Sonden zur Messung des statischen Drucks}
-Zur Messung des statischen Drucks (siehe \aref{statisch}) wird ein vorne geschlossenes Rohr mit seitlichen Bohrungen verwendet. Die Bohrungen dürfen dabei keinen Grad oder ähnliches aufweisen, da sonst die Messergebnisse verfälscht werden. Außerdem muss die Bohrung exakt senkrecht zur Wand und damit auch zur Strömung sein.
+Zur Messung des statischen Drucks (siehe \aref{statisch}) wird ein vorne geschlossenes Rohr mit seitlichen Bohrungen verwendet. Die Bohrungen dürfen dabei keinen Grat oder ähnliches aufweisen, da sonst die Messergebnisse verfälscht werden. Außerdem muss die Bohrung exakt senkrecht zur Wand und damit auch zur Strömung sein.
 %Abb. einfügen
 \begin{figure}
 	\centering
@@ -187,12 +187,12 @@ Zur Messung des statischen Drucks (siehe \aref{statisch}) wird ein vorne geschlo
 	\label{statisch}
 \end{figure}
 
-\subsubsection{Sonden zur gleichzeitigen Messung des Gesamtdrucks und des statischen Drucks (Prandtl Rohre)}
-Ein Prandtl Rohr (siehe \aref{prandtl}) ist Pitot Rohr und statische Drucksonde in einem und kann daher direkt zur Messung des dynamischen Drucks verwendet werden. Beim Prandtl Rohr ist die Messung des statischen Drucks problematisch, da es wichtig ist, dass sich die Bohrungen hierfür nicht zu weit vorne, aber auch nicht zu weit hinten befindet. Beides führt zu Fehlern bei der Messung des statischen Drucks. Werden diese Bohrungen jedoch korrekt platziert, gleichen sich die Messfehler gerade gegenseitig aus. Hier soll jedoch nicht weiter auf diesen Aspekt eingegangen werden, da bei unseren Messungen ein Pitot Rohr verwendet wurde.
+\subsubsection{Sonden zur gleichzeitigen Messung des Gesamtdrucks und des statischen Drucks (Prandtlsonden)}
+Eine Prandtlsonde (siehe \aref{prandtl}) ist Pitotrohr und statische Drucksonde in einem und kann daher direkt zur Messung des dynamischen Drucks verwendet werden. Bei der Prandtlsonde ist die Messung des statischen Drucks problematisch, da es wichtig ist, dass sich die Bohrungen hierfür nicht zu weit vorne, aber auch nicht zu weit hinten befindet. Beides führt zu Fehlern bei der Messung des statischen Drucks. Werden diese Bohrungen jedoch korrekt platziert, gleichen sich die Messfehler gerade gegenseitig aus. Hier soll jedoch nicht weiter auf diesen Aspekt eingegangen werden, da bei unseren Messungen ein Pitotrohr verwendet wurde.
 %Abb. einfügen
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/prandtl}
-	\caption{Prandtlrohr}
+	\caption{Prandtlsonde}
 	\label{prandtl}
 \end{figure}
