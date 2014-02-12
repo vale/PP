@@ -1,7 +1,7 @@
 \section{Darstellung der Ergebnisse und Auswertung}
 
 \subsection{Untersuchung des chaotischen Verhaltens}
-Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten. Das Pendel wurde dann in Ruhe so gestartet, dass sich die obere Masse($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5  mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
+Zunächst wurde das Pendel aus, soweit händisch möglich, gleichen Anfangsbedingungen gestartet. Der Startpunkt wurde hier mittels einer an einem der beiden Tische befestigten Gewindestange festgehalten. Das Pendel wurde dann in Ruhe so gestartet, dass sich die obere Masse ($ m_{1} $) direkt neben der Gewindestange befand. Aufgrund dieser Anordnung kann ein geschätzter Fehler von $ 5  mm $ für den Ort der oberen Masse und dementsprechend auch für den Ort der unteren Masse angenommen werden.
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/pendel-10.jpg}
@@ -24,13 +24,13 @@ Dieses Verhalten entspricht dem in der Theorie dargestellten chaotischen Verhalt
 \subsubsection{Allgemeines zur Auswertung}
 Gewählt wurde für die Auswertung ein Fall mit kleiner Auslenkung, weil die Messpunkte so durch numerische Berechnung in Näherung nachvollzogen werden konnten.
 Für die Betrachtung der Reibung wurde ein Video aufgenommen und mittels eines Tracking-Programms nachträglich ausgewertet. 
-Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Aufhänungspunktes des oberen Pendels, muss dieser noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände $d_1, d_2, ... $ zu den Messpunkten des oberen Pendels $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die stochastische Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, d.h. der Punkt, an dem die Abstände zu allem Messpunkten des oberen Pendels ungefähr gleich sind, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
-Für die weitere Auswertung für jeden Zeitpunkt $ t $ einer Aufnahme die Geschwindigkeit von einem Massepunkt zu dieser Zeit mittels
+Da aus den Tracking-Daten nur die einzelnen Koordinaten der Massepunkte hevor gehen, aber nicht die Koordinaten des Aufhänungspunktes des oberen Pendels, müssen diese noch separat ermittelt werden. Dies wurde mittels einer Berechnung in python erreicht, wobei ein Algorithmus implementiert wurde, der für jeden Punkt $(x, y)$ eines Rasters die Abstände $d_1, d_2, ... $ zu den Messpunkten des oberen Pendels $(x_1, y_1), (x_2, y_2), ...$ ermittelt und die stochastische Varianz dieser Abstände berechnet. Als Koordinatenursprung wird dann der Punkt mit minimaler Varianz des Abstandes verwendet, d.h. der Punkt, an dem die Abstände zu allem Messpunkten des oberen Pendels ungefähr gleich sind, sodass sich die \enquote{Länge} des ersten Pendels im Rahmen der Messgenauigkeit als konstant ergibt.  
+Für die weitere Auswertung wurde für jeden Zeitpunkt $ t $ einer Aufnahme die Geschwindigkeit von einem Massepunkt zu dieser Zeit mittels
 \begin{equation}
 \vec{v}(t) = \frac{1}{(2 \Delta t)} \cdot (\vec{x}(t+\Delta t) - \vec{x}(t-\Delta t))
 \end{equation} 
 berechnet. 
-Somit verhindert man eine \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
+Somit verhindert man eine \enquote{Verschiebung} zwischen den Ortskoordinaten $  \vec{x} (t) $ und $ \vec{v} $ , die sich ergeben würde, wenn man etwa nur das Intervall $ [t - \Delta t, t] $ betrachtet. Hier würde man einem Ort (und der damit verbundenen kinetischen Energie) eine \enquote{frühere} und damit falsche Geschwindigkeit zuordnen. 
 \subsubsection{Betrachtung der Messergebnisse}
 
 
@@ -45,8 +45,8 @@ E(t) = E_{kin,1}(t) + E_{kin,2}(t) + E_{pot,1}(t) + E_{pot,2}(t) = \frac{1}{2} (
 \end{equation}
 berechnet, wobei $h_1 = y_1 + l_1$ und $h_2 = y_2 + l_1 + l_2$, sodass $h_1 $ und $h_2$ die Höhe über der Ruhelage des entsprechenden Pendels angeben. 
 Somit ist die Energie im Fall, dass sich das Pendel gänzlich in Ruhe und in der Ruhelage ($\phi_1, \phi_2 = 0$) befindet, auf 0 normiert. 
-Zunächst fällt auf, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund tritt der Effekt auf, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Dies ist insbesondere dann sichtbar, wenn das Pendel ein Minimum der Höhe durchläuft und ein Bild vor und das darauffolgende nach dem Durchlauf aufgenommen wird. Die errechnete Geschwindigkeit ist dann kleiner als die tatsächliche (Abb. \ref{grafik1}). 
-
+Zunächst fällt auf, dass der Verlauf über dem betrachteten Zeitraum am sinnvollsten durch einen linearen Verlauf genähert werden kann (grüner Graph). 
+Beim Vergleich der Messwerte mit dem linearen Fit (grüner Graph) wird allerdings deutlich, dass die Energiewerte (Abb. \ref{E_ueber_t}) deutlich streuen und vom einem montonen Verlauf abweichen. Der Grund hierfür besteht darin, dass das ausgewertete Video lediglich mit einer Aufnahmerate von 30 Bildern pro Sekunde aufgezeichnet wurde. Aus diesem Grund tritt der Effekt auf, dass die Spitzen der Geschwindigkeit bei der Auswertung \enquote{abgeflacht} werden. Dies ist insbesondere dann sichtbar, wenn sich die beiden Pendel mit maximaler Geschwindigkeit und in entgegengesetzte Richtung bewegen, die Höhe also ein Minimum durchläuft (Abb. \ref{grafik1}). 
 \begin{figure}
         \includegraphics[width=.7\textwidth]{images/grafik1.png}
 \caption{Schematische Darstellung der fehlerhaften Auswertung}
@@ -70,18 +70,18 @@ Mittels einer Fehlerfortpflanzung ergibt sich:
 \begin{align}
 \Delta E &= \sqrt{(\frac{\partial E}{\partial v_1} \cdot \Delta v_1)^2 + (\frac{\partial E}{\partial v_2} \cdot \Delta v_2)^2} = \sqrt{(m_1 |v_1| \cdot \Delta v_1)^2 + (m_2 |v_2| \cdot \Delta v_2)^2}= \nonumber \\ &= \sqrt{(\Delta v)^2 \cdot (m_1^2 |v_1|^2 + m_2^2 |v_2|^2)}, 
 \end{align}
-wobei $ \Delta v_1 = \Delta v_2 = \Delta v  = 0.01$, der gleiche Fehler beider Geschwindigkeiten ist. Diese Abschätzung gilt nur für unkorrelierte Fehlergrößen, was hier nicht anzunehmen ist. Da in dem hier betrachteten Fall das Pendel mit sehr kleiner Amplitude schwingt, weißt das Verhalten des Pendels kaum chaotische Charakteristika auf, vielmehr schwingen oberes und unteres Pendel oft synchron, sodass eine klare Korrelation zwischen $v_1 $ und $v_2$ besteht. Da allerdings nur die Größenordnung des Fehlers abgeschätzt werden soll, kann diese weitere Näherung verwendet werden. 
-Wie deutlich zu erkennen, sind die Fehlerbalken viel zu klein, um die Schwankungen in der Energie zu erklären. Der Grund dafür ist, dass die Annahme einer Kreisbahn falsch ist. Betrachtet man die Daten (...), so fällt auf, dass die Energie immer dann sehr klein ist, wenn sich oberes und unteres Pendel mit hoher Geschwindigkeit in verschiedene Richtungen bewegen. Wie man leicht sieht, ist dadurch der Krümmungsradius der Bahn der unteren Masse zu diesem Zeitpunkt sehr klein, woraus ein deutlich größerer Fehler resultiert. 
+wobei $ \Delta v_1 = \Delta v_2 = \Delta v  = 0.01$, der gleiche Fehler beider Geschwindigkeiten ist. Diese Abschätzung gilt nur für unkorrelierte Fehlergrößen, was hier nicht anzunehmen ist. Da in dem hier betrachteten Fall das Pendel mit sehr kleiner Amplitude schwingt, weißt das Verhalten des Pendels kaum chaotische Charakteristika auf, vielmehr schwingen oberes und unteres Pendel teilweise synchron, sodass eine klare Korrelation zwischen $v_1 $ und $v_2$ besteht. Da allerdings nur die Größenordnung des Fehlers abgeschätzt werden soll, kann diese weitere Näherung verwendet werden. 
+Wie deutlich zu erkennen, sind die Fehlerbalken viel zu klein, um die Schwankungen in der Energie zu erklären. Der Grund dafür ist, dass die Annahme einer Kreisbahn falsch ist. Aufgrund der gegenläufigen Geschwindigkeiten hat die Bahn des unteren Pendels für kurze Zeit einen sehr kleinen Krümmungsradius (da sich Aufhängungspunkt verschiebt), woraus ein deutlich größerer Fehler resultiert. 
 
 \begin{figure}
         \includegraphics[width=.9\textwidth]{images/v_ueber_t_neu.png}
-\caption{Geschwindigkeit der beiden Massepunkte über der Zeit}
+\caption{Geschwindigkeitbeträge der beiden Massepunkte über der Zeit}
 \label{v_ueber_t}
 \end{figure}
 
 
 \subsubsection{Luftreibung}
-Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, siehe Abb. \ref{v_ueber_t}, eine der verwendeten Acrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} m^2$ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} m^2$ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \cdot 10^{-3} N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
+Da sich die Geschwindigkeit im Bereich von etwa null bis zwei Metern pro Sekunde bewegt, (Abb. \ref{v_ueber_t}), eine der verwendeten Acrylplatten eine Projektionsfläche von $ 1.5 \cdot 10^{-3} m^2$ (unten: 25 cm Länge, 6 mm Stärke) bzw. $ 1.4 \cdot 10^{-3} m^2$ (oben: 35 cm Länge, 4 mm Stärke) hat, ergibt sich bei einer Luftdichte von $ 1.2 \frac{kg}{m^2} $ eine abbremsende Kraft von $ 1.8 \cdot 10^{-3} N $ (mit $ v = 1 \frac{m}{s}, c_W = 2, A_S = 1.5 \cdot 10^{-3} m^2 $). 
 
 Für die drei verwendeten Platten ergibt sich somit, mit der stark vereinfachten Annahme, dass die gesamte Fläche sich mit gleicher Geschwindigkeit bewegt und die Beschleunigung über längere Zeit konstant ist, was zur Abschätzung der Größenordnung aber ausreichend ist, eine Kraft von $ 5.4 \cdot 10^{-3}  N $. Mit einer Gesamtmasse von $0.7 kg$ inklusive der Acrylplatten folgt eine durchschnittliche Beschleunigung von etwa $ 7.7 \cdot 10^{-3} \frac{m}{s^2} $. Bei einer Dauer der Messung von $20 s$ ergibt sich hiermit also  eine Geschwindigkeitsänderung von etwa $ 0.15 \frac{m}{s} $, die also einen wesentlichen Teil des Energieverlusts darstellt. \\
 \begin{comment}
