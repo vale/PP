@@ -8,7 +8,7 @@ Hierzu wurde das Pitotrohr, ähnlich wie bei der Messung auf dem Auto, zusammen 
 \label{fig:Winkel}
 \end{figure}
 
-Man sieht (Abbildung \ref{fig:Winkel}), dass im Rahmen des Messfehlers im Winkelbereich bis $30^\circ$ keine Abweichung festzustellen ist. Weiterhin fällt der Druck bei der Geschwindigkeit $14.2 \frac{m}{s}$ stärker ab als bei den kleineren Geschwindigkeiten, was aus der Theorie zu erwarten ist.
+Man sieht (Abbildung \ref{fig:Winkel}, Tabelle \ref{tab:Winkel} Seite \pageref{tab:Winkel}), dass im Rahmen des Messfehlers im Winkelbereich bis $30^\circ$ keine Abweichung festzustellen ist. Weiterhin fällt der Druck bei der Geschwindigkeit $14.2 \frac{m}{s}$ stärker ab als bei den kleineren Geschwindigkeiten, was aus der Theorie zu erwarten ist.
 \\
 Zum Vergleich soll noch die Winkelabhängigkeit der nicht umhüllten Prandtlsonde aus dem Lager überprüft werden. Dazu wurde der gleiche Versuchsaufbau wie vorher mit der Strömungsgeschwindigkeit $10.3 \frac{m}{s}$ verwendet. Es wurde wieder ein Ablesefehler von $\pm 2$ Pa angesetzt.
 \begin{figure}
@@ -16,7 +16,7 @@ Zum Vergleich soll noch die Winkelabhängigkeit der nicht umhüllten Prandtlsond
 \caption{Messung der Winkelabhängigkeit der nicht umhüllten Prandtlsonde für eine Strömungsgeschwindigkeit von $10,3 \frac{m}{s}$}
 \label{fig:Winkelnormalrohr}
 \end{figure}
-Auch hier (Abbildung \ref{fig:Winkelnormalrohr}) ist im Winkelbereich bis $30^\circ$ keine Abweichung festzustellen, obwohl das Rohr nicht umhüllt ist.
+Auch hier (Abbildung \ref{fig:Winkelnormalrohr}, Tabelle \ref{tab:Winkelnormalrohr} Seite \pageref{tab:Winkelnormalrohr}) ist im Winkelbereich bis $30^\circ$ keine Abweichung festzustellen, obwohl das Rohr nicht umhüllt ist.
 Es scheint also, als ob die umhüllte Bauweise des 3D-gedruckten Pitotrohrs keinen Unterschied machen würde. Jedoch ist der in der Theorie erwähnte Vorteil des umhüllten Pitotrohrs, dass der Fehler für einen bestimmten Winkelbereich unter $1\%$ liegt, mit unserer Messgenauigkeit unmöglich nachzuvollziehen. Das gewünschte Resultat für die Messung auf dem Auto, also dass das Messergebnis nicht stark vom Winkel beeinflusst wird, wurde aber erreicht.
 \subsection{Kalibration des Rohrs}
 Als Nächstes soll überprüft werden, ob das 3D-gedruckte Rohr korrekte Messergebnisse liefert und eine eventuelle Abweichung bestimmt werden.
@@ -33,9 +33,9 @@ bestimmt.
 \caption{Kalibration des Rohrs}
 \label{fig:Kalibration}
 \end{figure}
-Die Ergebnisse sind in Abbildung \ref{fig:Kalibration} dargestellt. Die Werte auf der x-Achse sind hier die mit dem Windmesser gemessenen Geschwindigkeiten umgerechnet in Drücke. Aus der Grafik und den Messwerten (Tabelle \ref{tab:Kalibration2}, Seite \pageref{tab:Kalibration2} sieht man, dass sich die Abweichung (innerhalb des Messbereichs) nicht mit der Geschwindigkeit ändert. Deswegen kann nun eine mittlere Abweichung bestimmt werden. Eigentlich müsste hier der Fehler aus der Fehlerfortpflanzung mit eingerechnet werden, dies wäre aber sehr kompliziert und muss deshalb vernachlässigt werden. Die mittlere Abweichung ergibt sich dann (mit statistischem Fehler) zu:
+Die Ergebnisse sind in Abbildung \ref{fig:Kalibration} dargestellt. Die Werte auf der x-Achse sind hier die mit dem Windmesser gemessenen Geschwindigkeiten umgerechnet in Drücke. Aus der Grafik und den Messwerten (Tabellen \ref{tab:Kalibration1} und \ref{tab:Kalibration2}, Seite \pageref{tab:Kalibration2} sieht man, dass sich die Abweichung (innerhalb des Messbereichs) nicht mit der Geschwindigkeit ändert. Deswegen kann nun eine mittlere Abweichung bestimmt werden. Eigentlich müsste hier der Fehler aus der Fehlerfortpflanzung mit eingerechnet werden, dies wäre aber sehr kompliziert und wird deshalb vernachlässigt. Die mittlere Abweichung ergibt sich dann (mit statistischem Fehler) zu:
 \begin{equation}
-\Delta u= 0,49 \pm 0,03 \frac{m}{s}
+\Delta u= 0.49 \pm 0.03 \frac{m}{s}
 \label{eq:Abweichung}
 \end{equation}
 Der Grund für diese Abweichung kann nicht klar bestimmt werden, es ist aber anzunehmen, dass Fehler und Ungenauigkeiten beim 3D-Druckprozess (z.B. rauhe Oberflächen, kleine Verformungen des Materials, etc.) zumindest teilweise dafür verantwortlich sind.
@@ -43,7 +43,7 @@ Der Grund für diese Abweichung kann nicht klar bestimmt werden, es ist aber anz
 Für die Auswertung der Geschwindigkeitsmessung wurden die Videoaufnahmen des Tachometers mit denen des Manometers synchronisiert. Dazu wurde die Audiospur der beiden Kameras durch die Software Pluraleyes analysiert, welche eine XML Datei zum Import in gängige Videoschnittprogramme erstellt. Es stellte sich jedoch heraus, dass die Audiospuren keine gute Qualität aufwiesen. Dies führte zu einer fehlerbehafteten Synchronisation, sodass teilweise Abweichungen von mehreren Sekunden zwischen beiden Videos vorkommen.
 Aus dem synchronisierten Video wurden dann die Passagen, während denen mit konstanter Geschwindigkeit gefahren wurde, herausgesucht. Aus diesen Passagen wurden dann jeweils ein Startpunkt, an dem die Flüssigkeit im Manometer nicht mehr steigt bzw. fällt, und ein Endpunkt, an dem die Flüssigkeit wieder steigt bzw. fällt, d.h. wenn das Auto wieder beschleunigte bzw. abbremste, gewählt. Das Zeitintervall zwischen Start- und Endpunkt wurde dann in 10 gleiche Teile unterteilt und jeweils am Beginn eines neuen Teils wurde der Wert für den gemessenen Druck auf dem Manometer und der Wert für die mit GPS gemessene Geschwindigkeit aufgeschrieben. (D.h. wenn z.B. ein 40 Sekunden langes Zeitintervall gewählt wurde, wurde alle 4 Sekunden ein Messwert aufgeschrieben.)
 \\
-Für das GPS wurde ein Fehler von $\pm 0,3$ Knoten gewählt, das dies der Wert war, der auch bei stehendem Fahrzeug angezeigt wurde. Für den Druck kann wieder ein Ablesefehler von $\pm 2$ Pa angenommen werden. Die gemessenen Drücke wurden dann über Gleichung (\ref{eq:Geschwindigkeitsformel}) in Geschwindigkeiten umgerechnet, aus denen dann ein Mittelwert und statistischer Fehler bestimmt wurde. Zu dem so bestimmten Mittelwert wurde dann noch die Abweichung (Gleichung (\ref{eq:Abweichung})) hinzuaddiert. Korrekterweise müsste hier wieder bei der Umrechnung der Drücke in Geschwindigkeiten eine Fehlerfortpflanzung nach Gleichung (\ref{eq:Fehlerfortpflanzung}) durchgeführt werden, die Behandlung dieser Fehler ist aber wieder sehr kompliziert und muss deswegen vernachlässigt werden. Für die mit GPS gemessenen Geschwindigkeiten wurden ebenfalls Mittelwerte und statistische Fehler bestimmt.
+Für das GPS wurde ein Fehler von $\pm 0.3$ Knoten gewählt, das dies der Wert war, der auch bei stehendem Fahrzeug angezeigt wurde. Für den Druck kann wieder ein Ablesefehler von $\pm 2$ Pa angenommen werden. Die gemessenen Drücke wurden dann über Gleichung (\ref{eq:Geschwindigkeitsformel}) in Geschwindigkeiten umgerechnet, aus denen dann ein Mittelwert und statistischer Fehler bestimmt wurde. Zu dem so bestimmten Mittelwert wurde dann noch die Abweichung (Gleichung (\ref{eq:Abweichung})) hinzuaddiert. Korrekterweise müsste hier wieder bei der Umrechnung der Drücke in Geschwindigkeiten eine Fehlerfortpflanzung nach Gleichung (\ref{eq:Fehlerfortpflanzung}) durchgeführt werden, die Behandlung dieser Fehler ist aber wieder sehr kompliziert und muss deswegen vernachlässigt werden. Für die mit GPS gemessenen Geschwindigkeiten wurden ebenfalls Mittelwerte und statistische Fehler bestimmt. (Tabellen \ref{tab:GPS}-\ref{tab:Geschwindigkeiten} Seite \pageref{tab:GPS}-\pageref{tab:Geschwindigkeiten})
 \\
 \begin{figure}
       \includegraphics[width=.9\textwidth]{images/Geschwindigkeit}
