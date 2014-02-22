@@ -45,9 +45,9 @@ Aus dem synchronisierten Video wurden dann die Passagen, während denen mit kons
 \\
 Für das GPS wurde ein Fehler von $\pm 0.3$ Knoten gewählt, da dies der Wert war, der auch bei stehendem Fahrzeug angezeigt wurde. Für den Druck kann wieder ein Ablesefehler von $\pm 2$ Pa angenommen werden. Die gemessenen Drücke wurden dann über Gleichung (\ref{eq:Geschwindigkeitsformel}) in Geschwindigkeiten umgerechnet, aus denen dann ein Mittelwert und statistischer Fehler bestimmt wurde. Zu dem so bestimmten Mittelwert wurde dann noch die Abweichung (Gleichung (\ref{eq:Abweichung})) hinzuaddiert. Korrekterweise müsste hier wieder bei der Umrechnung der Drücke in Geschwindigkeiten eine Fehlerfortpflanzung nach Gleichung (\ref{eq:Fehlerfortpflanzung}) durchgeführt werden, die Behandlung dieser Fehler ist aber wieder sehr kompliziert und muss deswegen vernachlässigt werden. Für die mit GPS gemessenen Geschwindigkeiten wurden ebenfalls Mittelwerte und statistische Fehler bestimmt. (Tabellen \ref{tab:GPS}-\ref{tab:Geschwindigkeiten} Seite \pageref{tab:GPS}-\pageref{tab:Geschwindigkeiten}) Der statistische Fehler wurde über die Formel
 \begin{equation}
-\Delta x_stat = \frac{\sigma}{\sqrt{n}}
+\Delta x_{stat} = \frac{\sigma}{\sqrt{n}}
 \end{equation}
-bestimmt, wobei $\sigma$ die Standardabweichung und n die Anzahl der Messwerte ist.
+bestimmt, wobei $\sigma$ die Standardabweichung und n die Anzahl der Messwerte ist. Der gesamte Fehler ist der statistische Fehler + Ablesefehler.
 \\
 \begin{figure}
       \includegraphics[width=.9\textwidth]{images/Geschwindigkeit}
