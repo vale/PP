@@ -81,7 +81,6 @@ Diese Gleichung nennt man die Kontinuitätsgleichung. Sie drückt aus, dass Mass
 
 \subsubsection{Die Euler-Gleichung}
 Für $ \frac{d \vec{u}}{dt} $ gilt:
-
 \begin{equation}
 \frac{d \vec{u}}{dt} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial \vec{u}}{\partial y} \frac{\partial y}{\partial t} + \frac{\partial \vec{u}}{\partial z} \frac{\partial z}{\partial t} = \frac{\partial \vec{u}}{\partial t} + \frac{\partial \vec{u}}{\partial x} u_x + \frac{\partial \vec{u}}{\partial y} u_y + \frac{\partial \vec{u}}{\partial z} u_z = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla) \vec{u}
 \label{form:herleitung euler}
@@ -128,9 +127,7 @@ Da Gleichung (\ref{form:Pre-Bernoulli}) für beliebige Querschnitte gilt, folgt 
 \boxed{p + \frac{1}{2} \rho u^2 = p_0 = const.}
 \label{form:Bernoulli-Gleichung}
 \end{equation}
-$ p_0 $ heißt Gesamtdruck, $ p_S = \frac{1}{2} \rho u^2 $ heißt Staudruck und $p$ ist der statische Druck der strömenden Flüssigkeit.
-
-Verläuft die Strömung durch schräge Rohre (Abb. \ref{fig:8-11}), ergibt sich die allgemeinere Gleichung:
+$ p_0 $ heißt Gesamtdruck, $ p_S = \frac{1}{2} \rho u^2 $ heißt Staudruck und $p$ ist der statische Druck der strömenden Flüssigkeit. Verläuft die Strömung durch schräge Rohre (Abb. \ref{fig:8-11}), ergibt sich die allgemeinere Gleichung:
 
 \begin{equation}
 p + \rho g z(x) + \frac{1}{2} \rho u^2(x) = p_0 = const.
@@ -146,12 +143,10 @@ Dabei ist $z(x)$ die Höhe am Ort $x$.
 
 \subsubsection{Die Navier-Stokes-Gleichung}
 Die Bewegungsgleichung für reale viskose strömende Fluide kann angegeben werden, wenn auch $ \vec{F}_R $ genauer bestimmt ist. Für viskose Fluide gilt:
-
 \begin{equation}
 \vec{F}_R = \eta {\bf \Delta} \vec{u} \Delta V
 \end{equation}
 Dabei ist $ {\bf \Delta} = \nabla \cdot \nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} $ der Laplace-Operator. Aus \ref{form:Newton} folgt nun mit Hilfe von Gleichung (\ref{form:herleitung euler}) die Navier-Stokes-Gleichung:
-
 \begin{equation}
 \boxed{\rho (\frac{\partial}{\partial t} + \vec{u} \cdot \nabla ) \vec{u} = - {\bf grad}(p) + \rho \cdot \vec{g} + \eta {\bf \Delta} \vec{u}}
 \end{equation}
@@ -160,7 +155,6 @@ Die Lösung der Navier-Stokes-Gleichung ist laut dem Clay Mathematics Institute 
 \subsection{Strömungsmesstechnik}
 \subsubsection{Grundsätzliche Betrachtungen}
 Betrachtet man ein Fluid, ist ihm zunächst nicht anzusehen, ob es strömt oder nicht. Dies wird erst durch Fremdkörper wie z.B. Rauch, Farbstoff, Strömungsfäden oder anderes ermöglicht. Es wird also in der Praxis unmöglich sein tatsächlich $ \vec{u} ( \vec{r} , t) $ für alle $ \vec{r} $ und $t$ zu messen. Deshalb ist man auf indirekte Methoden wie z.B. die  Messung von Druckdifferenzen oder die Messung der Kraft auf einen in der Strömung befindlichen Körper angewiesen. Außerdem sind Messinstrumente oft nur dazu in der Lage den Betrag oder die Richtung von $ \vec{u} $ zu bestimmen. Dabei ist außerdem zu beachten, dass Instrumente zur Messung des Betrags von $ \vec{u} $ oft eine Richtungsempfindlichkeit besitzen, sodass vor der Messung des Betrags die Kenntnis der Richtung von $ \vec{u} $ erforderlich ist.
-
 Die Grundlage zur Bestimmung von Strömungsgeschwindigkeiten durch Druckmessung bildet die Bernoulli-Gleichung \ref{form:Bernoulli-Gleichung}. Stellt man diese nach $u$ um, ergibt sich eine Formel zur Bestimmung der Strömungsgeschwindigkeit des Fluids:
 
 \begin{equation}
